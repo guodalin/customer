@@ -2,14 +2,15 @@
 
 namespace App\Models\Auth;
 
-use App\Models\Traits\Uuid;
-use OwenIt\Auditing\Auditable;
-use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Auth\Traits\SendUserPasswordReset;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Traits\Uuid;
+use App\Models\Auth\Traits\SendUserPasswordReset;
+use Spatie\Permission\Traits\HasRoles;
+use OwenIt\Auditing\Auditable;
 use OwenIt\Auditing\Contracts\Auditable as AuditableInterface;
+use Laravel\Passport\HasApiTokens;
 
 /**
  * Class User.
@@ -21,6 +22,7 @@ class BaseUser extends Authenticatable implements AuditableInterface
         Notifiable,
         SendUserPasswordReset,
         SoftDeletes,
+        HasApiTokens,
         Uuid;
 
     /**
@@ -31,7 +33,9 @@ class BaseUser extends Authenticatable implements AuditableInterface
     protected $fillable = [
         'first_name',
         'last_name',
+        'username',
         'email',
+        'mobile',
         'avatar_type',
         'avatar_location',
         'password',

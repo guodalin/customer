@@ -17,11 +17,11 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
+                                    {{ html()->label(__('validation.attributes.frontend.' . config('access.users.username')))->for(config('access.users.username')) }}
 
-                                    {{ html()->email('email')
+                                    {{ html()->text(config('access.users.username'))
                                         ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.email'))
+                                        ->placeholder(__('validation.attributes.frontend.' . config('access.users.username')))
                                         ->attribute('maxlength', 191)
                                         ->required() }}
                                 </div><!--form-group-->

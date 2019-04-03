@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'service' => 'ipapi',
+    'service' => 'maxmind_database',
 
     /*
     |--------------------------------------------------------------------------
@@ -53,7 +53,7 @@ return [
             'class' => \Torann\GeoIP\Services\MaxMindDatabase::class,
             'database_path' => storage_path('app/geoip.mmdb'),
             'update_url' => 'https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz',
-            'locales' => ['en'],
+            'locales' => ['zh-CN'],
         ],
 
         'maxmind_api' => [
@@ -88,7 +88,7 @@ return [
     |
     */
 
-    'cache' => 'none',
+    'cache' => 'some',
 
     /*
     |--------------------------------------------------------------------------
@@ -124,17 +124,17 @@ return [
 
     'default_location' => [
         'ip' => '127.0.0.0',
-        'iso_code' => 'US',
-        'country' => 'United States',
-        'city' => 'New Haven',
-        'state' => 'CT',
-        'state_name' => 'Connecticut',
-        'postal_code' => '06510',
-        'lat' => 41.31,
-        'lon' => -72.92,
-        'timezone' => 'America/New_York',
-        'continent' => 'NA',
+        'iso_code' => 'CN',
+        'country' => 'China',
+        'city' => 'Nanjing',
+        'state' => 'JS',
+        'state_name' => 'Jiangsu',
+        'postal_code' => '210000',
+        'lat' => 32.06,
+        'lon' => 118.78,
+        'timezone' => 'Asia/Shanghai',
+        'continent' => 'AS',
         'default' => true,
-        'currency' => 'USD',
+        'currency' => 'CNY',
     ],
 ];

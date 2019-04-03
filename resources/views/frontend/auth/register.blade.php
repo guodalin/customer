@@ -80,15 +80,6 @@
                             </div><!--col-->
                         </div><!--row-->
 
-                        @if(config('access.captcha.registration'))
-                            <div class="row">
-                                <div class="col">
-                                    @captcha
-                                    {{ html()->hidden('captcha_status', 'true') }}
-                                </div><!--col-->
-                            </div><!--row-->
-                        @endif
-
                         <div class="row">
                             <div class="col">
                                 <div class="form-group mb-0 clearfix">
@@ -111,9 +102,3 @@
         </div><!-- col-md-8 -->
     </div><!-- row -->
 @endsection
-
-@push('after-scripts')
-    @if(config('access.captcha.registration'))
-        @captchaScripts
-    @endif
-@endpush

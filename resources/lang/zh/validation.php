@@ -183,7 +183,8 @@ return [
 
         'frontend' => [
             'email' => '电子邮件',
-            'name' => '用户名',
+            'name' => '名称',
+            'username' => '用户名',
             'password' => '密码',
             'password_confirmation' => '确认密码',
             'phone' => '电话',

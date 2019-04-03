@@ -17,9 +17,11 @@ class CreateUsersTable extends Migration
         Schema::create(config('access.table_names.users'), function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->uuid('uuid');
+            $table->string('username')->unique();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
+            $table->string('mobile')->nullable()->index();
             $table->string('avatar_type')->default('gravatar');
             $table->string('avatar_location')->nullable();
             $table->string('password')->nullable();

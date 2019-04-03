@@ -1,13 +1,6 @@
 <?php
 
 return [
-    // Application captcha specific settings
-    'captcha' => [
-        // Whether the registration captcha is on or off
-        'contact' => env('CONTACT_CAPTCHA_STATUS', false),
-        'registration' => env('REGISTRATION_CAPTCHA_STATUS', false),
-    ],
-
     // Whether or not registration is enabled
     'registration' => env('ENABLE_REGISTRATION', true),
 
@@ -38,7 +31,7 @@ return [
         'requires_approval' => env('REQUIRES_APPROVAL', false),
 
         // Login username to be used by the controller.
-        'username' => 'email',
+        'username' => 'username',
 
         /*
          * When active, a user can only have one session active at a time

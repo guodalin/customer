@@ -19,6 +19,7 @@ class UserTableSeeder extends Seeder
 
         // Add the master administrator, user id of 1
         User::create([
+            'username' => 'admin',
             'first_name' => 'Admin',
             'last_name' => 'Istrator',
             'email' => 'admin@admin.com',
@@ -28,6 +29,7 @@ class UserTableSeeder extends Seeder
         ]);
 
         User::create([
+            'username' => 'backend',
             'first_name' => 'Backend',
             'last_name' => 'User',
             'email' => 'executive@executive.com',
@@ -37,6 +39,7 @@ class UserTableSeeder extends Seeder
         ]);
 
         User::create([
+            'username' => 'user',
             'first_name' => 'Default',
             'last_name' => 'User',
             'email' => 'user@user.com',
