@@ -28,6 +28,7 @@ return [
         'none' => '空',
         'show' => '显示',
         'toggle_navigation' => '切换导航',
+        'more' => '更多',
     ],
 
     'backend' => [
@@ -70,8 +71,11 @@ return [
                     'no_deactivated' => '没有停用的用户',
                     'no_deleted' => '没有删除的用户',
                     'roles' => '角色',
-                    'social' => 'Social',
+                    'social' => '社交账户',
                     'total' => '用户总计',
+                    'full_name' => '姓名',
+                    'username' => '用户名',
+                    'other_permissions' => '额外权限',
                 ],
 
                 'tabs' => [

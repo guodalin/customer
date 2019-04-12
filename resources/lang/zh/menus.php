@@ -60,8 +60,8 @@ return [
          */
         'langs' => [
             'ar' => '阿拉伯语（Arabic）',
-            'zh' => '中文-简体（Chinese Simplified）',
-            'zh-TW' => '中文-繁体（Chinese Traditional）',
+            'zh' => '简体中文（Chinese Simplified）',
+            'zh-TW' => '繁体中文（Chinese Traditional）',
             'da' => '丹麦语（Danish）',
             'de' => '德语（German）',
             'el' => '希腊语（Greek）',
@@ -78,8 +78,8 @@ return [
             'ru' => '俄语（Russian）',
             'sv' => '瑞典语（Swedish）',
             'th' => '泰语（Thai）',
-            'tr' => '土耳其语(Turkish)',
-            'uk' => '(Ukrainian)',
+            'tr' => '土耳其语 (Turkish)',
+            'uk' => '乌克兰语 (Ukrainian)',
         ],
     ],
 ];

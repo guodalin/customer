@@ -27,8 +27,9 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>@lang('labels.backend.access.users.table.last_name')</th>
-                            <th>@lang('labels.backend.access.users.table.first_name')</th>
+                            <th>#</th>
+                            <th>@lang('labels.backend.access.users.table.username')</th>
+                            <th>@lang('labels.backend.access.users.table.full_name')</th>
                             <th>@lang('labels.backend.access.users.table.email')</th>
                             <th>@lang('labels.backend.access.users.table.confirmed')</th>
                             <th>@lang('labels.backend.access.users.table.roles')</th>
@@ -41,8 +42,9 @@
                         <tbody>
                         @foreach($users as $user)
                             <tr>
-                                <td>{{ $user->last_name }}</td>
-                                <td>{{ $user->first_name }}</td>
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->username }}</td>
+                                <td>{{ $user->full_name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{!! $user->confirmed_label !!}</td>
                                 <td>{!! $user->roles_label !!}</td>
