@@ -30,6 +30,12 @@ return [
         ],
     ],
 
+    'frontend' => [
+        'auth' => [
+            'register_now' => '立刻注册!',
+        ],
+    ],
+
     'emails' => [
         'auth' => [
             'confirm_account' => '确认帐户',
@@ -51,5 +57,11 @@ return [
 
         'save' => '保存',
         'view' => '查看',
+    ],
+
+    'socialites' => [
+        'weixin' => '微信',
+        'qq' => 'QQ',
+        'weibo' => '微博',
     ],
 ];

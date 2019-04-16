@@ -1,104 +1,74 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.coreui')
 
 @section('title', app_name() . ' | ' . __('labels.frontend.auth.register_box_title'))
 
+@section('body_class', 'app flex-row align-items-center')
+
 @section('content')
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-8 align-self-center">
-            <div class="card">
-                <div class="card-header">
-                    <strong>
-                        @lang('labels.frontend.auth.register_box_title')
-                    </strong>
-                </div><!--card-header-->
-
-                <div class="card-body">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card mx-4">
+                <div class="card-body p-4">
+                    <h1>@lang('labels.frontend.auth.register_box_title')</h1>
+                    <p class="text-muted">Create your account</p>
                     {{ html()->form('POST', route('frontend.auth.register.post'))->open() }}
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.first_name'))->for('first_name') }}
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-user fa-fw"></i>
+                            </span>
+                        </div>
+                        {{ html()->text('username')
+                            ->class('form-control')
+                            ->placeholder(__('validation.attributes.frontend.username'))
+                            ->attribute('maxlength', 191)
+                            ->required()}}
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+                        </div>
+                        {{ html()->email('email')
+                            ->class('form-control')
+                            ->placeholder(__('validation.attributes.frontend.email'))
+                            ->attribute('maxlength', 191)
+                            ->required() }}
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-unlock-alt fa-fw"></i>
+                            </span>
+                        </div>
+                        {{ html()->password('password')
+                            ->class('form-control')
+                            ->placeholder(__('validation.attributes.frontend.password'))
+                            ->required() }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-unlock fa-fw"></i>
+                            </span>
+                        </div>
+                        {{ html()->password('password_confirmation')
+                            ->class('form-control')
+                            ->placeholder(__('validation.attributes.frontend.password_confirmation'))
+                            ->required() }}
+                    </div>
+                    {{ form_submit(__('labels.frontend.auth.register_button'), 'btn btn-block btn-success') }}
 
-                                    {{ html()->text('first_name')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.first_name'))
-                                        ->attribute('maxlength', 191)
-                                        ->required()}}
-                                </div><!--col-->
-                            </div><!--row-->
-
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.last_name'))->for('last_name') }}
-
-                                    {{ html()->text('last_name')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.last_name'))
-                                        ->attribute('maxlength', 191)
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
-
-                                    {{ html()->email('email')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.email'))
-                                        ->attribute('maxlength', 191)
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.password'))->for('password') }}
-
-                                    {{ html()->password('password')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.password'))
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.password_confirmation'))->for('password_confirmation') }}
-
-                                    {{ html()->password('password_confirmation')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.password_confirmation'))
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group mb-0 clearfix">
-                                    {{ form_submit(__('labels.frontend.auth.register_button')) }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
                     {{ html()->form()->close() }}
 
-                    <div class="row">
-                        <div class="col">
-                            <div class="text-center">
-                                {!! $socialiteLinks !!}
-                            </div>
-                        </div><!--/ .col -->
-                    </div><!-- / .row -->
+                    @if ($socialiteLinks)
+                    <div class="text-center">
+                        {!! $socialiteLinks !!}
+                    </div>
+                    @endif
+                </div>
 
-                </div><!-- card-body -->
-            </div><!-- card -->
-        </div><!-- col-md-8 -->
+
+            </div>
+        </div>
     </div><!-- row -->
 @endsection

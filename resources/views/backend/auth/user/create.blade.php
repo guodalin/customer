@@ -24,27 +24,48 @@
                 <div class="row mt-4 mb-4">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('validation.attributes.backend.access.users.first_name'))->class('col-md-2 form-control-label')->for('first_name') }}
+                            {{ html()->label(__('validation.attributes.backend.access.users.full_name'))->class('col-md-2 form-control-label')->for('first_name') }}
 
                             <div class="col-md-10">
-                                {{ html()->text('first_name')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.access.users.first_name'))
-                                    ->attribute('maxlength', 191)
-                                    ->required()
-                                    ->autofocus() }}
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        {{ html()->text('first_name')
+                                            ->class('form-control')
+                                            ->placeholder(__('validation.attributes.backend.access.users.first_name'))
+                                            ->attribute('maxlength', 191)
+                                            ->autofocus() }}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{ html()->text('last_name')
+                                            ->class('form-control')
+                                            ->placeholder(__('validation.attributes.backend.access.users.last_name'))
+                                            ->attribute('maxlength', 191) }}
+                                    </div>
+                                </div>
+
                             </div><!--col-->
                         </div><!--form-group-->
 
                         <div class="form-group row">
-                        {{ html()->label(__('validation.attributes.backend.access.users.last_name'))->class('col-md-2 form-control-label')->for('last_name') }}
+                            {{ html()->label(__('validation.attributes.backend.access.users.username'))->class('col-md-2 form-control-label')->for('username') }}
 
                             <div class="col-md-10">
-                                {{ html()->text('last_name')
+                                {{ html()->text('username')
                                     ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.access.users.last_name'))
+                                    ->placeholder(__('validation.attributes.backend.access.users.username'))
                                     ->attribute('maxlength', 191)
                                     ->required() }}
+                            </div><!--col-->
+                        </div><!--form-group-->
+
+                        <div class="form-group row">
+                            {{ html()->label(__('validation.attributes.backend.access.users.mobile'))->class('col-md-2 form-control-label')->for('mobile') }}
+
+                            <div class="col-md-10">
+                                {{ html()->text('mobile')
+                                    ->class('form-control')
+                                    ->placeholder(__('validation.attributes.backend.access.users.mobile'))
+                                    ->attribute('maxlength', 191) }}
                             </div><!--col-->
                         </div><!--form-group-->
 
@@ -126,7 +147,7 @@
                                         <thead>
                                         <tr>
                                             <th>@lang('labels.backend.access.users.table.roles')</th>
-                                            <th>@lang('labels.backend.access.users.table.permissions')</th>
+                                            <th>@lang('labels.backend.access.users.table.other_permissions')</th>
                                         </tr>
                                         </thead>
                                         <tbody>

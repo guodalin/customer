@@ -31,7 +31,8 @@ return [
         'requires_approval' => env('REQUIRES_APPROVAL', false),
 
         // Login username to be used by the controller.
-        'username' => 'username',
+        // set 'auto' for auto determine the value for username, email, or mobile
+        'username' => 'auto',
 
         /*
          * When active, a user can only have one session active at a time

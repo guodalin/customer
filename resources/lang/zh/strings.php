@@ -127,6 +127,10 @@ return [
             'password_updated' => '密码修改成功。',
         ],
 
+        'access' => [
+            'register_helper' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua.',
+        ],
+
         'welcome_to' => '欢迎来到 :place',
     ],
 ];

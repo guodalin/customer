@@ -92,8 +92,9 @@ class UserRepository extends BaseRepository
     {
         return DB::transaction(function () use ($data) {
             $user = parent::create([
-                'first_name' => $data['first_name'],
-                'last_name' => $data['last_name'],
+                'username' => $data['username'],
+                'first_name' => $data['first_name'] ?? $data['username'],
+                'last_name' => $data['last_name'] ?? null,
                 'email' => $data['email'],
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'active' => true,

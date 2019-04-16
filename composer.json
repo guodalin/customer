@@ -17,12 +17,17 @@
         "fideloper/proxy": "^4.0",
         "geoip2/geoip2": "^2.9",
         "hieu-le/active": "^3.5",
+        "jenssegers/agent": "^2.6",
         "laravel/framework": "5.8.*",
         "laravel/passport": "^7.2",
         "laravel/socialite": "^4.1",
         "laravel/tinker": "^1.0",
         "owen-it/laravel-auditing": "^9.0",
         "predis/predis": "^1.1",
+        "socialiteproviders/qq": "^3.0",
+        "socialiteproviders/weibo": "^3.0",
+        "socialiteproviders/weixin": "^4.0",
+        "socialiteproviders/weixin-web": "^3.0",
         "spatie/laravel-html": "^2.4",
         "spatie/laravel-permission": "^2.36",
         "torann/geoip": "^1.0"
@@ -59,7 +64,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "laravel/socialite"
+            ]
         }
     },
     "minimum-stability": "dev",

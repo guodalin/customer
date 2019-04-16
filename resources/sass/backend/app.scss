@@ -12,3 +12,9 @@
     padding-top: map-get($spacers, 3);
     padding-bottom: map-get($spacers, 3);
 }
+
+@each $color, $value in $socialite-colors {
+    .btn-#{$color} {
+        @include button-variant($value, $value);
+    }
+}

@@ -7,7 +7,17 @@
             </tr>
 
             <tr>
-                <th>@lang('labels.backend.access.users.tabs.content.overview.name')</th>
+                <th>@lang('labels.backend.access.users.tabs.content.overview.username')</th>
+                <td>{{ $user->username }}</td>
+            </tr>
+
+            <tr>
+                <th>@lang('labels.backend.access.users.tabs.content.overview.mobile')</th>
+                <td>{{ $user->mobile }}</td>
+            </tr>
+
+            <tr>
+                <th>@lang('labels.backend.access.users.tabs.content.overview.full_name')</th>
                 <td>{{ $user->name }}</td>
             </tr>
 

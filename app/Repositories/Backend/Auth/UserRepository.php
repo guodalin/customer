@@ -101,8 +101,10 @@ class UserRepository extends BaseRepository
     {
         return DB::transaction(function () use ($data) {
             $user = parent::create([
-                'first_name' => $data['first_name'],
-                'last_name' => $data['last_name'],
+                'username' => $data['username'],
+                'mobile' => $data['mobile'] ?? null,
+                'first_name' => $data['first_name'] ?? null,
+                'last_name' => $data['last_name'] ?? null,
                 'email' => $data['email'],
                 'password' => $data['password'],
                 'active' => isset($data['active']) && $data['active'] === '1',
@@ -159,8 +161,10 @@ class UserRepository extends BaseRepository
 
         return DB::transaction(function () use ($user, $data) {
             if ($user->update([
-                'first_name' => $data['first_name'],
-                'last_name' => $data['last_name'],
+                'first_name' => $data['first_name'] ?? null,
+                'last_name' => $data['last_name'] ?? null,
+                'username' => $data['username'],
+                'mobile' => $data['mobile'] ?? null,
                 'email' => $data['email'],
             ])) {
                 // Add selected roles/permissions

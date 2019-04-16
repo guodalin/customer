@@ -6,6 +6,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Passport\Passport;
+use App\UserProviders\AutoUserProvider;
 
 /**
  * Class AuthServiceProvider.
@@ -30,9 +31,22 @@ class AuthServiceProvider extends ServiceProvider
 
         Passport::routes();
 
+        $this->registerAutoUserProvider();
+
         $this->checkSuperAdmin();
 
         $this->bindWechatMiniProgramGuard();
+    }
+
+    /**
+     * register user provider for auto detecting user credentials
+     *
+     * @return void
+     */
+    protected function registerAutoUserProvider() {
+        Auth::provider('auto', function ($app, array $config) {
+            return new AutoUserProvider($app['hash'], $config['model']);
+        });
     }
 
     /**
