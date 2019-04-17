@@ -27,7 +27,7 @@ class WechatMiniProgramTokenGuard extends TokenGuard
 
         $user = null;
 
-        $token = $this->getThirdSessionFromRequest();
+        $token = $this->getTokenForRequest();
 
         if (!empty($token)) {
             $user = resolve(MiniProgramRepository::class)->findByToken($token);
@@ -41,10 +41,10 @@ class WechatMiniProgramTokenGuard extends TokenGuard
      *
      * @return string
      */
-    protected function getThirdSessionFromRequest()
-    {
-        return $this->request->header($this->inputKey);
-    }
+    // protected function getThirdSessionFromRequest()
+    // {
+    //     return $this->request->header($this->inputKey);
+    // }
 
     /**
      * Validate a user's credentials.
