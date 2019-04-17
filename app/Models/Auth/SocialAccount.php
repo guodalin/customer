@@ -2,8 +2,8 @@
 
 namespace App\Models\Auth;
 
-use OwenIt\Auditing\Auditable;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Auditable;
 use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
 /**
@@ -42,4 +42,14 @@ class SocialAccount extends Model implements AuditableContract
         'id',
         'token',
     ];
+
+    /**
+     * 关联的用户
+     *
+     * @return void
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

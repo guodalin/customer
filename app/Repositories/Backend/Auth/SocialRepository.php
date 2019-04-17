@@ -29,4 +29,18 @@ class SocialRepository
 
         throw new GeneralException(__('exceptions.backend.access.users.social_delete_error'));
     }
+
+    /**
+     * 根据provider查找对象
+     *
+     * @param string $provider
+     * @param string $providerId
+     * @return SocialAccount|null
+     */
+    public function findByProvider($provider, $providerId)
+    {
+        return SocialAccount::where('provider', $provider)
+            ->where('provider_id', $providerId)
+            ->first();
+    }
 }

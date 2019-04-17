@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Frontend\Auth;
 
 use Illuminate\Http\Request;
+use Laravel\Socialite\Facades\Socialite;
 use App\Exceptions\GeneralException;
 use App\Http\Controllers\Controller;
 use App\Helpers\Auth\SocialiteHelper;
-use Laravel\Socialite\Facades\Socialite;
 use App\Events\Frontend\Auth\UserLoggedIn;
 use App\Repositories\Frontend\Auth\UserRepository;
 
@@ -98,16 +98,20 @@ class SocialLoginController extends Controller
     }
 
     /**
-     * @param  $provider
-     *
+     * @param string $provider
+     * @param string|null $url
      * @return mixed
      */
-    protected function getAuthorizationFirst($provider)
+    protected function getAuthorizationFirst($provider, $url = null)
     {
         $socialite = Socialite::driver($provider);
         $scopes = empty(config("services.{$provider}.scopes")) ? false : config("services.{$provider}.scopes");
         $with = empty(config("services.{$provider}.with")) ? false : config("services.{$provider}.with");
         $fields = empty(config("services.{$provider}.fields")) ? false : config("services.{$provider}.fields");
+
+        if ($url) {
+            $socialite->redirectUrl($url);
+        }
 
         if ($scopes) {
             $socialite->scopes($scopes);
@@ -131,6 +135,13 @@ class SocialLoginController extends Controller
      */
     protected function getProviderUser($provider)
     {
-        return Socialite::driver($provider)->user();
+        $user = Socialite::driver($provider)->user();
+
+        // 微信需要获得 unionid 来识别用户
+        if (in_array($provider, ['weixin', 'weixinweb'])) {
+            $user->map(['id' => $user->offsetGet('unionid')]);
+        }
+
+        return $user;
     }
 }

@@ -2,22 +2,24 @@
 
 namespace App\Repositories\Backend\Auth;
 
-use App\Models\Auth\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\LengthAwarePaginator;
+use App\Models\Auth\User;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use App\Events\Backend\Auth\User\UserCreated;
 use App\Events\Backend\Auth\User\UserUpdated;
 use App\Events\Backend\Auth\User\UserRestored;
 use App\Events\Backend\Auth\User\UserConfirmed;
-use Illuminate\Pagination\LengthAwarePaginator;
 use App\Events\Backend\Auth\User\UserDeactivated;
 use App\Events\Backend\Auth\User\UserReactivated;
 use App\Events\Backend\Auth\User\UserUnconfirmed;
 use App\Events\Backend\Auth\User\UserPasswordChanged;
-use App\Notifications\Backend\Auth\UserAccountActive;
 use App\Events\Backend\Auth\User\UserPermanentlyDeleted;
+use App\Notifications\Backend\Auth\UserAccountActive;
 use App\Notifications\Frontend\Auth\UserNeedsConfirmation;
+use Comcsoft\Ucenter\Repositories\UcenterRepository;
+use Illuminate\Validation\ValidationException;
 
 /**
  * Class UserRepository.
@@ -100,7 +102,7 @@ class UserRepository extends BaseRepository
     public function create(array $data) : User
     {
         return DB::transaction(function () use ($data) {
-            $user = parent::create([
+            $insert = [
                 'username' => $data['username'],
                 'mobile' => $data['mobile'] ?? null,
                 'first_name' => $data['first_name'] ?? null,
@@ -110,7 +112,13 @@ class UserRepository extends BaseRepository
                 'active' => isset($data['active']) && $data['active'] === '1',
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed' => isset($data['confirmed']) && $data['confirmed'] === '1',
-            ]);
+            ];
+
+            if (should_sync_with_ucenter()) {
+                $insert['id'] = resolve(UcenterRepository::class)->create($insert['username'], $insert['password'], $insert['email']);
+            }
+
+            $user = parent::create($insert);
 
             // See if adding any additional permissions
             if (! isset($data['permissions']) || ! count($data['permissions'])) {
@@ -160,6 +168,29 @@ class UserRepository extends BaseRepository
         }
 
         return DB::transaction(function () use ($user, $data) {
+            if (should_sync_with_ucenter()) {
+                $ucenterRepository = resolve(UcenterRepository::class);
+
+                // 如果修改了用户名
+                if ($data['username'] != $user->username) {
+                    try {
+                        $ucenterRepository->updateUserName($user->id, $data['username']);
+                    } catch (\Throwable $th) {
+                        throw ValidationException::withMessages(['username' => $th->getMessage()]);
+                    }
+                }
+
+                // 如果修改了邮箱
+                if ($data['email'] != $user->email) {
+                    try {
+                        $ucenterRepository->update($user->username, '', '', $data['email']);
+                    } catch (\Throwable $th) {
+                        throw ValidationException::withMessages(['email' => $th->getMessage()]);
+                    }
+                }
+            }
+
+
             if ($user->update([
                 'first_name' => $data['first_name'] ?? null,
                 'last_name' => $data['last_name'] ?? null,
@@ -189,6 +220,14 @@ class UserRepository extends BaseRepository
      */
     public function updatePassword(User $user, $input) : User
     {
+        if (should_sync_with_ucenter()) {
+            try {
+                resolve(UcenterRepository::class)->update($user->username, '', $input['password'], '', 1);
+            } catch (\Throwable $th) {
+                throw new GeneralException($th->getMessage());
+            }
+        }
+
         if ($user->update(['password' => $input['password']])) {
             event(new UserPasswordChanged($user));
 

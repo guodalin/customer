@@ -33,6 +33,10 @@ trait UserMethod
     {
         switch ($this->avatar_type) {
             case 'gravatar':
+                if (should_sync_with_ucenter()) {
+                    return $this->ucenterAvatar();
+                }
+
                 if (! $size) {
                     $size = config('gravatar.default.size');
                 }
@@ -40,7 +44,7 @@ trait UserMethod
                 return gravatar()->get($this->email, ['size' => $size]);
 
             case 'storage':
-                return url('storage/'.$this->avatar_location);
+                return $this->storedAvatar();
         }
 
         $social_avatar = $this->providers()->where('provider', $this->avatar_type)->first();
@@ -50,6 +54,24 @@ trait UserMethod
         }
 
         return false;
+    }
+
+    public function storedAvatar()
+    {
+        return $this->getFirstMediaUrl('avatar', 'thumb');
+        // return url('storage/' . $this->avatar_location);
+    }
+
+    /**
+     * 获得ucenter用户头像
+     *
+     * @param string $size
+     * @param string $type
+     * @return string
+     */
+    public function ucenterAvatar($size = 'middle', $type = 'virtual')
+    {
+        return config('ucenter.api') . "/avatar.php?uid=" . $this->id . "&size=$size&type=$type";
     }
 
     /**

@@ -8,6 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Traits\Uuid;
 use App\Models\Auth\Traits\SendUserPasswordReset;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
+use Spatie\Image\Manipulations;
 use OwenIt\Auditing\Auditable;
 use OwenIt\Auditing\Contracts\Auditable as AuditableInterface;
 use Laravel\Passport\HasApiTokens;
@@ -15,7 +19,7 @@ use Laravel\Passport\HasApiTokens;
 /**
  * Class User.
  */
-class BaseUser extends Authenticatable implements AuditableInterface
+class BaseUser extends Authenticatable implements AuditableInterface, HasMedia
 {
     use Auditable,
         HasRoles,
@@ -23,6 +27,7 @@ class BaseUser extends Authenticatable implements AuditableInterface
         SendUserPasswordReset,
         SoftDeletes,
         HasApiTokens,
+        HasMediaTrait,
         Uuid;
 
     /**
@@ -31,6 +36,7 @@ class BaseUser extends Authenticatable implements AuditableInterface
      * @var array
      */
     protected $fillable = [
+        'id',
         'first_name',
         'last_name',
         'username',
@@ -97,4 +103,51 @@ class BaseUser extends Authenticatable implements AuditableInterface
     protected $appends = [
         'full_name',
     ];
+
+    /**
+     * The relations to eager load on every query.
+     *
+     * @var array
+     */
+    protected $with = [
+        'media'
+    ];
+
+    /**
+     * 通过用户名查找用户
+     *
+     * @param  string $username
+     * @return self
+     */
+    public function findForPassport($username)
+    {
+        return auth()->guard()->getProvider()->retrieveByCredentials([config('access.users.username') => $username]);
+    }
+
+    /**
+     * 验证用户密码
+     *
+     * @param  string $password
+     * @return boolean
+     */
+    public function validateForPassportPasswordGrant($password)
+    {
+        return auth()->guard()->getProvider()->validateCredentials($this, ['password' => $password]);
+    }
+
+    /**
+     * 为用户头像注册mediacollections
+     *
+     * @return void
+     */
+    public function registerMediaCollections()
+    {
+        $this->addMediaCollection('avatar')
+            ->singleFile()
+            ->registerMediaConversions(function (Media $media) {
+                $this->addMediaConversion('thumb')
+                    ->fit(Manipulations::FIT_CROP, 300, 300)
+                    ->optimize();
+            });
+    }
 }

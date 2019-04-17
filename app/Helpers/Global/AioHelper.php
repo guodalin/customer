@@ -23,3 +23,15 @@ if (!function_exists('is_mobile')) {
         return (boolean)preg_match('/^1\d{10}$/', $str);
     }
 }
+
+if (!function_exists('should_sync_with_ucenter')) {
+    /**
+     * 是否需要同步到ucenter
+     *
+     * @return boolean
+     */
+    function should_sync_with_ucenter()
+    {
+        return in_array(config('auth.providers.users.driver'), ['bbs', 'ucenter']);
+    }
+}
