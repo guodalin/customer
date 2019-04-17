@@ -1,0 +1,104 @@
+<?php
+
+namespace App\Repositories\Frontend\Wechat;
+
+use Overtrue\Socialite\User as WechatUser;
+use Overtrue\LaravelWeChat\Facade as Wechat;
+use EasyWeChat\Kernel\Exceptions\DecryptException;
+use App\Exceptions\GeneralException;
+use App\Repositories\Frontend\Auth\UserRepository;
+use Illuminate\Support\Facades\Cache;
+
+class MiniProgramRepository
+{
+    /**
+     * 登录微信小程序
+     *
+     * @param string $name
+     * @param string $code
+     * @param array $base
+     * @param array|null $more
+     * @return void
+     */
+    public function login($name, $code, $base, $more = null)
+    {
+        $mnp = Wechat::miniProgram($name);
+
+        $result = $mnp->auth->session($code);
+
+        $userInfo = $this->decrypt($mnp->encryptor, $result['session_key'], $base['iv'], $base['data']);
+
+        if ($more) {
+            $moreInfo = $this->decrypt($mnp->encryptor, $result['session_key'], $more['iv'], $more['data']);
+        }
+
+        if ($userInfo) {
+            $wechatUser = new WechatUser([
+                'id' => $userInfo['unionId'],
+                'nickname' => $userInfo['nickName'],
+                'name' => $userInfo['nickName'],
+                'avatar' => $userInfo['avatarUrl'],
+                'email' => null,
+                'token' => $result['session_key'],
+                'provider' => 'weixin',
+            ]);
+
+            $user = resolve(UserRepository::class)->findOrCreateProvider($wechatUser, 'weixin');
+
+            $this->cacheToken($result, $user);
+
+            return [$user, $result];
+        }
+
+        return null;
+    }
+
+    /**
+     * 通过小程序缓存token查找用户
+     *
+     * @param string $token
+     * @return null|\App\Models\Auth\User
+     */
+    public function findByToken($token)
+    {
+        $uuid = Cache::get('wechat.miniprogram.' . $token);
+
+        try {
+            return resolve(UserRepository::class)->findByUuid($uuid);
+        } catch (GeneralException $e) {
+            return null;
+        }
+    }
+
+    /**
+     * 解密微信数据
+     *
+     * @param mixed $encryptor
+     * @param string $sessKey
+     * @param string $iv
+     * @param mixed $data
+     * @return mixed
+     */
+    protected function decrypt($encryptor, $sessKey, $iv, $data)
+    {
+        try {
+            return $encryptor->decryptData($sessKey, $iv, $data);
+        } catch (DecryptException $e) {
+            throw new GeneralException($e->getMessage(), $e->getCode());
+        }
+    }
+
+    /**
+     * 把用户uuid缓存到微信小程序token
+     *
+     * @param string $token
+     * @param \App\Models\Auth\User $user
+     * @return self
+     */
+    public function cacheToken($token, $user)
+    {
+        Cache::put('wechat.miniprogram.' . $token['session_key'], $user->uuid, now()->addDay());
+
+        return $this;
+    }
+}

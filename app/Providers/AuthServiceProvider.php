@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Passport\Passport;
 use App\UserProviders\AutoUserProvider;
+use App\Guards\WechatMiniProgramTokenGuard;
 
 /**
  * Class AuthServiceProvider.
@@ -70,8 +71,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected function bindWechatMiniProgramGuard()
     {
-        // Auth::extend('3rdsess', function($app, $name, array $config) {
-        //     return new WechatMiniProgramTokenGuard(Auth::createUserProvider($config['provider']), $app['request'], 'sessionid');
-        // });
+        Auth::extend('3rdsess', function($app, $name, array $config) {
+            return new WechatMiniProgramTokenGuard(Auth::createUserProvider($config['provider']), $app['request'], 'sessionid');
+        });
     }
 }
