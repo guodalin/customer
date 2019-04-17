@@ -49,7 +49,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
 
@@ -60,6 +60,13 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
+        ],
+
+        'media' => [
+            'driver' => 'local',
+            'root' => storage_path('app/medialibrary'),
+            'url' => env('MEDIALIBRARY_URL') . '/storage/media',
+            'visibility' => 'private',
         ],
     ],
 ];
