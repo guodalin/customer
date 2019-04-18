@@ -2,11 +2,15 @@
 
 namespace App\Listeners\Frontend\Auth;
 
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
+// use Illuminate\Queue\InteractsWithQueue;
+// use Illuminate\Contracts\Queue\ShouldQueue;
 use Overtrue\LaravelWeChat\Events\WeChatUserAuthorized;
 use App\Repositories\Frontend\Auth\UserRepository;
 
+/**
+ * event WeChatUserAuthorized should trigger immediately
+ * so we wont use queue here
+ */
 class WechatAuthorizeListener
 {
     /**
