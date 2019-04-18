@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Overtrue\LaravelWeChat\Events\WeChatUserAuthorized;
+use SocialiteProviders\Manager\SocialiteWasCalled;
 
 /**
  * Class EventServiceProvider.
@@ -15,7 +17,16 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        //
+        WeChatUserAuthorized::class => [
+            'App\Listeners\Frontend\Auth\WechatAuthorizeListener'
+        ],
+
+        SocialiteWasCalled::class => [
+            'SocialiteProviders\WeixinWeb\WeixinWebExtendSocialite',  // for weixin web
+            'SocialiteProviders\Weibo\WeiboExtendSocialite',          // for weibo
+            'SocialiteProviders\QQ\QqExtendSocialite',                 // for qq
+            'SocialiteProviders\Weixin\WeixinExtendSocialite'   // for weixin offical
+        ],
     ];
 
     /**
