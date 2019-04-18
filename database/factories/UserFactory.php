@@ -1,8 +1,8 @@
 <?php
 
+use App\Models\Auth\User;
 use Faker\Generator;
 use Ramsey\Uuid\Uuid;
-use App\Models\Auth\User;
 
 /*
 |--------------------------------------------------------------------------

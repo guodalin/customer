@@ -63,7 +63,7 @@ trait UserMethod
     }
 
     /**
-     * 获得ucenter用户头像
+     * 获得ucenter用户头像.
      *
      * @param string $size
      * @param string $type
@@ -71,7 +71,7 @@ trait UserMethod
      */
     public function ucenterAvatar($size = 'middle', $type = 'virtual')
     {
-        return config('ucenter.api') . "/avatar.php?uid=" . $this->id . "&size=$size&type=$type";
+        return config('ucenter.api').'/avatar.php?uid='.$this->id."&size=$size&type=$type";
     }
 
     /**

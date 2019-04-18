@@ -44,9 +44,7 @@ class SocialAccount extends Model implements AuditableContract
     ];
 
     /**
-     * 关联的用户
-     *
-     * @return void
+     * 关联的用户.
      */
     public function user()
     {

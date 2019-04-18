@@ -2,13 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\ServiceProvider;
 
 class MorphMapServiceProvider extends ServiceProvider
 {
     /**
-     * 设定多态模型映射关系
+     * 设定多态模型映射关系.
      *
      * @var array
      */
@@ -19,8 +19,6 @@ class MorphMapServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap services.
-     *
-     * @return void
      */
     public function boot()
     {

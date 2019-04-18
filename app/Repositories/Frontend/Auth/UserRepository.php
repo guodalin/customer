@@ -2,21 +2,21 @@
 
 namespace App\Repositories\Frontend\Auth;
 
+use App\Events\Frontend\Auth\UserConfirmed;
+use App\Events\Frontend\Auth\UserProviderRegistered;
+use App\Exceptions\GeneralException;
+// use Illuminate\Support\Facades\Storage;
+use App\Models\Auth\SocialAccount;
+use App\Models\Auth\User;
+use App\Notifications\Frontend\Auth\UserNeedsConfirmation;
+use App\Repositories\Backend\Access\User\SocialRepository;
+use App\Repositories\BaseRepository;
+use Comcsoft\Ucenter\Repositories\UcenterRepository;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-// use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-use App\Models\Auth\User;
-use App\Models\Auth\SocialAccount;
-use App\Exceptions\GeneralException;
-use App\Events\Frontend\Auth\UserConfirmed;
-use App\Events\Frontend\Auth\UserProviderRegistered;
-use App\Notifications\Frontend\Auth\UserNeedsConfirmation;
-use App\Repositories\BaseRepository;
-use App\Repositories\Backend\Access\User\SocialRepository;
-use Comcsoft\Ucenter\Repositories\UcenterRepository;
 
 /**
  * Class UserRepository.
@@ -137,7 +137,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * 使用手机号注册
+     * 使用手机号注册.
      *
      * @param string $phone
      * @return \App\Models\Auth\User
@@ -170,7 +170,7 @@ class UserRepository extends BaseRepository
     {
         $user = $this->getById($id);
 
-        if (isset($input['username']) && !empty($input['username'])) {
+        if (isset($input['username']) && ! empty($input['username'])) {
             $user->username = $input['username'];
 
             // 如果修改用户名, 那么需要同步到ucenter
@@ -190,7 +190,7 @@ class UserRepository extends BaseRepository
         // Upload profile image if necessary
         if ($image) {
             $user->addMedia($image)->toMediaCollection('avatar');
-            // $user->avatar_location = $image->store('/avatars', 'public');
+        // $user->avatar_location = $image->store('/avatars', 'public');
         } else {
             // No image being passed
             if ($input['avatar_type'] === 'storage') {
@@ -198,18 +198,16 @@ class UserRepository extends BaseRepository
                 // if (auth()->user()->avatar_location === '') {
                 // throw new GeneralException('You must supply a profile image.');
                 // }
-                if (!$user->getFirstMedia('avatar')) {
+                if (! $user->getFirstMedia('avatar')) {
                     throw ValidationException::withMessages(['avatar_location' => __('validation.attributes.frontend.upload_avatar')]); //GeneralException('You must supply a profile image.');
                 }
-
-            } else {
-                // If there is a current image, and they are not using it anymore, get rid of it
+            }
+            // If there is a current image, and they are not using it anymore, get rid of it
                 // if (auth()->user()->avatar_location !== '') {
                 //     Storage::disk('public')->delete(auth()->user()->avatar_location);
                 // }
 
                 // $user->avatar_location = null;
-            }
         }
 
         if ($user->canChangeEmail()) {
@@ -349,7 +347,7 @@ class UserRepository extends BaseRepository
             }
 
             // 如果还是没有找到用户
-            if (!$user) {
+            if (! $user) {
                 // Get users first name and last name from their full name
                 $nameParts = $this->getNameParts($data->getName(), $data->getNickname());
 
@@ -407,7 +405,7 @@ class UserRepository extends BaseRepository
      */
     protected function getNameParts($fullName, $nickName = null)
     {
-        if (!$fullName) {
+        if (! $fullName) {
             $fullName = $nickName;
         }
 
@@ -434,7 +432,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * 纠正提供者名称
+     * 纠正提供者名称.
      *
      * weixinweb 和 weixin 使用一个即可
      *
@@ -451,7 +449,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * 根据provider生成ucenter用户名和邮箱
+     * 根据provider生成ucenter用户名和邮箱.
      *
      * @param string $provider
      * @return array
@@ -461,13 +459,13 @@ class UserRepository extends BaseRepository
         // correct provider name first
         $provider = $this->correctProviderName($provider);
 
-        $prefix = $provider . '_';
+        $prefix = $provider.'_';
 
         // 保证name为15个字符, 因为ucenter的限制
-        $name = $prefix . Str::random(15 - strlen($prefix));
+        $name = $prefix.Str::random(15 - strlen($prefix));
 
         // ucenter email 为 32 个字符, 目前不用判断长度
-        $email = Str::lower($name) . '@' . $provider . '.com';
+        $email = Str::lower($name).'@'.$provider.'.com';
 
         return compact('name', 'email');
     }

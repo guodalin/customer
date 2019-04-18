@@ -2,23 +2,23 @@
 
 namespace App\Repositories\Backend\Auth;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Pagination\LengthAwarePaginator;
-use App\Models\Auth\User;
-use App\Exceptions\GeneralException;
-use App\Repositories\BaseRepository;
-use App\Events\Backend\Auth\User\UserCreated;
-use App\Events\Backend\Auth\User\UserUpdated;
-use App\Events\Backend\Auth\User\UserRestored;
 use App\Events\Backend\Auth\User\UserConfirmed;
+use App\Events\Backend\Auth\User\UserCreated;
 use App\Events\Backend\Auth\User\UserDeactivated;
-use App\Events\Backend\Auth\User\UserReactivated;
-use App\Events\Backend\Auth\User\UserUnconfirmed;
 use App\Events\Backend\Auth\User\UserPasswordChanged;
 use App\Events\Backend\Auth\User\UserPermanentlyDeleted;
+use App\Events\Backend\Auth\User\UserReactivated;
+use App\Events\Backend\Auth\User\UserRestored;
+use App\Events\Backend\Auth\User\UserUnconfirmed;
+use App\Events\Backend\Auth\User\UserUpdated;
+use App\Exceptions\GeneralException;
+use App\Models\Auth\User;
 use App\Notifications\Backend\Auth\UserAccountActive;
 use App\Notifications\Frontend\Auth\UserNeedsConfirmation;
+use App\Repositories\BaseRepository;
 use Comcsoft\Ucenter\Repositories\UcenterRepository;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 /**
@@ -189,7 +189,6 @@ class UserRepository extends BaseRepository
                     }
                 }
             }
-
 
             if ($user->update([
                 'first_name' => $data['first_name'] ?? null,

@@ -2,19 +2,19 @@
 
 namespace App\Models\Auth;
 
-use Illuminate\Notifications\Notifiable;
+use App\Models\Auth\Traits\SendUserPasswordReset;
+use App\Models\Traits\Uuid;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Models\Traits\Uuid;
-use App\Models\Auth\Traits\SendUserPasswordReset;
-use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
+use OwenIt\Auditing\Auditable;
+use OwenIt\Auditing\Contracts\Auditable as AuditableInterface;
+use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
-use Spatie\Image\Manipulations;
-use OwenIt\Auditing\Auditable;
-use OwenIt\Auditing\Contracts\Auditable as AuditableInterface;
-use Laravel\Passport\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 /**
  * Class User.
@@ -110,11 +110,11 @@ class BaseUser extends Authenticatable implements AuditableInterface, HasMedia
      * @var array
      */
     protected $with = [
-        'media'
+        'media',
     ];
 
     /**
-     * 通过用户名查找用户
+     * 通过用户名查找用户.
      *
      * @param  string $username
      * @return self
@@ -128,7 +128,7 @@ class BaseUser extends Authenticatable implements AuditableInterface, HasMedia
      * 验证用户密码
      *
      * @param  string $password
-     * @return boolean
+     * @return bool
      */
     public function validateForPassportPasswordGrant($password)
     {
@@ -136,9 +136,7 @@ class BaseUser extends Authenticatable implements AuditableInterface, HasMedia
     }
 
     /**
-     * 为用户头像注册mediacollections
-     *
-     * @return void
+     * 为用户头像注册mediacollections.
      */
     public function registerMediaCollections()
     {

@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Auth;
-use Laravel\Passport\Passport;
-use App\UserProviders\AutoUserProvider;
 use App\Guards\WechatMiniProgramTokenGuard;
+use App\UserProviders\AutoUserProvider;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+use Laravel\Passport\Passport;
 
 /**
  * Class AuthServiceProvider.
@@ -40,20 +40,17 @@ class AuthServiceProvider extends ServiceProvider
     }
 
     /**
-     * register user provider for auto detecting user credentials
-     *
-     * @return void
+     * register user provider for auto detecting user credentials.
      */
-    protected function registerAutoUserProvider() {
+    protected function registerAutoUserProvider()
+    {
         Auth::provider('auto', function ($app, array $config) {
             return new AutoUserProvider($app['hash'], $config['model']);
         });
     }
 
     /**
-     * pass through if is super admin
-     *
-     * @return void
+     * pass through if is super admin.
      */
     protected function checkSuperAdmin()
     {
@@ -65,13 +62,11 @@ class AuthServiceProvider extends ServiceProvider
     }
 
     /**
-     * bind wechat miniprogram guard
-     *
-     * @return void
+     * bind wechat miniprogram guard.
      */
     protected function bindWechatMiniProgramGuard()
     {
-        Auth::extend('3rdsess', function($app, $name, array $config) {
+        Auth::extend('3rdsess', function ($app, $name, array $config) {
             return new WechatMiniProgramTokenGuard(Auth::createUserProvider($config['provider']), $app['request'], 'sessionid');
         });
     }

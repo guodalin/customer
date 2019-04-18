@@ -22,5 +22,5 @@ Route::middleware('auth:mnp')->get('/user', function (Request $request) {
  */
 
 Route::group(['namespace' => 'Mnp', 'as' => 'mnp.'], function () {
-    include_route_files(__DIR__ . '/mnp/');
+    include_route_files(__DIR__.'/mnp/');
 });

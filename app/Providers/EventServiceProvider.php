@@ -18,14 +18,14 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         WeChatUserAuthorized::class => [
-            'App\Listeners\Frontend\Auth\WechatAuthorizeListener'
+            'App\Listeners\Frontend\Auth\WechatAuthorizeListener',
         ],
 
         SocialiteWasCalled::class => [
             'SocialiteProviders\WeixinWeb\WeixinWebExtendSocialite',  // for weixin web
             'SocialiteProviders\Weibo\WeiboExtendSocialite',          // for weibo
             'SocialiteProviders\QQ\QqExtendSocialite',                 // for qq
-            'SocialiteProviders\Weixin\WeixinExtendSocialite'   // for weixin offical
+            'SocialiteProviders\Weixin\WeixinExtendSocialite',   // for weixin offical
         ],
     ];
 

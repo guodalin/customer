@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Auth\User;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 /**
  * Class RouteServiceProvider.
@@ -78,8 +78,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the "mnp" routes for the application.
      *
      * These routes are typically stateless.
-     *
-     * @return void
      */
     protected function mapMiniProgramRoutes()
     {

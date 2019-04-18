@@ -10,18 +10,12 @@
  */
 
 return [
-    /*
-     * 默认配置，将会合并到各模块中
-     */
+    // 默认配置，将会合并到各模块中
     'defaults' => [
-        /*
-         * 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
-         */
+        // 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
         'response_type' => 'array',
 
-        /*
-         * 使用 Laravel 的缓存系统
-         */
+        // 使用 Laravel 的缓存系统
         'use_laravel_cache' => true,
 
         /*
@@ -37,13 +31,9 @@ return [
         ],
     ],
 
-    /*
-     * 路由配置
-     */
+    // 路由配置
     'route' => [
-        /*
-         * 开放平台第三方平台路由配置
-         */
+        // 开放平台第三方平台路由配置
         // 'open_platform' => [
         //     'uri' => 'serve',
         //     'action' => Overtrue\LaravelWeChat\Controllers\OpenPlatformController::class,
@@ -54,9 +44,7 @@ return [
         // ],
     ],
 
-    /*
-     * 公众号
-     */
+    // 公众号
     'official_account' => [
         'default' => [
             'app_id' => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'your-app-id'),         // AppID
@@ -77,9 +65,7 @@ return [
         ],
     ],
 
-    /*
-     * 开放平台第三方平台
-     */
+    // 开放平台第三方平台
     // 'open_platform' => [
     //     'default' => [
     //         'app_id'  => env('WECHAT_OPEN_PLATFORM_APPID', ''),
@@ -89,21 +75,17 @@ return [
     //     ],
     // ],
 
-    /*
-     * 小程序
-     */
+    // 小程序
     'mini_program' => [
         'default' => [
-            'app_id'  => env('WECHAT_MINI_PROGRAM_APPID', ''),
-            'secret'  => env('WECHAT_MINI_PROGRAM_SECRET', ''),
-            'token'   => env('WECHAT_MINI_PROGRAM_TOKEN', ''),
+            'app_id' => env('WECHAT_MINI_PROGRAM_APPID', ''),
+            'secret' => env('WECHAT_MINI_PROGRAM_SECRET', ''),
+            'token' => env('WECHAT_MINI_PROGRAM_TOKEN', ''),
             'aes_key' => env('WECHAT_MINI_PROGRAM_AES_KEY', ''),
         ],
     ],
 
-    /*
-     * 微信支付
-     */
+    // 微信支付
     // 'payment' => [
     //     'default' => [
     //         'sandbox'            => env('WECHAT_PAYMENT_SANDBOX', false),
@@ -117,9 +99,7 @@ return [
     //     // ...
     // ],
 
-    /*
-     * 企业微信
-     */
+    // 企业微信
     // 'work' => [
     //     'default' => [
     //         'corp_id' => 'xxxxxxxxxxxxxxxxx',

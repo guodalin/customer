@@ -1,34 +1,34 @@
 <?php
 
-if (!function_exists('is_email')) {
+if (! function_exists('is_email')) {
     /**
      * @param $str
      *
-     * @return boolean
+     * @return bool
      */
     function is_email($str)
     {
-        return (boolean)filter_var($str, FILTER_VALIDATE_EMAIL);
+        return (bool) filter_var($str, FILTER_VALIDATE_EMAIL);
     }
 }
 
-if (!function_exists('is_mobile')) {
+if (! function_exists('is_mobile')) {
     /**
      * @param $str
      *
-     * @return boolean
+     * @return bool
      */
     function is_mobile($str)
     {
-        return (boolean)preg_match('/^1\d{10}$/', $str);
+        return (bool) preg_match('/^1\d{10}$/', $str);
     }
 }
 
-if (!function_exists('should_sync_with_ucenter')) {
+if (! function_exists('should_sync_with_ucenter')) {
     /**
-     * 是否需要同步到ucenter
+     * 是否需要同步到ucenter.
      *
-     * @return boolean
+     * @return bool
      */
     function should_sync_with_ucenter()
     {

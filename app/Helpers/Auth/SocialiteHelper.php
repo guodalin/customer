@@ -45,20 +45,20 @@ class SocialiteHelper
 
         // we dont use wechat for a mobile device
         if (config('services.weixinweb.active') && Agent::isDesktop()) {
-            $socialite_enable[] = '<a href="' . route('frontend.auth.social.login', 'weixinweb') . '" class="btn btn-brand btn-weixin m-1"><i class="fab fa-weixin"></i> <span>' . __('buttons.socialites.weixin') . '</span></a>';
+            $socialite_enable[] = '<a href="'.route('frontend.auth.social.login', 'weixinweb').'" class="btn btn-brand btn-weixin m-1"><i class="fab fa-weixin"></i> <span>'.__('buttons.socialites.weixin').'</span></a>';
         }
 
         // we use wechat when in weichat browser
         if (config('services.weixin.active') && Agent::isWeChat()) {
-            $socialite_enable[] = '<a href="' . route('frontend.auth.social.login', 'weixin') . '" class="btn btn-brand btn-weixin m-1"><i class="fab fa-weixin"></i> <span>' . __('buttons.socialites.weixin') . '</span></a>';
+            $socialite_enable[] = '<a href="'.route('frontend.auth.social.login', 'weixin').'" class="btn btn-brand btn-weixin m-1"><i class="fab fa-weixin"></i> <span>'.__('buttons.socialites.weixin').'</span></a>';
         }
 
         if (config('services.qq.active')) {
-            $socialite_enable[] = '<a href="' . route('frontend.auth.social.login', 'qq') . '" class="btn btn-brand btn-qq m-1"><i class="fab fa-qq"></i> <span>' . __('buttons.socialites.qq') . '</span></a>';
+            $socialite_enable[] = '<a href="'.route('frontend.auth.social.login', 'qq').'" class="btn btn-brand btn-qq m-1"><i class="fab fa-qq"></i> <span>'.__('buttons.socialites.qq').'</span></a>';
         }
 
         if (config('services.weibo.active')) {
-            $socialite_enable[] = '<a href="' . route('frontend.auth.social.login', 'weibo') . '" class="btn btn-brand btn-weibo m-1"><i class="fab fa-weibo"></i> <span>' . __('buttons.socialites.weibo') . '</span></a>';
+            $socialite_enable[] = '<a href="'.route('frontend.auth.social.login', 'weibo').'" class="btn btn-brand btn-weibo m-1"><i class="fab fa-weibo"></i> <span>'.__('buttons.socialites.weibo').'</span></a>';
         }
 
         if ($count = count($socialite_enable)) {
@@ -66,7 +66,7 @@ class SocialiteHelper
         }
 
         for ($i = 0; $i < $count; $i++) {
-            $socialite_links .= ($socialite_links != '' ? ' ' : '') . $socialite_enable[$i];
+            $socialite_links .= ($socialite_links != '' ? ' ' : '').$socialite_enable[$i];
         }
 
         return $socialite_links;

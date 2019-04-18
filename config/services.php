@@ -119,30 +119,30 @@ return [
     ],
 
     'weixinweb' => [
-        'active'        => env('WEIXINWEB_ACTIVE'),
-        'client_id'     => env('WEIXINWEB_CLIENT_ID'),
+        'active' => env('WEIXINWEB_ACTIVE'),
+        'client_id' => env('WEIXINWEB_CLIENT_ID'),
         'client_secret' => env('WEIXINWEB_CLIENT_SECRET'),
-        'redirect'      => env('WEIXINWEB_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
+        'redirect' => env('WEIXINWEB_REDIRECT'),
+        'scopes' => [],
+        'with' => [],
     ],
 
     'weixin' => [
-        'active'        => env('WEIXIN_ACTIVE'),
-        'client_id'     => env('WEIXIN_CLIENT_ID'),
+        'active' => env('WEIXIN_ACTIVE'),
+        'client_id' => env('WEIXIN_CLIENT_ID'),
         'client_secret' => env('WEIXIN_CLIENT_SECRET'),
-        'redirect'      => env('WEIXIN_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
+        'redirect' => env('WEIXIN_REDIRECT'),
+        'scopes' => [],
+        'with' => [],
     ],
 
     'qq' => [
-        'active'        => env('QQ_ACTIVE'),
-        'client_id'     => env('QQ_CLIENT_ID'),
+        'active' => env('QQ_ACTIVE'),
+        'client_id' => env('QQ_CLIENT_ID'),
         'client_secret' => env('QQ_CLIENT_SECRET'),
-        'redirect'      => env('QQ_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
+        'redirect' => env('QQ_REDIRECT'),
+        'scopes' => [],
+        'with' => [],
     ],
 
     'weibo' => [

@@ -7,7 +7,7 @@ use Illuminate\Auth\EloquentUserProvider;
 class AutoUserProvider extends EloquentUserProvider
 {
     /**
-     * key of auto detected
+     * key of auto detected.
      */
     const AUTO_KEY = 'auto';
 
@@ -19,7 +19,7 @@ class AutoUserProvider extends EloquentUserProvider
      */
     public function retrieveByCredentials(array $credentials)
     {
-        if (isset($credentials[static::AUTO_KEY]) && !empty($credentials[static::AUTO_KEY])) {
+        if (isset($credentials[static::AUTO_KEY]) && ! empty($credentials[static::AUTO_KEY])) {
             $auto = $credentials[static::AUTO_KEY];
 
             if (is_email($auto)) {

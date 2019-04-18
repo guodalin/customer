@@ -2,23 +2,22 @@
 
 namespace App\Repositories\Frontend\Wechat;
 
-use Overtrue\Socialite\User as WechatUser;
-use Overtrue\LaravelWeChat\Facade as Wechat;
-use EasyWeChat\Kernel\Exceptions\DecryptException;
 use App\Exceptions\GeneralException;
 use App\Repositories\Frontend\Auth\UserRepository;
+use EasyWeChat\Kernel\Exceptions\DecryptException;
 use Illuminate\Support\Facades\Cache;
+use Overtrue\LaravelWeChat\Facade as Wechat;
+use Overtrue\Socialite\User as WechatUser;
 
 class MiniProgramRepository
 {
     /**
-     * 登录微信小程序
+     * 登录微信小程序.
      *
      * @param string $name
      * @param string $code
      * @param array $base
      * @param array|null $more
-     * @return void
      */
     public function login($name, $code, $base, $more = null)
     {
@@ -49,29 +48,27 @@ class MiniProgramRepository
 
             return [$user, $result];
         }
-
-        return null;
     }
 
     /**
-     * 通过小程序缓存token查找用户
+     * 通过小程序缓存token查找用户.
      *
      * @param string $token
      * @return null|\App\Models\Auth\User
      */
     public function findByToken($token)
     {
-        $uuid = Cache::get('wechat.miniprogram.' . $token);
+        $uuid = Cache::get('wechat.miniprogram.'.$token);
 
         try {
             return resolve(UserRepository::class)->findByUuid($uuid);
         } catch (GeneralException $e) {
-            return null;
+            return;
         }
     }
 
     /**
-     * 解密微信数据
+     * 解密微信数据.
      *
      * @param mixed $encryptor
      * @param string $sessKey
@@ -89,7 +86,7 @@ class MiniProgramRepository
     }
 
     /**
-     * 把用户uuid缓存到微信小程序token
+     * 把用户uuid缓存到微信小程序token.
      *
      * @param string $token
      * @param \App\Models\Auth\User $user
@@ -97,7 +94,7 @@ class MiniProgramRepository
      */
     public function cacheToken($token, $user)
     {
-        Cache::put('wechat.miniprogram.' . $token['session_key'], $user->uuid, now()->addDay());
+        Cache::put('wechat.miniprogram.'.$token['session_key'], $user->uuid, now()->addDay());
 
         return $this;
     }

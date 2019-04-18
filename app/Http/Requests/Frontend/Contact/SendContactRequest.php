@@ -38,6 +38,5 @@ class SendContactRequest extends FormRequest
      */
     public function messages()
     {
-
     }
 }
