@@ -65,8 +65,8 @@ trait UserMethod
     /**
      * 获得ucenter用户头像.
      *
-     * @param string $size
-     * @param string $type
+     * @param  string $size
+     * @param  string $type
      * @return string
      */
     public function ucenterAvatar($size = 'middle', $type = 'virtual')

@@ -98,8 +98,8 @@ class SocialLoginController extends Controller
     }
 
     /**
-     * @param string $provider
-     * @param string|null $url
+     * @param  string      $provider
+     * @param  string|null $url
      * @return mixed
      */
     protected function getAuthorizationFirst($provider, $url = null)

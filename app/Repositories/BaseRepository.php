@@ -325,8 +325,8 @@ abstract class BaseRepository implements RepositoryContract
     /**
      * Set an ORDER BY clause.
      *
-     * @param string $column
-     * @param string $direction
+     * @param  string $column
+     * @param  string $direction
      * @return $this
      */
     public function orderBy($column, $direction = 'asc')
@@ -472,7 +472,7 @@ abstract class BaseRepository implements RepositoryContract
      * Add the given query scope.
      *
      * @param string $scope
-     * @param array $args
+     * @param array  $args
      *
      * @return $this
      */

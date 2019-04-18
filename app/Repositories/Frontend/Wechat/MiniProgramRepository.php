@@ -14,9 +14,9 @@ class MiniProgramRepository
     /**
      * 登录微信小程序.
      *
-     * @param string $name
-     * @param string $code
-     * @param array $base
+     * @param string     $name
+     * @param string     $code
+     * @param array      $base
      * @param array|null $more
      */
     public function login($name, $code, $base, $more = null)
@@ -53,12 +53,16 @@ class MiniProgramRepository
     /**
      * 通过小程序缓存token查找用户.
      *
-     * @param string $token
+     * @param  string                     $token
      * @return null|\App\Models\Auth\User
      */
     public function findByToken($token)
     {
         $uuid = Cache::get('wechat.miniprogram.'.$token);
+
+        if (! $uuid) {
+            return;
+        }
 
         try {
             return resolve(UserRepository::class)->findByUuid($uuid);
@@ -70,10 +74,10 @@ class MiniProgramRepository
     /**
      * 解密微信数据.
      *
-     * @param mixed $encryptor
-     * @param string $sessKey
-     * @param string $iv
-     * @param mixed $data
+     * @param  mixed  $encryptor
+     * @param  string $sessKey
+     * @param  string $iv
+     * @param  mixed  $data
      * @return mixed
      */
     protected function decrypt($encryptor, $sessKey, $iv, $data)
@@ -88,8 +92,8 @@ class MiniProgramRepository
     /**
      * 把用户uuid缓存到微信小程序token.
      *
-     * @param string $token
-     * @param \App\Models\Auth\User $user
+     * @param  string                $token
+     * @param  \App\Models\Auth\User $user
      * @return self
      */
     public function cacheToken($token, $user)

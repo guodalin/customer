@@ -13,7 +13,7 @@ use App\Models\Auth\User;
 class SocialRepository
 {
     /**
-     * @param User        $user
+     * @param User          $user
      * @param SocialAccount $social
      *
      * @throws GeneralException
@@ -33,8 +33,8 @@ class SocialRepository
     /**
      * 根据provider查找对象
      *
-     * @param string $provider
-     * @param string $providerId
+     * @param  string             $provider
+     * @param  string             $providerId
      * @return SocialAccount|null
      */
     public function findByProvider($provider, $providerId)

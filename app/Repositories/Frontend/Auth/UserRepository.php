@@ -139,7 +139,7 @@ class UserRepository extends BaseRepository
     /**
      * 使用手机号注册.
      *
-     * @param string $phone
+     * @param  string                $phone
      * @return \App\Models\Auth\User
      */
     public function createUsingMobile(string $phone)
@@ -159,9 +159,9 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * @param       $id
-     * @param array $input
-     * @param bool|UploadedFile  $image
+     * @param                   $id
+     * @param array             $input
+     * @param bool|UploadedFile $image
      *
      * @throws GeneralException
      * @return array|bool
@@ -303,9 +303,9 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * @param mixed $data
-     * @param string $provider
-     * @param string|null $phone 手机号码
+     * @param mixed       $data
+     * @param string      $provider
+     * @param string|null $phone    手机号码
      *
      * @throws GeneralException
      * @return mixed
@@ -400,7 +400,7 @@ class UserRepository extends BaseRepository
 
     /**
      * @param $fullName
-     * @param mixed $nickName
+     * @param  mixed $nickName
      * @return array
      */
     protected function getNameParts($fullName, $nickName = null)
@@ -436,7 +436,7 @@ class UserRepository extends BaseRepository
      *
      * weixinweb 和 weixin 使用一个即可
      *
-     * @param string $provider
+     * @param  string $provider
      * @return string
      */
     public function correctProviderName($provider)
@@ -451,7 +451,7 @@ class UserRepository extends BaseRepository
     /**
      * 根据provider生成ucenter用户名和邮箱.
      *
-     * @param string $provider
+     * @param  string $provider
      * @return array
      */
     protected function genUserNameAndEmail($provider)

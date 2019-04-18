@@ -36,7 +36,7 @@ class WechatAuthorizeListener
     /**
      * Handle the event.
      *
-     * @param  WeChatUserAuthorized  $event
+     * @param WeChatUserAuthorized $event
      */
     public function handle(WeChatUserAuthorized $event)
     {

@@ -13,9 +13,9 @@ class LoginController extends Controller
     /**
      * 微信小程序登录.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Repositories\Frontend\Wechat\MiniProgramRepository $miniProgramRepository
-     * @param null|string $name
+     * @param  \Illuminate\Http\Request                                $request
+     * @param  \App\Repositories\Frontend\Wechat\MiniProgramRepository $miniProgramRepository
+     * @param  null|string                                             $name
      * @throws GeneralException
      * @throws AuthenticationException
      * @return \Illuminate\Http\Response

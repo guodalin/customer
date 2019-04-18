@@ -62,7 +62,7 @@ class ResetPasswordController extends Controller
     /**
      * Reset the given user's password.
      *
-     * @param  ResetPasswordRequest  $request
+     * @param  ResetPasswordRequest                                            $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
     public function reset(ResetPasswordRequest $request)
@@ -88,8 +88,8 @@ class ResetPasswordController extends Controller
     /**
      * Reset the given user's password.
      *
-     * @param  \Illuminate\Contracts\Auth\CanResetPassword  $user
-     * @param  string  $password
+     * @param \Illuminate\Contracts\Auth\CanResetPassword $user
+     * @param string                                      $password
      */
     protected function resetPassword($user, $password)
     {
@@ -109,7 +109,7 @@ class ResetPasswordController extends Controller
     /**
      * Get the response for a successful password reset.
      *
-     * @param  string  $response
+     * @param  string                            $response
      * @return \Illuminate\Http\RedirectResponse
      */
     protected function sendResetResponse($response)
