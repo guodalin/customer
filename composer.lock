@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "534dba76b82f15071c307927bfe9ce1f",
+    "content-hash": "244f3ea0877355e4b330ed5befc4ba97",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -207,54 +207,6 @@
                 "laravel-self-diagnosis"
             ],
             "time": "2019-03-20T15:23:20+00:00"
-        },
-        {
-            "name": "comcsoft/ucenter",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.comc.91360.com/php/comcsoft-ucenter.git",
-                "reference": "22eb519f636a135494aed4d1f848df91c7adb2ff"
-            },
-            "require": {
-                "illuminate/auth": "^5.4",
-                "illuminate/support": "^5.4",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "codeception/codeception": "~2.0",
-                "fzaninotto/faker": "~1.0",
-                "mockery/mockery": "0.9.*"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Comcsoft\\Ucenter\\UcenterServiceProvider"
-                    ],
-                    "aliases": {
-                        "Ucenter": "Comcsoft\\Ucenter\\Facades\\Ucenter"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Comcsoft\\Ucenter\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "noxue",
-                    "email": "yes@noxue.com",
-                    "homepage": "http://noxue.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "ucenter client for laravel",
-            "time": "2019-04-17T06:29:01+00:00"
         },
         {
             "name": "composer/ca-bundle",

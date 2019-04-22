@@ -1,26 +1,41 @@
-## Laravel 5.8 Boilerplate
+## AIO基础套件 (ALL IN ONE BASE)
 
-[![Latest Stable Version](https://poser.pugx.org/rappasoft/laravel-5-boilerplate/v/stable)](https://packagist.org/packages/rappasoft/laravel-5-boilerplate)
-[![Latest Unstable Version](https://poser.pugx.org/rappasoft/laravel-5-boilerplate/v/unstable)](https://packagist.org/packages/rappasoft/laravel-5-boilerplate) 
-<br/>
-[![StyleCI](https://styleci.io/repos/30171828/shield?style=plastic)](https://styleci.io/repos/30171828/shield?style=plastic)
-[![CircleCI](https://circleci.com/gh/rappasoft/laravel-5-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/rappasoft/laravel-5-boilerplate/tree/master)
-<br/>
-![GitHub contributors](https://img.shields.io/github/contributors/rappasoft/laravel-5-boilerplate.svg)
-![GitHub stars](https://img.shields.io/github/stars/rappasoft/laravel-5-boilerplate.svg?style=social)
+91360 PHP 项目组基于 [Laravel 5.8 Boilerplate](http://laravel-boilerplate.com) 开发的整体一致性软件
 
-
-### Official Documentation
+### 官方文档
 
 [Click here for the official documentation](http://laravel-boilerplate.com)
 
-### Slack Channel
+### 简介
 
-Please join us in our Slack channel to get faster responses to your questions. Get your invite here: https://laravel-5-boilerplate.herokuapp.com
+我们使用了 [Laravel Boilerplate](http://laravel-boilerplate.com) (基于 Laravel) 作为程序的中层应用，以此开发符合我们业务需求的软件应用。
 
-### Introduction
+我们在此基础上逐步开发了 视频，会议，网盘等组件，后期将着手将其真正组件化(基于 composer).
 
-Laravel Boilerplate provides you with a massive head start on any size web application. It comes with a full featured access control system out of the box with an easy to learn API and is built on a Bootstrap foundation with a front and backend architecture. We have put a lot of work into it and we hope it serves you well and saves you time!
+程序包含了基础的用户管理，权限管理，日志管理，第三方（微博，QQ，微信）社交账户.
+
+### 安装
+
+1. 使用 `composer create-project comcsoft/laravel-5-boilerplate --repository-url=https://git.comc.91360.com/php/aio-base.git --stability=dev [project name]` 创建项目
+2. 进入项目根目录 执行 `npm i` (安装 npm 依赖)
+3. 执行 `composer run post-root-package-install` 安装程序的环境变量并作相应的设置 （数据库连接，项目名称等）
+4. 执行 `composer run post-create-project-cmd` 安装程序密钥
+5. 执行 `php artisan storage:link` 建立存储文件映射
+6. 执行 `php artisan migrate --seed` 导入数据库和种子文件 （需要先创建数据库，推荐使用 utf8mb 编码）
+7. 执行 `php artisan geoip:update` 更新 IP 数据库
+8. 执行 `php artisan self-diagnosis` 自检程序，确保没有错误
+9. (生成环境) 执行 `php artisan optimize` 缓存系统启动文件
+10. (生成环境) 执行 `php artisan config:cache` 缓存配置文件
+11. (生成环境) 执行 `php artisan route:cache` 缓存路由文件
+12. (生成环境) 执行 `php artisan view:cache` 缓存视图文件
+13. (生成环境) 执行 `npm run prod` (打包前端脚本)
+14. ... 根据需要安装符合本框架的各类组件 （用户中心, 视频, 会议, 切片等)
+
+> 系统内置了三个账户
+>
+> 1. 超级管理员 admin@admin.com/secret
+> 2. 后台管理员 executive@executive.com/secret
+> 3. 普通用户 user@user.com/secret
 
 ### Wiki
 
@@ -28,7 +43,7 @@ Please view the [wiki](https://github.com/rappasoft/laravel-5-boilerplate/wiki) 
 
 ### Issues
 
-If you come across any issues please [report them here](https://github.com/rappasoft/Laravel-5-Boilerplate/issues).
+如遇到任何问题请访问并 [提交到这里](https://git.comc.91360.com/php/aio-base/issues).
 
 ### Contributing
 
@@ -37,10 +52,6 @@ Thank you for considering contributing to the Laravel Boilerplate project! Pleas
 ### Security Vulnerabilities
 
 If you discover a security vulnerability within this boilerplate, please send an e-mail to Anthony Rappa at rappa819@gmail.com, or create a pull request if possible. All security vulnerabilities will be promptly addressed. Please reference [this page](https://github.com/rappasoft/laravel-5-boilerplate/wiki/7.-Security-Fixes) to make sure you are up to date.
-
-### Donations
-
-If you would like to help the continued efforts of this project, any size [donations](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=JJWUZ4E9S9SFG&lc=US&item_name=Laravel%205%20Boilerplate&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted) are welcomed and highly appreciated.
 
 ### License
 
