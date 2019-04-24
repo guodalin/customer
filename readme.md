@@ -12,23 +12,23 @@
 
 我们在此基础上逐步开发了 视频，会议，网盘等组件，后期将着手将其真正组件化(基于 composer).
 
-程序包含了基础的用户管理，权限管理，日志管理，第三方（微博，QQ，微信）社交账户.
+程序包含了基础的用户管理，权限管理，日志管理，第三方（微博，QQ，微信）社交账户并支持使用用户名，邮箱，手机号码登录.
 
 ### 安装
 
-1. 使用 `composer create-project comcsoft/laravel-5-boilerplate --repository-url=https://git.comc.91360.com/php/aio-base.git --stability=dev [project name]` 创建项目
-2. 进入项目根目录 执行 `npm i` (安装 npm 依赖)
+1. 使用 `git clone` 创建项目
+2. 进入项目根目录 执行 `composer install` 和 `npm i` (安装composer 和 npm 依赖)
 3. 执行 `composer run post-root-package-install` 安装程序的环境变量并作相应的设置 （数据库连接，项目名称等）
 4. 执行 `composer run post-create-project-cmd` 安装程序密钥
 5. 执行 `php artisan storage:link` 建立存储文件映射
 6. 执行 `php artisan migrate --seed` 导入数据库和种子文件 （需要先创建数据库，推荐使用 utf8mb 编码）
 7. 执行 `php artisan geoip:update` 更新 IP 数据库
 8. 执行 `php artisan self-diagnosis` 自检程序，确保没有错误
-9. (生成环境) 执行 `php artisan optimize` 缓存系统启动文件
-10. (生成环境) 执行 `php artisan config:cache` 缓存配置文件
-11. (生成环境) 执行 `php artisan route:cache` 缓存路由文件
-12. (生成环境) 执行 `php artisan view:cache` 缓存视图文件
-13. (生成环境) 执行 `npm run prod` (打包前端脚本)
+9. (生产环境) 执行 `php artisan optimize` 缓存系统启动文件
+10. (生产环境) 执行 `php artisan config:cache` 缓存配置文件
+11. (生产环境) 执行 `php artisan route:cache` 缓存路由文件
+12. (生产环境) 执行 `php artisan view:cache` 缓存视图文件
+13. (生产环境) 执行 `npm run prod` (打包前端脚本)
 14. ... 根据需要安装符合本框架的各类组件 （用户中心, 视频, 会议, 切片等)
 
 > 系统内置了三个账户
