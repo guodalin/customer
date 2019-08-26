@@ -64,4 +64,12 @@ return [
         'qq' => 'QQ',
         'weibo' => '微博',
     ],
+
+    'components' => [
+        'fileinput' => [
+            'browse' => '选择图像',
+            'change' => '修改',
+            'remove' => '移除',
+        ]
+    ]
 ];
