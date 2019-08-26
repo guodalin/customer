@@ -15,6 +15,7 @@ use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
+use Comcsoft\Comment\Traits\CanComment;
 
 /**
  * Class User.
@@ -28,7 +29,8 @@ class BaseUser extends Authenticatable implements AuditableInterface, HasMedia
         SoftDeletes,
         HasApiTokens,
         HasMediaTrait,
-        Uuid;
+        Uuid,
+        CanComment;
 
     /**
      * The attributes that are mass assignable.
