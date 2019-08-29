@@ -52,6 +52,7 @@ class Kernel extends HttpKernel
             'auth',
             'password_expires',
             'permission:view backend',
+            'menu.backend',
         ],
     ];
 
@@ -76,6 +77,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'menu.backend' => \App\Http\Middleware\BackendMenu::class,
     ];
 
     /**

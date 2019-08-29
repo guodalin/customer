@@ -47,7 +47,10 @@ return [
             'general' => '常规',
             'history' => 'History',
             'system' => '系统',
+            'menu' => '菜单',
         ],
+
+        'name' => '后台菜单',
     ],
 
     'language-picker' => [
