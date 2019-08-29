@@ -114,7 +114,10 @@ class MenuHelper
     {
         $key = 'menu.' . $this->menu->nickname . '.items';
 
-        Cache::forget($key);
+        // no cache when app is under debug mode
+        if (config('app.debug')) {
+            Cache::forget($key);
+        }
 
         return Cache::remember($key, now()->addMonth(), function () {
             return $this->items();
