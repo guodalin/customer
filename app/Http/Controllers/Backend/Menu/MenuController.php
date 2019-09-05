@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Menu;
 
 use Illuminate\Http\Request;
 use App\Helpers\General\MenuHelper;
 use App\Models\Menu\Menu;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Menu\StoreMenuRequest;
+use App\Http\Requests\Backend\Menu\UpdateMenuRequest;
+use App\Http\Resources\Backend\Menu\MenuResource;
 
 class MenuController extends Controller
 {
@@ -14,9 +17,20 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->expectsJson()) {
+            return MenuResource::collection(Menu::withCount('items')->latest()->get());
+        }
 
+        return view('backend.menu.index');
+    }
+
+    public function store(StoreMenuRequest $request)
+    {
+        $menu = Menu::create($request->only('name', 'nickname'));
+
+        return ['message' => '菜单创建成功，请为其添加菜单项'];
     }
 
     public function demo()
@@ -44,27 +58,6 @@ class MenuController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  \App\Models\System\Menu  $menu
@@ -72,18 +65,9 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        //
-    }
+        $menu->tree = $menu->items()->defaultOrder()->get()->toTree();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\System\Menu  $menu
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Menu $menu)
-    {
-        //
+        return new MenuResource($menu);
     }
 
     /**
@@ -93,9 +77,12 @@ class MenuController extends Controller
      * @param  \App\Models\System\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Menu $menu)
+    public function update(UpdateMenuRequest $request, Menu $menu)
     {
-        //
+        $menu->fill($request->only('name', 'nickname'))
+            ->save();
+
+        return ['message' => '菜单更新成功!'];
     }
 
     /**
@@ -106,6 +93,8 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu)
     {
-        //
+        $menu->delete();
+
+        return ['message' => '菜单删除成功!'];
     }
 }

@@ -84,6 +84,7 @@ mix
         'popper.js',
         'axios',
         'sweetalert2',
+        'toastr',
         'lodash',
         'vue'
     ])

@@ -5,6 +5,7 @@
 import _ from 'lodash';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import toastr from 'toastr';
 import $ from 'jquery';
 import 'popper.js'; // Required for BS4
 import 'bootstrap';
@@ -17,6 +18,7 @@ import 'bootstrap';
 
 window.$ = window.jQuery = $;
 window.Swal = Swal;
+window.toastr = toastr;
 window._ = _; // Lodash
 
 /**

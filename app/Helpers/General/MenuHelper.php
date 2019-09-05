@@ -63,7 +63,7 @@ class MenuHelper
 
     public function addSeparator($name = null, $html = [])
     {
-        return $this->addItem($name ?: 'SEPARATOR', [], $html);
+        return $this->addItem($name ?: 'SEPARATOR', [MenuItem::TYPE_OF_DIVIDE], $html);
     }
 
     /**
@@ -92,7 +92,7 @@ class MenuHelper
 
     public function items()
     {
-        return MenuItem::scoped(['menu_id' => $this->menu->id])->with('descendants')->whereIsRoot()->defaultOrder()->get();
+        return MenuItem::scoped(['menu_id' => $this->menu->id])->defaultOrder()->get()->toTree();
     }
 
     public function build()
@@ -158,8 +158,8 @@ class MenuHelper
             $m->active($item->active);
         }
 
-        if ($item->descendants->isNotEmpty()) {
-            foreach ($item->descendants as $child) {
+        if ($item->children->isNotEmpty()) {
+            foreach ($item->children as $child) {
                 $this->addItemToMenu($child, $m);
             }
         }

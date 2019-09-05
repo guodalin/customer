@@ -42,6 +42,7 @@
         "sass": "^1.17.3",
         "sass-loader": "^7.1.0",
         "sweetalert2": "^8.7.0",
+        "toastr": "^2.1.4",
         "vue": "^2.6.10",
         "vue-jest": "^3.0.4",
         "vue-template-compiler": "^2.6.10"

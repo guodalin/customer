@@ -45,9 +45,8 @@ return [
         'sidebar' => [
             'dashboard' => '指示板',
             'general' => '常规',
-            'history' => 'History',
+            'history' => '历史',
             'system' => '系统',
-            'menu' => '菜单',
         ],
 
         'name' => '后台菜单',

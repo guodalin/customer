@@ -6,6 +6,9 @@
 // Import styles
 @import "~@coreui/coreui/scss/coreui";
 
+// Import toastr
+@import "~toastr/toastr";
+
 // Fix mobile footer
 .app-footer {
     flex: 0 0;

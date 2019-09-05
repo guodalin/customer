@@ -50,7 +50,7 @@
                 <li class="nav-item">
                     <a class="nav-link {{ active_class(Active::checkUriPattern('admin/menu')) }}" href="{{ route('admin.menu.index') }}">
                         <i class="nav-icon fab fa-elementor"></i>
-                        @lang('menus.backend.sidebar.menu')
+                        @lang('labels.backend.menu.management')
                     </a>
                 </li>
             @endif

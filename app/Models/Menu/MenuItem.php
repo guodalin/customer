@@ -50,6 +50,7 @@ class MenuItem extends Model
      */
     protected $fillable = [
         'name',
+        'parent_id',
         'menu_id',
         'nickname',
         'type',

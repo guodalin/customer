@@ -108,6 +108,10 @@ return [
                 'view' => '查看用户',
             ],
         ],
+
+        'menu' => [
+            'management' => '菜单管理'
+        ],
     ],
 
     'frontend' => [
