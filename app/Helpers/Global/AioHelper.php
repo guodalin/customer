@@ -35,3 +35,17 @@ if (! function_exists('should_sync_with_ucenter')) {
         return in_array(config('auth.providers.users.driver'), ['bbs', 'ucenter']);
     }
 }
+
+if (! function_exists('sanitize_filename')) {
+    /**
+     * 随机文件名称
+     *
+     * @param string $fileName
+     * @param int $len
+     * @return string
+     */
+    function sanitize_filename($fileName, $len = 20)
+    {
+        return str_random($len) . '.' . pathinfo($fileName, PATHINFO_EXTENSION);
+    }
+}

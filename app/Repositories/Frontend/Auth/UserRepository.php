@@ -189,7 +189,11 @@ class UserRepository extends BaseRepository
 
         // Upload profile image if necessary
         if ($image) {
-            $user->addMedia($image)->toMediaCollection('avatar');
+            $user->addMedia($image)
+                ->sanitizingFileName(function ($fileName) {
+                    return sanitize_filename($fileName);
+                })
+                ->toMediaCollection('avatar');
         // $user->avatar_location = $image->store('/avatars', 'public');
         } else {
             // No image being passed

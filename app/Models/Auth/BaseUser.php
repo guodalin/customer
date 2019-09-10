@@ -147,6 +147,8 @@ class BaseUser extends Authenticatable implements AuditableInterface, HasMedia
             ->registerMediaConversions(function (Media $media) {
                 $this->addMediaConversion('thumb')
                     ->fit(Manipulations::FIT_CROP, config('gravatar.default.size'), config('gravatar.default.size'))
+                    ->format(Manipulations::FORMAT_PNG)
+                    ->background('transparent')
                     ->optimize();
             });
     }
