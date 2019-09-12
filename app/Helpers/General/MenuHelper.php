@@ -99,10 +99,6 @@ class MenuHelper
     {
         $items = $this->getCachedMenuItems();
 
-        if ($items->isEmpty()) {
-            return;
-        }
-
         MenuFacade::makeOnce($this->menu->nickname, function ($menu) use ($items) {
             foreach ($items as $item) {
                 $this->addItemToMenu($item, $menu);
