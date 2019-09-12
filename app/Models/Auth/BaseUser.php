@@ -8,29 +8,28 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
-use OwenIt\Auditing\Auditable;
-use OwenIt\Auditing\Contracts\Auditable as AuditableInterface;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Comcsoft\Comment\Traits\CanComment;
 
 /**
  * Class User.
  */
-class BaseUser extends Authenticatable implements AuditableInterface, HasMedia
+class BaseUser extends Authenticatable implements HasMedia
 {
-    use Auditable,
-        HasRoles,
+    use HasRoles,
         Notifiable,
         SendUserPasswordReset,
         SoftDeletes,
         HasApiTokens,
         HasMediaTrait,
         Uuid,
-        CanComment;
+        CanComment,
+        LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -67,17 +66,20 @@ class BaseUser extends Authenticatable implements AuditableInterface, HasMedia
         'remember_token',
     ];
 
-    /**
-     * Attributes to exclude from the Audit.
-     *
-     * @var array
+    /*-------------------------------------------
+     * Attributes to log the event.
      */
-    protected $auditExclude = [
-        'id',
-        'password',
-        'remember_token',
-        'confirmation_code',
+    protected static $logName = 'system';
+
+    protected static $logAttributes = [
+        'username', 'mobile', 'email', 'password_changed_at',
+        'timezone', 'last_login_at', 'last_login_ip'
     ];
+
+    protected static $logOnlyDirty = true;
+
+    protected static $submitEmptyLogs = false;
+    /*------------------------------------------*/
 
     /**
      * The attributes that should be cast to native types.

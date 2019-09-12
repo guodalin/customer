@@ -4,25 +4,27 @@ namespace App\Models\Auth;
 
 use App\Models\Auth\Traits\Attribute\RoleAttribute;
 use App\Models\Auth\Traits\Method\RoleMethod;
-use OwenIt\Auditing\Auditable;
-use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Permission\Models\Role as SpatieRole;
 
 /**
  * Class Role.
  */
-class Role extends SpatieRole implements AuditableContract
+class Role extends SpatieRole
 {
-    use Auditable,
+    use LogsActivity,
         RoleAttribute,
         RoleMethod;
 
-    /**
-     * Attributes to exclude from the Audit.
-     *
-     * @var array
+    /*-------------------------------------------
+     * Attributes to log the event.
      */
-    protected $auditExclude = [
-        'id',
-    ];
+    protected static $logName = 'system';
+
+    protected static $logAttributes = ['name'];
+
+    protected static $logOnlyDirty = true;
+
+    protected static $submitEmptyLogs = false;
+    /*------------------------------------------*/
 }
