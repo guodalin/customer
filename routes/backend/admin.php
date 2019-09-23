@@ -19,6 +19,3 @@ Route::post('menu', [MenuController::class, 'store']);
 Route::delete('menu/{menu}', [MenuController::class, 'destroy']);
 Route::put('menu/{menu}', [MenuController::class, 'update']);
 Route::get('menu/{menu}', [MenuController::class, 'show']);
-
-Route::resource('experts', 'ExpertController');
-Route::resource('hospitals', 'ExpertController');
