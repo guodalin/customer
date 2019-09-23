@@ -1,0 +1,34 @@
+{
+    "name": "comcsoft/aio-comment",
+    "description": "Aio Comment Component",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "欧军辉",
+            "email": "oujh@91360.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "illuminate/support": "^5.4",
+        "illuminate/database": "^5.4",
+        "illuminate/console": "^5.4",
+        "comcsoft/laravel-comment": "dev-master",
+        "spatie/laravel-medialibrary": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Comcsoft\\Aio\\Comment\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Comcsoft\\Aio\\Comment\\CommentServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

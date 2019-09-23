@@ -16,13 +16,10 @@ class CommentServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/comment.php' => config_path('comment.php'),
-                __DIR__ . '/../resources/lang' => resource_path('lang/vendor/comment'),
             ], 'laravel-comment');
 
             $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         }
-
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'comment');
     }
 
     /**
