@@ -28,11 +28,11 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => ['required', 'string', 'max:191', Rule::unique('users')],
+            'username'   => ['required', 'string', 'max:191', Rule::unique('users')],
             'first_name' => ['nullable', 'string', 'max:191'],
-            'last_name' => ['nullable', 'string', 'max:191'],
-            'email' => ['required', 'string', 'email', 'max:191', Rule::unique('users')],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'last_name'  => ['nullable', 'string', 'max:191'],
+            'email'      => ['required', 'string', 'email', 'max:191', Rule::unique('users')],
+            'password'   => ['required', 'string', 'min:6', 'confirmed'],
         ];
     }
 

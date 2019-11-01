@@ -26,5 +26,6 @@ class Role extends SpatieRole
     protected static $logOnlyDirty = true;
 
     protected static $submitEmptyLogs = false;
-    /*------------------------------------------*/
+
+    // ------------------------------------------
 }

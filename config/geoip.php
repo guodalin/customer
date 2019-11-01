@@ -50,25 +50,25 @@ return [
 
     'services' => [
         'maxmind_database' => [
-            'class' => \Torann\GeoIP\Services\MaxMindDatabase::class,
+            'class'         => \Torann\GeoIP\Services\MaxMindDatabase::class,
             'database_path' => storage_path('app/geoip.mmdb'),
-            'update_url' => 'https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz',
-            'locales' => ['zh-CN'],
+            'update_url'    => 'https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz',
+            'locales'       => ['zh-CN'],
         ],
 
         'maxmind_api' => [
-            'class' => \Torann\GeoIP\Services\MaxMindWebService::class,
-            'user_id' => env('MAXMIND_USER_ID'),
+            'class'       => \Torann\GeoIP\Services\MaxMindWebService::class,
+            'user_id'     => env('MAXMIND_USER_ID'),
             'license_key' => env('MAXMIND_LICENSE_KEY'),
-            'locales' => ['en'],
+            'locales'     => ['en'],
         ],
 
         'ipapi' => [
-            'class' => \Torann\GeoIP\Services\IPApi::class,
-            'secure' => true,
-            'key' => env('IPAPI_KEY'),
+            'class'          => \Torann\GeoIP\Services\IPApi::class,
+            'secure'         => true,
+            'key'            => env('IPAPI_KEY'),
             'continent_path' => storage_path('app/continents.json'),
-            'lang' => 'en',
+            'lang'           => 'en',
         ],
     ],
 
@@ -123,18 +123,18 @@ return [
     */
 
     'default_location' => [
-        'ip' => '127.0.0.0',
-        'iso_code' => 'CN',
-        'country' => 'China',
-        'city' => 'Nanjing',
-        'state' => 'JS',
-        'state_name' => 'Jiangsu',
+        'ip'          => '127.0.0.0',
+        'iso_code'    => 'CN',
+        'country'     => 'China',
+        'city'        => 'Nanjing',
+        'state'       => 'JS',
+        'state_name'  => 'Jiangsu',
         'postal_code' => '210000',
-        'lat' => 32.06,
-        'lon' => 118.78,
-        'timezone' => 'Asia/Shanghai',
-        'continent' => 'AS',
-        'default' => true,
-        'currency' => 'CNY',
+        'lat'         => 32.06,
+        'lon'         => 118.78,
+        'timezone'    => 'Asia/Shanghai',
+        'continent'   => 'AS',
+        'default'     => true,
+        'currency'    => 'CNY',
     ],
 ];

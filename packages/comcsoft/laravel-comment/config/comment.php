@@ -6,7 +6,7 @@ return [
         'cascade_on_delete' => false,
 
         'table' => [
-            'name' => 'users',
+            'name'        => 'users',
             'primary_key' => 'id',
         ],
 
@@ -16,11 +16,11 @@ return [
     // comments media settings
     'media' => [
         'thumb' => [
-            'width' => env('COMMENT_MEDIA_THUMB_WIDTH', 200),
+            'width'  => env('COMMENT_MEDIA_THUMB_WIDTH', 200),
             'height' => env('COMMENT_MEDIA_THUMB_HEIGHT', 200),
         ],
     ],
 
     // comment model, you can use ur own comment model here
-    'model' => env('COMMENT_MODEL', Comcsoft\Comment\Models\Comment::class)
+    'model' => env('COMMENT_MODEL', Comcsoft\Comment\Models\Comment::class),
 ];

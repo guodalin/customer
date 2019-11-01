@@ -59,15 +59,15 @@ class PasswordExpirationTest extends TestCase
         config(['access.users.password_expires_days' => 30]);
 
         $user = factory(User::class)->create([
-            'password' => ']EqZL4}zBT',
+            'password'            => ']EqZL4}zBT',
             'password_changed_at' => now()->subMonths(2)->toDateTimeString(),
         ]);
 
         $response = $this->actingAs($user)
             ->followingRedirects()
             ->patch('/password/expired', [
-                'old_password' => ']EqZL4}zBT',
-                'password' => 'secret',
+                'old_password'          => ']EqZL4}zBT',
+                'password'              => 'secret',
                 'password_confirmation' => 'secret',
             ]);
 
@@ -81,14 +81,14 @@ class PasswordExpirationTest extends TestCase
         config(['access.users.password_expires_days' => 30]);
 
         $user = factory(User::class)->create([
-            'password' => ']EqZL4}zBT',
+            'password'            => ']EqZL4}zBT',
             'password_changed_at' => now()->subMonths(2)->toDateTimeString(),
         ]);
 
         $response = $this->actingAs($user)
             ->patch('/password/expired', [
-                'old_password' => ']EqZL4}zBT',
-                'password' => ']EqZL4}zBT',
+                'old_password'          => ']EqZL4}zBT',
+                'password'              => ']EqZL4}zBT',
                 'password_confirmation' => ']EqZL4}zBT',
             ]);
 
@@ -103,21 +103,21 @@ class PasswordExpirationTest extends TestCase
         config(['access.users.password_expires_days' => 30]);
 
         $user = factory(User::class)->create([
-            'password' => ']EqZL4}zBT',
+            'password'            => ']EqZL4}zBT',
             'password_changed_at' => now()->subMonths(2)->toDateTimeString(),
         ]);
 
         $this->actingAs($user)
             ->patch('/password/expired', [
-                'old_password' => ']EqZL4}zBT',
-                'password' => ':ZqD~57}1t',
+                'old_password'          => ']EqZL4}zBT',
+                'password'              => ':ZqD~57}1t',
                 'password_confirmation' => ':ZqD~57}1t',
             ]);
 
         $response = $this->actingAs($user)
             ->patch('/password/expired', [
-                'old_password' => ':ZqD~57}1t',
-                'password' => ']EqZL4}zBT',
+                'old_password'          => ':ZqD~57}1t',
+                'password'              => ']EqZL4}zBT',
                 'password_confirmation' => ']EqZL4}zBT',
             ]);
 

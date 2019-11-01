@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Backend\Menu;
 
-use Illuminate\Http\Request;
 use App\Helpers\General\MenuHelper;
-use App\Models\Menu\Menu;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Menu\StoreMenuRequest;
 use App\Http\Requests\Backend\Menu\UpdateMenuRequest;
 use App\Http\Resources\Backend\Menu\MenuResource;
+use App\Models\Menu\Menu;
+use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
@@ -60,7 +60,7 @@ class MenuController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\System\Menu  $menu
+     * @param  \App\Models\System\Menu   $menu
      * @return \Illuminate\Http\Response
      */
     public function show(Menu $menu)
@@ -74,7 +74,7 @@ class MenuController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\System\Menu  $menu
+     * @param  \App\Models\System\Menu   $menu
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateMenuRequest $request, Menu $menu)
@@ -88,7 +88,7 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\System\Menu  $menu
+     * @param  \App\Models\System\Menu   $menu
      * @return \Illuminate\Http\Response
      */
     public function destroy(Menu $menu)

@@ -13,23 +13,23 @@ return [
     */
 
     'general' => [
-        'home' => 'Hjem',
+        'home'   => 'Hjem',
         'logout' => 'Logg av',
     ],
 
     'frontend' => [
-        'contact' => 'Kontakt',
+        'contact'   => 'Kontakt',
         'dashboard' => 'Dashboard',
-        'login' => 'Logg inn',
-        'macros' => 'Makroer',
-        'register' => 'Opprett',
+        'login'     => 'Logg inn',
+        'macros'    => 'Makroer',
+        'register'  => 'Opprett',
 
         'user' => [
-            'account' => 'Min Konto',
-            'administration' => 'Administration',
+            'account'         => 'Min Konto',
+            'administration'  => 'Administration',
             'change_password' => 'Endre passord',
-            'my_information' => 'Min information',
-            'profile' => 'Profil',
+            'my_information'  => 'Min information',
+            'profile'         => 'Profil',
         ],
     ],
 ];

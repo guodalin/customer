@@ -8,27 +8,23 @@ class CommentServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
     public function boot()
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/comment.php' => config_path('comment.php'),
+                __DIR__.'/../config/comment.php' => config_path('comment.php'),
             ], 'laravel-comment');
 
-            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+            $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         }
     }
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/comment.php', 'comment');
+        $this->mergeConfigFrom(__DIR__.'/../config/comment.php', 'comment');
     }
 }

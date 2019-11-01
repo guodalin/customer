@@ -2,7 +2,7 @@
 
 // All route names are prefixed with 'mnp.auth'.
 Route::group([
-    'as' => 'auth.',
+    'as'        => 'auth.',
     'namespace' => 'Auth',
 ], function () {
     // 微信小程序登录

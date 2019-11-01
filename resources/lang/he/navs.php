@@ -13,23 +13,23 @@ return [
     */
 
     'general' => [
-        'home' => 'בית',
+        'home'   => 'בית',
         'logout' => 'התנתקות',
     ],
 
     'frontend' => [
-        'contact' => 'צרו קשר',
+        'contact'   => 'צרו קשר',
         'dashboard' => 'לוח בקרה',
-        'login' => 'התחברות',
-        'macros' => 'מאקרו',
-        'register' => 'הרשמה',
+        'login'     => 'התחברות',
+        'macros'    => 'מאקרו',
+        'register'  => 'הרשמה',
 
         'user' => [
-            'account' => 'החשבון שלי',
-            'administration' => 'ניהול',
+            'account'         => 'החשבון שלי',
+            'administration'  => 'ניהול',
             'change_password' => 'החלפת סיסמה',
-            'my_information' => 'המידע שלי',
-            'profile' => 'פרופיל',
+            'my_information'  => 'המידע שלי',
+            'profile'         => 'פרופיל',
         ],
     ],
 ];

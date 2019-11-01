@@ -5,10 +5,10 @@ namespace Comcsoft\Comment\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kalnoy\Nestedset\NodeTrait;
+use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
-use Spatie\Image\Manipulations;
 
 class Comment extends Model implements HasMedia
 {
@@ -42,11 +42,11 @@ class Comment extends Model implements HasMedia
      * @var array
      */
     protected $with = [
-        'media', 'commenter'
+        'media', 'commenter',
     ];
 
     /**
-     * Make Relationship for commenter
+     * Make Relationship for commenter.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -56,7 +56,7 @@ class Comment extends Model implements HasMedia
     }
 
     /**
-     * Morph Relation for commentable
+     * Morph Relation for commentable.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
@@ -66,7 +66,7 @@ class Comment extends Model implements HasMedia
     }
 
     /**
-     * Register Media Collections
+     * Register Media Collections.
      */
     public function registerMediaCollections()
     {
@@ -79,7 +79,7 @@ class Comment extends Model implements HasMedia
     }
 
     /**
-     * Get galleries
+     * Get galleries.
      *
      * @return Collection
      */
@@ -88,16 +88,15 @@ class Comment extends Model implements HasMedia
         return $this->getMedia('galleries')->map(function ($media) {
             return [
                 'original' => $media->getUrl(),
-                'thumb' => $media->getUrl('thumb'),
+                'thumb'    => $media->getUrl('thumb'),
             ];
         });
     }
 
     /**
-     * attach galleries
+     * attach galleries.
      *
      * @param array $keys
-     * @return void
      */
     public function attachGalleriesFromRequest(array $keys)
     {
@@ -107,14 +106,14 @@ class Comment extends Model implements HasMedia
     }
 
     /**
-     * add a comment
+     * add a comment.
      *
-     * @param \Illuminate\Database\Eloquent\Model $commenter
-     * @param \Illuminate\Database\Eloquent\Model $commentable
-     * @param null|string $message
-     * @param array|string|null $mediaKeys
-     * @param boolean $anonymous
-     * @param null|\Illuminate\Database\Eloquent\Model $replyTo
+     * @param  \Illuminate\Database\Eloquent\Model      $commenter
+     * @param  \Illuminate\Database\Eloquent\Model      $commentable
+     * @param  null|string                              $message
+     * @param  array|string|null                        $mediaKeys
+     * @param  bool                                     $anonymous
+     * @param  null|\Illuminate\Database\Eloquent\Model $replyTo
      * @return self
      */
     public static function add($commenter, $commentable, $message = null, $mediaKeys = null, $anonymous = false, $replyTo = null)
@@ -148,12 +147,12 @@ class Comment extends Model implements HasMedia
 
     /**
      * add a reply to this comment;
-     * e.g.: $comment->addReply('hello');
+     * e.g.: $comment->addReply('hello');.
      *
-     * @param string|null $message
-     * @param array|string|null $medias
-     * @param null|\Illuminate\Database\Eloquent\Model $commenter
-     * @param boolean $anonymous
+     * @param  string|null                              $message
+     * @param  array|string|null                        $medias
+     * @param  null|\Illuminate\Database\Eloquent\Model $commenter
+     * @param  bool                                     $anonymous
      * @return self
      */
     public function addReply($message = null, $medias = null, $commenter = null, $anonymous = false)

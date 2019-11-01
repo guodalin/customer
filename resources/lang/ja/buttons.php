@@ -15,15 +15,15 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate' => 'Activate',
-                'change_password' => 'パスワードの変更',
-                'deactivate' => 'Deactivate',
+                'activate'           => 'Activate',
+                'change_password'    => 'パスワードの変更',
+                'deactivate'         => 'Deactivate',
                 'delete_permanently' => 'Delete Permanently',
-                'login_as' => 'Login As :user',
-                'resend_email' => '再確認メール',
-                'restore_user' => 'ユーザーの復元',
-                'unconfirm' => 'Un-confirm',
-                'unlink' => 'Unlink',
+                'login_as'           => 'Login As :user',
+                'resend_email'       => '再確認メール',
+                'restore_user'       => 'ユーザーの復元',
+                'unconfirm'          => 'Un-confirm',
+                'unlink'             => 'Unlink',
             ],
         ],
     ],
@@ -31,7 +31,7 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'アカウントの確認',
-            'reset_password' => 'パスワードのリセット',
+            'reset_password'  => 'パスワードのリセット',
         ],
     ],
 
@@ -41,9 +41,9 @@ return [
         'crud' => [
             'create' => '作成',
             'delete' => '削除',
-            'edit' => '編集',
+            'edit'   => '編集',
             'update' => '更新',
-            'view' => '表示',
+            'view'   => '表示',
         ],
 
         'save' => '保存',

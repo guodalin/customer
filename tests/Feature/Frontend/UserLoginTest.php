@@ -24,13 +24,13 @@ class UserLoginTest extends TestCase
     public function a_user_can_login_with_email_and_password()
     {
         $user = factory(User::class)->create([
-            'email' => 'john@example.com',
+            'email'    => 'john@example.com',
             'password' => 'secret',
         ]);
         Event::fake();
 
         $this->post('/login', [
-            'email' => 'john@example.com',
+            'email'    => 'john@example.com',
             'password' => 'secret',
         ]);
 
@@ -42,12 +42,12 @@ class UserLoginTest extends TestCase
     public function inactive_users_cant_login()
     {
         factory(User::class)->states('inactive')->create([
-            'email' => 'john@example.com',
+            'email'    => 'john@example.com',
             'password' => 'secret',
         ]);
 
         $response = $this->post('/login', [
-            'email' => 'john@example.com',
+            'email'    => 'john@example.com',
             'password' => 'secret',
         ]);
 
@@ -59,12 +59,12 @@ class UserLoginTest extends TestCase
     public function unconfirmed_user_cant_login()
     {
         factory(User::class)->states('unconfirmed')->create([
-            'email' => 'john@example.com',
+            'email'    => 'john@example.com',
             'password' => 'secret',
         ]);
 
         $response = $this->post('/login', [
-            'email' => 'john@example.com',
+            'email'    => 'john@example.com',
             'password' => 'secret',
         ]);
 
@@ -76,7 +76,7 @@ class UserLoginTest extends TestCase
     public function email_is_required()
     {
         $response = $this->post('/login', [
-            'email' => '',
+            'email'    => '',
             'password' => '12345',
         ]);
 
@@ -87,7 +87,7 @@ class UserLoginTest extends TestCase
     public function password_is_required()
     {
         $response = $this->post('/login', [
-            'email' => 'john@example.com',
+            'email'    => 'john@example.com',
             'password' => '',
         ]);
 
@@ -102,7 +102,7 @@ class UserLoginTest extends TestCase
         $this->expectException(ValidationException::class);
 
         $this->post('/login', [
-            'email' => 'not-existend@user.com',
+            'email'    => 'not-existend@user.com',
             'password' => '9s8gy8s9diguh4iev',
         ]);
     }

@@ -2,6 +2,6 @@
 
 return [
     'menu' => [
-        'title' => 'Comment Management'
-    ]
+        'title' => 'Comment Management',
+    ],
 ];

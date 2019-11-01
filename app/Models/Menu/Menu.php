@@ -18,7 +18,7 @@ class Menu extends Model
     ];
 
     /**
-     * 包含的菜单项
+     * 包含的菜单项.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -28,9 +28,9 @@ class Menu extends Model
     }
 
     /**
-     * 序列化html属性
+     * 序列化html属性.
      *
-     * @param array $value
+     * @param  array $value
      * @return self
      */
     public function setHtmlAttributesAttribute($value)
@@ -41,7 +41,7 @@ class Menu extends Model
     }
 
     /**
-     * 反序列化html属性
+     * 反序列化html属性.
      *
      * @return mixed
      */
@@ -51,7 +51,7 @@ class Menu extends Model
     }
 
     /**
-     * 获得后台菜单实例
+     * 获得后台菜单实例.
      *
      * @return self
      */

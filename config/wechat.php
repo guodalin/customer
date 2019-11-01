@@ -27,7 +27,7 @@ return [
          */
         'log' => [
             'level' => env('WECHAT_LOG_LEVEL', 'debug'),
-            'file' => env('WECHAT_LOG_FILE', storage_path('logs/wechat.log')),
+            'file'  => env('WECHAT_LOG_FILE', storage_path('logs/wechat.log')),
         ],
     ],
 
@@ -47,9 +47,9 @@ return [
     // 公众号
     'official_account' => [
         'default' => [
-            'app_id' => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'your-app-id'),         // AppID
-            'secret' => env('WECHAT_OFFICIAL_ACCOUNT_SECRET', 'your-app-secret'),    // AppSecret
-            'token' => env('WECHAT_OFFICIAL_ACCOUNT_TOKEN', 'your-token'),           // Token
+            'app_id'  => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'your-app-id'),         // AppID
+            'secret'  => env('WECHAT_OFFICIAL_ACCOUNT_SECRET', 'your-app-secret'),    // AppSecret
+            'token'   => env('WECHAT_OFFICIAL_ACCOUNT_TOKEN', 'your-token'),           // Token
             'aes_key' => env('WECHAT_OFFICIAL_ACCOUNT_AES_KEY', ''),                 // EncodingAESKey
 
             /*
@@ -78,9 +78,9 @@ return [
     // 小程序
     'mini_program' => [
         'default' => [
-            'app_id' => env('WECHAT_MINI_PROGRAM_APPID', ''),
-            'secret' => env('WECHAT_MINI_PROGRAM_SECRET', ''),
-            'token' => env('WECHAT_MINI_PROGRAM_TOKEN', ''),
+            'app_id'  => env('WECHAT_MINI_PROGRAM_APPID', ''),
+            'secret'  => env('WECHAT_MINI_PROGRAM_SECRET', ''),
+            'token'   => env('WECHAT_MINI_PROGRAM_TOKEN', ''),
             'aes_key' => env('WECHAT_MINI_PROGRAM_AES_KEY', ''),
         ],
     ],

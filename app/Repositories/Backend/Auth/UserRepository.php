@@ -103,15 +103,15 @@ class UserRepository extends BaseRepository
     {
         return DB::transaction(function () use ($data) {
             $insert = [
-                'username' => $data['username'],
-                'mobile' => $data['mobile'] ?? null,
-                'first_name' => $data['first_name'] ?? null,
-                'last_name' => $data['last_name'] ?? null,
-                'email' => $data['email'],
-                'password' => $data['password'],
-                'active' => isset($data['active']) && $data['active'] === '1',
+                'username'          => $data['username'],
+                'mobile'            => $data['mobile'] ?? null,
+                'first_name'        => $data['first_name'] ?? null,
+                'last_name'         => $data['last_name'] ?? null,
+                'email'             => $data['email'],
+                'password'          => $data['password'],
+                'active'            => isset($data['active']) && $data['active'] === '1',
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
-                'confirmed' => isset($data['confirmed']) && $data['confirmed'] === '1',
+                'confirmed'         => isset($data['confirmed']) && $data['confirmed'] === '1',
             ];
 
             if (should_sync_with_ucenter()) {

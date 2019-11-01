@@ -33,12 +33,12 @@ class MiniProgramRepository
 
         if ($userInfo) {
             $wechatUser = new WechatUser([
-                'id' => $userInfo['unionId'],
+                'id'       => $userInfo['unionId'],
                 'nickname' => $userInfo['nickName'],
-                'name' => $userInfo['nickName'],
-                'avatar' => $userInfo['avatarUrl'],
-                'email' => null,
-                'token' => $result['session_key'],
+                'name'     => $userInfo['nickName'],
+                'avatar'   => $userInfo['avatarUrl'],
+                'email'    => null,
+                'token'    => $result['session_key'],
                 'provider' => 'weixin',
             ]);
 

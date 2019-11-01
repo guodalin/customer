@@ -21,7 +21,7 @@ class ChangeUserPasswordTest extends TestCase
 
         $response = $this->followingRedirects()
             ->patch("/admin/auth/user/{$user->id}/password/change", [
-                'password' => '12345678',
+                'password'              => '12345678',
                 'password_confirmation' => '12345678',
             ]);
 
@@ -46,7 +46,7 @@ class ChangeUserPasswordTest extends TestCase
         $user = factory(User::class)->create();
 
         $response = $this->patch("/admin/auth/user/{$user->id}/password/change", [
-            'password' => 'Boilerplate',
+            'password'              => 'Boilerplate',
             'password_confirmation' => 'Boilerplate01',
         ]);
 
@@ -61,7 +61,7 @@ class ChangeUserPasswordTest extends TestCase
         Event::fake();
 
         $response = $this->patch("/admin/auth/user/{$user->id}/password/change", [
-            'password' => 'Boilerplate01',
+            'password'              => 'Boilerplate01',
             'password_confirmation' => 'Boilerplate01',
         ]);
 
@@ -79,7 +79,7 @@ class ChangeUserPasswordTest extends TestCase
         $user = factory(User::class)->create(['password' => 'Boilerplate01']);
 
         $response = $this->patch("/admin/auth/user/{$user->id}/password/change", [
-            'password' => 'Boilerplate01',
+            'password'              => 'Boilerplate01',
             'password_confirmation' => 'Boilerplate01',
         ]);
 
@@ -96,12 +96,12 @@ class ChangeUserPasswordTest extends TestCase
         $user = factory(User::class)->create(['password' => 'Boilerplate01']);
 
         $this->patch("/admin/auth/user/{$user->id}/password/change", [
-            'password' => 'Boilerplate02',
+            'password'              => 'Boilerplate02',
             'password_confirmation' => 'Boilerplate02',
         ]);
 
         $response = $this->patch("/admin/auth/user/{$user->id}/password/change", [
-            'password' => 'Boilerplate01',
+            'password'              => 'Boilerplate01',
             'password_confirmation' => 'Boilerplate01',
         ]);
 

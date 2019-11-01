@@ -41,9 +41,9 @@ class ResetPasswordTest extends TestCase
     public function the_reset_password_form_has_required_fields()
     {
         $response = $this->post('password/reset', [
-            'token' => '',
-            'email' => '',
-            'password' => '',
+            'token'                 => '',
+            'email'                 => '',
+            'password'              => '',
             'password_confirmation' => '',
         ]);
 
@@ -57,9 +57,9 @@ class ResetPasswordTest extends TestCase
         $token = $this->app->make('auth.password.broker')->createToken($user);
 
         $this->post('password/reset', [
-            'token' => $token,
-            'email' => 'john@example.com',
-            'password' => ']EqZL4}zBT',
+            'token'                 => $token,
+            'email'                 => 'john@example.com',
+            'password'              => ']EqZL4}zBT',
             'password_confirmation' => ']EqZL4}zBT',
         ]);
 
@@ -74,9 +74,9 @@ class ResetPasswordTest extends TestCase
 
         $response = $this->followingRedirects()
             ->post('password/reset', [
-                'token' => $token,
-                'email' => 'john@example.com',
-                'password' => 'secret',
+                'token'                 => $token,
+                'email'                 => 'john@example.com',
+                'password'              => 'secret',
                 'password_confirmation' => 'secret',
             ]);
 
@@ -92,9 +92,9 @@ class ResetPasswordTest extends TestCase
         $token = $this->app->make('auth.password.broker')->createToken($user);
 
         $response = $this->post('password/reset', [
-            'token' => $token,
-            'email' => 'john@example.com',
-            'password' => ']EqZL4}zBT',
+            'token'                 => $token,
+            'email'                 => 'john@example.com',
+            'password'              => ']EqZL4}zBT',
             'password_confirmation' => ']EqZL4}zBT',
         ]);
 
@@ -112,8 +112,8 @@ class ResetPasswordTest extends TestCase
         // Change once
         $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => ']EqZL4}zBT',
-                'password' => ':ZqD~57}1t',
+                'old_password'          => ']EqZL4}zBT',
+                'password'              => ':ZqD~57}1t',
                 'password_confirmation' => ':ZqD~57}1t',
             ]);
 
@@ -123,9 +123,9 @@ class ResetPasswordTest extends TestCase
 
         $token = $this->app->make('auth.password.broker')->createToken($user);
         $response = $this->post('password/reset', [
-            'token' => $token,
-            'email' => 'john@example.com',
-            'password' => ']EqZL4}zBT',
+            'token'                 => $token,
+            'email'                 => 'john@example.com',
+            'password'              => ']EqZL4}zBT',
             'password_confirmation' => ']EqZL4}zBT',
         ]);
 

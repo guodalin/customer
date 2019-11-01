@@ -14,8 +14,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain'   => env('MAILGUN_DOMAIN'),
+        'secret'   => env('MAILGUN_SECRET'),
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
@@ -24,7 +24,7 @@ return [
     ],
 
     'ses' => [
-        'key' => env('AWS_ACCESS_KEY_ID'),
+        'key'    => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
@@ -34,11 +34,11 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\Models\Auth\User::class,
-        'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
+        'model'   => App\Models\Auth\User::class,
+        'key'     => env('STRIPE_KEY'),
+        'secret'  => env('STRIPE_SECRET'),
         'webhook' => [
-            'secret' => env('STRIPE_WEBHOOK_SECRET'),
+            'secret'    => env('STRIPE_WEBHOOK_SECRET'),
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
@@ -53,38 +53,38 @@ return [
      * Make sure 'scopes' and 'with' are arrays, if their are none, use empty arrays []
      */
     'bitbucket' => [
-        'active' => env('BITBUCKET_ACTIVE'),
-        'client_id' => env('BITBUCKET_CLIENT_ID'),
+        'active'        => env('BITBUCKET_ACTIVE'),
+        'client_id'     => env('BITBUCKET_CLIENT_ID'),
         'client_secret' => env('BITBUCKET_CLIENT_SECRET'),
-        'redirect' => env('BITBUCKET_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
+        'redirect'      => env('BITBUCKET_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
     ],
 
     'facebook' => [
-        'active' => env('FACEBOOK_ACTIVE'),
-        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'active'        => env('FACEBOOK_ACTIVE'),
+        'client_id'     => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => env('FACEBOOK_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
-        'fields' => [],
+        'redirect'      => env('FACEBOOK_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
+        'fields'        => [],
     ],
 
     'github' => [
-        'active' => env('GITHUB_ACTIVE'),
-        'client_id' => env('GITHUB_CLIENT_ID'),
+        'active'        => env('GITHUB_ACTIVE'),
+        'client_id'     => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => env('GITHUB_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
+        'redirect'      => env('GITHUB_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
     ],
 
     'google' => [
-        'active' => env('GOOGLE_ACTIVE'),
-        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'active'        => env('GOOGLE_ACTIVE'),
+        'client_id'     => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('GOOGLE_REDIRECT'),
+        'redirect'      => env('GOOGLE_REDIRECT'),
 
         /*
          * Only allows google to grab email address
@@ -100,57 +100,57 @@ return [
     ],
 
     'linkedin' => [
-        'active' => env('LINKEDIN_ACTIVE'),
-        'client_id' => env('LINKEDIN_CLIENT_ID'),
+        'active'        => env('LINKEDIN_ACTIVE'),
+        'client_id'     => env('LINKEDIN_CLIENT_ID'),
         'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
-        'redirect' => env('LINKEDIN_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
-        'fields' => [],
+        'redirect'      => env('LINKEDIN_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
+        'fields'        => [],
     ],
 
     'twitter' => [
-        'active' => env('TWITTER_ACTIVE'),
-        'client_id' => env('TWITTER_CLIENT_ID'),
+        'active'        => env('TWITTER_ACTIVE'),
+        'client_id'     => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect' => env('TWITTER_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
+        'redirect'      => env('TWITTER_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
     ],
 
     'weixinweb' => [
-        'active' => env('WEIXINWEB_ACTIVE'),
-        'client_id' => env('WEIXINWEB_CLIENT_ID'),
+        'active'        => env('WEIXINWEB_ACTIVE'),
+        'client_id'     => env('WEIXINWEB_CLIENT_ID'),
         'client_secret' => env('WEIXINWEB_CLIENT_SECRET'),
-        'redirect' => env('WEIXINWEB_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
+        'redirect'      => env('WEIXINWEB_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
     ],
 
     'weixin' => [
-        'active' => env('WEIXIN_ACTIVE'),
-        'client_id' => env('WEIXIN_CLIENT_ID'),
+        'active'        => env('WEIXIN_ACTIVE'),
+        'client_id'     => env('WEIXIN_CLIENT_ID'),
         'client_secret' => env('WEIXIN_CLIENT_SECRET'),
-        'redirect' => env('WEIXIN_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
+        'redirect'      => env('WEIXIN_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
     ],
 
     'qq' => [
-        'active' => env('QQ_ACTIVE'),
-        'client_id' => env('QQ_CLIENT_ID'),
+        'active'        => env('QQ_ACTIVE'),
+        'client_id'     => env('QQ_CLIENT_ID'),
         'client_secret' => env('QQ_CLIENT_SECRET'),
-        'redirect' => env('QQ_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
+        'redirect'      => env('QQ_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
     ],
 
     'weibo' => [
-        'active' => env('WEIBO_ACTIVE'),
-        'client_id' => env('WEIBO_CLIENT_ID'),
+        'active'        => env('WEIBO_ACTIVE'),
+        'client_id'     => env('WEIBO_CLIENT_ID'),
         'client_secret' => env('WEIBO_CLIENT_SECRET'),
-        'redirect' => env('WEIBO_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
+        'redirect'      => env('WEIBO_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
     ],
 ];

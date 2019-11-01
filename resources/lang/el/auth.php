@@ -12,13 +12,13 @@ return [
     |
     */
 
-    'failed' => 'Αυτά τα διαπιστευτήρια δεν ταιριάζουν με τα αρχεία μας.',
-    'general_error' => 'Δεν έχετε πρόσβαση σε αυτό.',
+    'failed'         => 'Αυτά τα διαπιστευτήρια δεν ταιριάζουν με τα αρχεία μας.',
+    'general_error'  => 'Δεν έχετε πρόσβαση σε αυτό.',
     'password_rules' => 'Your password must be more than 8 characters long, should contain at least 1 uppercase, 1 lowercase and 1 number.',
-    'password_used' => 'You can not set a password that you have previously used.',
-    'socialite' => [
+    'password_used'  => 'You can not set a password that you have previously used.',
+    'socialite'      => [
         'unacceptable' => ':provider δεν είναι αποδεκτός τρόπος σύνδεσης.',
     ],
     'throttle' => 'Πολλές προσπάθειες σύνδεσης. Παρακαλούμε προσπαθήστε πάλι σε :seconds δευτερόλεπτα.',
-    'unknown' => 'Προέκυψε άγνωστο σφάλμα.',
+    'unknown'  => 'Προέκυψε άγνωστο σφάλμα.',
 ];

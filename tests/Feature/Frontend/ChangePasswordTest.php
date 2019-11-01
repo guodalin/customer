@@ -19,8 +19,8 @@ class ChangePasswordTest extends TestCase
         $response = $this->actingAs($user)
             ->followingRedirects()
             ->patch('/password/update', [
-                'old_password' => '1234',
-                'password' => '12345678',
+                'old_password'          => '1234',
+                'password'              => '12345678',
                 'password_confirmation' => '12345678',
             ]);
 
@@ -34,8 +34,8 @@ class ChangePasswordTest extends TestCase
 
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => '1234',
-                'password' => 'Boilerplate01',
+                'old_password'          => '1234',
+                'password'              => 'Boilerplate01',
                 'password_confirmation' => 'Boilerplate01',
             ]);
 
@@ -50,8 +50,8 @@ class ChangePasswordTest extends TestCase
 
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => '1234',
-                'password' => 'Boilerplate01',
+                'old_password'          => '1234',
+                'password'              => 'Boilerplate01',
                 'password_confirmation' => '',
             ]);
 
@@ -65,8 +65,8 @@ class ChangePasswordTest extends TestCase
 
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => '',
-                'password' => 'Boilerplate01',
+                'old_password'          => '',
+                'password'              => 'Boilerplate01',
                 'password_confirmation' => 'Boilerplate01',
             ]);
 
@@ -82,8 +82,8 @@ class ChangePasswordTest extends TestCase
 
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'Boilerplate01',
-                'password' => 'Boilerplate01',
+                'old_password'          => 'Boilerplate01',
+                'password'              => 'Boilerplate01',
                 'password_confirmation' => 'Boilerplate01',
             ]);
 
@@ -101,8 +101,8 @@ class ChangePasswordTest extends TestCase
         // Change once
         $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'Boilerplate01',
-                'password' => 'Boilerplate02',
+                'old_password'          => 'Boilerplate01',
+                'password'              => 'Boilerplate02',
                 'password_confirmation' => 'Boilerplate02',
             ]);
 
@@ -111,8 +111,8 @@ class ChangePasswordTest extends TestCase
         // Change back
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'Boilerplate02',
-                'password' => 'Boilerplate01',
+                'old_password'          => 'Boilerplate02',
+                'password'              => 'Boilerplate01',
                 'password_confirmation' => 'Boilerplate01',
             ]);
 
@@ -132,8 +132,8 @@ class ChangePasswordTest extends TestCase
         // Change once
         $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'Boilerplate01',
-                'password' => 'Boilerplate02',
+                'old_password'          => 'Boilerplate01',
+                'password'              => 'Boilerplate02',
                 'password_confirmation' => 'Boilerplate02',
             ]);
 
@@ -142,15 +142,15 @@ class ChangePasswordTest extends TestCase
         // Change twice
         $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'Boilerplate02',
-                'password' => 'Boilerplate03',
+                'old_password'          => 'Boilerplate02',
+                'password'              => 'Boilerplate03',
                 'password_confirmation' => 'Boilerplate03',
             ]);
 
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'Boilerplate03',
-                'password' => 'Boilerplate01',
+                'old_password'          => 'Boilerplate03',
+                'password'              => 'Boilerplate01',
                 'password_confirmation' => 'Boilerplate01',
             ]);
 

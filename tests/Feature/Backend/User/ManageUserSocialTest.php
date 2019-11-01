@@ -17,10 +17,10 @@ class ManageUserSocialTest extends TestCase
 
         $user = factory(User::class)->create();
         $provider = $user->providers()->create([
-            'provider' => 'github',
+            'provider'    => 'github',
             'provider_id' => mt_rand(),
-            'token' => mt_rand(),
-            'avatar' => null,
+            'token'       => mt_rand(),
+            'avatar'      => null,
         ]);
 
         $this->assertSame(1, $user->fresh()->providers()->count());
@@ -36,10 +36,10 @@ class ManageUserSocialTest extends TestCase
 
         $user = factory(User::class)->states('softDeleted')->create();
         $provider = $user->providers()->create([
-            'provider' => 'github',
+            'provider'    => 'github',
             'provider_id' => mt_rand(),
-            'token' => mt_rand(),
-            'avatar' => null,
+            'token'       => mt_rand(),
+            'avatar'      => null,
         ]);
 
         $this->assertSame(1, $user->fresh()->providers()->count());

@@ -96,14 +96,14 @@ class UserRepository extends BaseRepository
     {
         return DB::transaction(function () use ($data) {
             $insert = [
-                'username' => $data['username'],
-                'first_name' => $data['first_name'] ?? $data['username'],
-                'last_name' => $data['last_name'] ?? null,
-                'email' => $data['email'],
-                'mobile' => $data['mobile'] ?? null,
+                'username'          => $data['username'],
+                'first_name'        => $data['first_name'] ?? $data['username'],
+                'last_name'         => $data['last_name'] ?? null,
+                'email'             => $data['email'],
+                'mobile'            => $data['mobile'] ?? null,
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
-                'active' => true,
-                'password' => $data['password'],
+                'active'            => true,
+                'password'          => $data['password'],
                 // If users require approval or needs to confirm email
                 'confirmed' => ! (config('access.users.requires_approval') || config('access.users.confirm_email')),
             ];
@@ -150,11 +150,11 @@ class UserRepository extends BaseRepository
 
         return $this->create([
             'first_name' => null,
-            'last_name' => null,
-            'username' => $faker['name'],
-            'email' => $faker['email'],
-            'mobile' => $phone,
-            'password' => $password,
+            'last_name'  => null,
+            'username'   => $faker['name'],
+            'email'      => $faker['email'],
+            'mobile'     => $phone,
+            'password'   => $password,
         ]);
     }
 
@@ -242,7 +242,7 @@ class UserRepository extends BaseRepository
                 // Send the new confirmation e-mail
 
                 return [
-                    'success' => $updated,
+                    'success'       => $updated,
                     'email_changed' => true,
                 ];
             }
@@ -359,11 +359,11 @@ class UserRepository extends BaseRepository
 
                 $userData = [
                     'first_name' => $nameParts['first_name'],
-                    'last_name' => $nameParts['last_name'],
-                    'username' => $faker['name'],
-                    'email' => $faker['email'],
-                    'mobile' => $phone,
-                    'password' => Str::random(6),
+                    'last_name'  => $nameParts['last_name'],
+                    'username'   => $faker['name'],
+                    'email'      => $faker['email'],
+                    'mobile'     => $phone,
+                    'password'   => Str::random(6),
                 ];
 
                 $user = $this->create($userData);
@@ -380,17 +380,17 @@ class UserRepository extends BaseRepository
         if (! $user->hasProvider($provider)) {
             // Gather the provider data for saving and associate it with the user
             $user->providers()->save(new SocialAccount([
-                'provider' => $provider,
+                'provider'    => $provider,
                 'provider_id' => $data->id,
-                'token' => $data->token,
-                'avatar' => $data->avatar,
+                'token'       => $data->token,
+                'avatar'      => $data->avatar,
             ]));
         } else {
             // Update the users information, token and avatar can be updated.
             $user->providers()
                 ->where('provider', $provider)
                 ->update([
-                    'token' => $data->token,
+                    'token'  => $data->token,
                     'avatar' => $data->avatar,
                 ]);
 

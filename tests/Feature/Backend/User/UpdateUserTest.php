@@ -50,10 +50,10 @@ class UpdateUserTest extends TestCase
 
         $this->patch("/admin/auth/user/{$user->id}", [
             'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'timezone' => 'UTC',
-            'roles' => ['administrator'],
+            'last_name'  => 'Doe',
+            'email'      => 'john@example.com',
+            'timezone'   => 'UTC',
+            'roles'      => ['administrator'],
         ]);
 
         $this->assertSame('John', $user->fresh()->first_name);

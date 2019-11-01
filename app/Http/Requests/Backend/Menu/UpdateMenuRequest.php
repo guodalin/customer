@@ -27,7 +27,7 @@ class UpdateMenuRequest extends FormRequest
         $menu = $this->route('menu');
 
         return [
-            'name' => 'required|max:191',
+            'name'     => 'required|max:191',
             'nickname' => ['required', 'alpha_dash', Rule::unique('menus')->ignore($menu), 'max:191'],
         ];
     }

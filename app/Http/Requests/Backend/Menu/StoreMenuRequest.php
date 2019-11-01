@@ -24,7 +24,7 @@ class StoreMenuRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:191',
+            'name'     => 'required|max:191',
             'nickname' => 'required|alpha_dash|unique:menus|max:191',
         ];
     }

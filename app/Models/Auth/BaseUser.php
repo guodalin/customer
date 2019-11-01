@@ -4,17 +4,17 @@ namespace App\Models\Auth;
 
 use App\Models\Auth\Traits\SendUserPasswordReset;
 use App\Models\Traits\Uuid;
+use Comcsoft\Comment\Traits\CanComment;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
-use Spatie\Activitylog\Traits\LogsActivity;
-use Comcsoft\Comment\Traits\CanComment;
 
 /**
  * Class User.
@@ -73,13 +73,14 @@ class BaseUser extends Authenticatable implements HasMedia
 
     protected static $logAttributes = [
         'username', 'mobile', 'email', 'password_changed_at',
-        'timezone', 'last_login_at', 'last_login_ip'
+        'timezone', 'last_login_at', 'last_login_ip',
     ];
 
     protected static $logOnlyDirty = true;
 
     protected static $submitEmptyLogs = false;
-    /*------------------------------------------*/
+
+    // ------------------------------------------
 
     /**
      * The attributes that should be cast to native types.
@@ -87,8 +88,8 @@ class BaseUser extends Authenticatable implements HasMedia
      * @var array
      */
     protected $casts = [
-        'active' => 'boolean',
-        'confirmed' => 'boolean',
+        'active'           => 'boolean',
+        'confirmed'        => 'boolean',
         'to_be_logged_out' => 'boolean',
     ];
 

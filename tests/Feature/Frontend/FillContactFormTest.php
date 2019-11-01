@@ -20,9 +20,9 @@ class FillContactFormTest extends TestCase
         Mail::fake();
 
         $response = $this->post('/contact/send', [
-            'name' => 'John Doe',
-            'email' => 'john@example.com',
-            'phone' => '+49 123 456 78',
+            'name'    => 'John Doe',
+            'email'   => 'john@example.com',
+            'phone'   => '+49 123 456 78',
             'message' => 'This is a test message',
         ]);
 
@@ -34,9 +34,9 @@ class FillContactFormTest extends TestCase
     public function it_redirects_back_after_success()
     {
         $response = $this->from('/contact')->post('/contact/send', [
-            'name' => 'John Doe',
-            'email' => 'john@example.com',
-            'phone' => '+49 123 456 78',
+            'name'    => 'John Doe',
+            'email'   => 'john@example.com',
+            'phone'   => '+49 123 456 78',
             'message' => 'This is a test message',
         ]);
 
@@ -49,8 +49,8 @@ class FillContactFormTest extends TestCase
         Mail::fake();
 
         $response = $this->from('/contact')->post('/contact/send', [
-            'name' => 'John Doe',
-            'email' => 'john@example.com',
+            'name'    => 'John Doe',
+            'email'   => 'john@example.com',
             'message' => 'This is a test message',
         ]);
 
@@ -62,7 +62,7 @@ class FillContactFormTest extends TestCase
     public function name_is_required()
     {
         $response = $this->from('/contact')->post('/contact/send', [
-            'email' => 'john@example.com',
+            'email'   => 'john@example.com',
             'message' => 'This is a test message',
         ]);
 
@@ -73,7 +73,7 @@ class FillContactFormTest extends TestCase
     public function email_is_required()
     {
         $response = $this->from('/contact')->post('/contact/send', [
-            'name' => 'John Doe',
+            'name'    => 'John Doe',
             'message' => 'This is a test message',
         ]);
 
@@ -84,7 +84,7 @@ class FillContactFormTest extends TestCase
     public function message_is_required()
     {
         $response = $this->from('/contact')->post('/contact/send', [
-            'name' => 'John Doe',
+            'name'  => 'John Doe',
             'email' => 'john@example.com',
         ]);
 

@@ -12,22 +12,22 @@ class MenuItem extends Model
         Uuid;
 
     /**
-     * 纯文字
+     * 纯文字.
      */
     const TYPE_OF_RAW = 'raw';
 
     /**
-     * URL
+     * URL.
      */
     const TYPE_OF_URL = 'url';
 
     /**
-     * 命名路由
+     * 命名路由.
      */
     const TYPE_OF_ROUTE = 'route';
 
     /**
-     * 动作
+     * 动作.
      */
     const TYPE_OF_ACTION = 'action';
 
@@ -37,7 +37,7 @@ class MenuItem extends Model
     const TYPE_OF_DIVIDE = 'divide';
 
     /**
-     * Undocumented variable
+     * Undocumented variable.
      *
      * @var string
      */
@@ -64,7 +64,7 @@ class MenuItem extends Model
     ];
 
     /**
-     * 属于的菜单
+     * 属于的菜单.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -84,14 +84,14 @@ class MenuItem extends Model
      * @var array
      */
     protected $casts = [
-        'show' => 'boolean',
+        'show'      => 'boolean',
         'just_icon' => 'boolean',
     ];
 
     /**
-     * 序列化html属性
+     * 序列化html属性.
      *
-     * @param array $value
+     * @param  array $value
      * @return self
      */
     public function setHtmlAttributesAttribute($value)
@@ -102,7 +102,7 @@ class MenuItem extends Model
     }
 
     /**
-     * 反序列化html属性
+     * 反序列化html属性.
      *
      * @return mixed
      */
@@ -112,9 +112,9 @@ class MenuItem extends Model
     }
 
     /**
-     * 序列化meta属性
+     * 序列化meta属性.
      *
-     * @param array $value
+     * @param  array $value
      * @return self
      */
     public function setMetaAttribute($value)
@@ -125,7 +125,7 @@ class MenuItem extends Model
     }
 
     /**
-     * 反序列化meta属性
+     * 反序列化meta属性.
      *
      * @return mixed
      */
@@ -135,7 +135,7 @@ class MenuItem extends Model
     }
 
     /**
-     * get full url
+     * get full url.
      *
      * @return string|null
      */
@@ -147,11 +147,9 @@ class MenuItem extends Model
             case static::TYPE_OF_ACTION:
                 $url = action($this->link);
                 break;
-
             case static::TYPE_OF_ROUTE:
                 $url = route($this->link);
                 break;
-
             case static::TYPE_OF_RAW:
             case static::TYPE_OF_DIVIDE:
                 $url = null;
@@ -162,9 +160,9 @@ class MenuItem extends Model
     }
 
     /**
-     * just show
+     * just show.
      *
-     * @param mixed $query
+     * @param  mixed $query
      * @return mixed
      */
     public function scopeShow($query)
@@ -184,6 +182,6 @@ class MenuItem extends Model
 
     public function hasIcon()
     {
-        return !empty($this->icon);
+        return ! empty($this->icon);
     }
 }

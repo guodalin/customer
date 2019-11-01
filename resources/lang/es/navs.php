@@ -13,23 +13,23 @@ return [
     */
 
     'general' => [
-        'home' => 'Inicio',
+        'home'   => 'Inicio',
         'logout' => 'Cerrar Sesión',
     ],
 
     'frontend' => [
-        'contact' => 'Contacto',
+        'contact'   => 'Contacto',
         'dashboard' => 'Principal',
-        'login' => 'Iniciar Sesión',
-        'macros' => 'Macros',
-        'register' => 'Registrarse',
+        'login'     => 'Iniciar Sesión',
+        'macros'    => 'Macros',
+        'register'  => 'Registrarse',
 
         'user' => [
-            'account' => 'Mi Cuenta',
-            'administration' => 'Administración',
+            'account'         => 'Mi Cuenta',
+            'administration'  => 'Administración',
             'change_password' => 'Cambiar la contraseña',
-            'my_information' => 'Mi Cuenta',
-            'profile' => 'Perfil',
+            'my_information'  => 'Mi Cuenta',
+            'profile'         => 'Perfil',
         ],
     ],
 ];

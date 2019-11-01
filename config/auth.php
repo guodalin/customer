@@ -13,7 +13,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard'     => 'web',
         'passwords' => 'users',
     ],
 
@@ -36,18 +36,18 @@ return [
 
     'guards' => [
         'web' => [
-            'driver' => 'session',
+            'driver'   => 'session',
             'provider' => 'users',
         ],
 
         'api' => [
-            'driver' => 'passport',
+            'driver'   => 'passport',
             'provider' => 'users',
-            'hash' => false,
+            'hash'     => false,
         ],
 
         'mnp' => [
-            'driver' => '3rdsess',
+            'driver'   => '3rdsess',
             'provider' => 'users',
         ],
     ],
@@ -72,7 +72,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => env('AUTH_USER_PROVIDER', 'auto'),
-            'model' => App\Models\Auth\User::class,
+            'model'  => App\Models\Auth\User::class,
         ],
 
         // 'users' => [
@@ -99,8 +99,8 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
+            'table'    => 'password_resets',
+            'expire'   => 60,
         ],
     ],
 ];

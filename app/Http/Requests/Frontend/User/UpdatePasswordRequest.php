@@ -30,7 +30,7 @@ class UpdatePasswordRequest extends FormRequest
     {
         return [
             'old_password' => ['required'],
-            'password' => [
+            'password'     => [
                 'required',
                 'confirmed',
                 new ChangePassword(),

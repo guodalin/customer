@@ -3,12 +3,12 @@
 namespace Comcsoft\Comment\Traits;
 
 /**
- * Can Comment trait
+ * Can Comment trait.
  */
 trait CanComment
 {
     /**
-     * Make relationship with comments and commenter
+     * Make relationship with comments and commenter.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -18,14 +18,13 @@ trait CanComment
     }
 
     /**
-     * Make a comment
+     * Make a comment.
      *
-     * @param \Illuminate\Database\Eloquent\Model $commentable
-     * @param null|string $message
-     * @param null|array|string $medias request keys for medias
-     * @param boolean $anonymous
-     * @param null|\Comcsoft\Comment\Models\Comment $at reply
-     * @return void
+     * @param \Illuminate\Database\Eloquent\Model   $commentable
+     * @param null|string                           $message
+     * @param null|array|string                     $medias      request keys for medias
+     * @param bool                                  $anonymous
+     * @param null|\Comcsoft\Comment\Models\Comment $at          reply
      */
     public function addComment($commentable, $message = null, $medias = null, $anonymous = false, $at = null)
     {

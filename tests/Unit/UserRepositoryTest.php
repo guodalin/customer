@@ -34,11 +34,11 @@ class UserRepositoryTest extends TestCase
     {
         return array_merge([
             'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'timezone' => 'UTC',
-            'password' => 'secret',
-            'roles' => ['test-role'],
+            'last_name'  => 'Doe',
+            'email'      => 'john@example.com',
+            'timezone'   => 'UTC',
+            'password'   => 'secret',
+            'roles'      => ['test-role'],
         ], $userData);
     }
 
@@ -119,8 +119,8 @@ class UserRepositoryTest extends TestCase
 
         $this->userRepository->update($user, $this->getValidUserData([
             'first_name' => 'updated',
-            'last_name' => 'name',
-            'email' => 'new@email.com',
+            'last_name'  => 'name',
+            'email'      => 'new@email.com',
         ]));
 
         $this->assertSame('updated', $user->fresh()->first_name);

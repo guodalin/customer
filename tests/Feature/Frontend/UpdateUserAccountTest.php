@@ -22,10 +22,10 @@ class UpdateUserAccountTest extends TestCase
     protected function getValidUserData($userData = [])
     {
         return array_merge([
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'timezone' => 'UTC',
+            'first_name'  => 'John',
+            'last_name'   => 'Doe',
+            'email'       => 'john@example.com',
+            'timezone'    => 'UTC',
             'avatar_type' => 'gravatar',
         ], $userData);
     }
@@ -44,9 +44,9 @@ class UpdateUserAccountTest extends TestCase
 
         $this->actingAs($user)
             ->patch('/profile/update', $this->getValidUserData([
-                'first_name' => 'John',
-                'last_name' => 'Doe',
-                'email' => 'john@example.com',
+                'first_name'  => 'John',
+                'last_name'   => 'Doe',
+                'email'       => 'john@example.com',
                 'avatar_type' => 'gravatar',
             ]));
         $user = $user->fresh();
@@ -109,7 +109,7 @@ class UpdateUserAccountTest extends TestCase
 
         $this->actingAs($user)
             ->patch('/profile/update', $this->getValidUserData([
-                'avatar_type' => 'storage',
+                'avatar_type'     => 'storage',
                 'avatar_location' => UploadedFile::fake()->image('avatar.png'),
             ]));
 

@@ -28,13 +28,13 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => ['required', 'max:191', Rule::unique('users')],
-            'mobile' => ['nullable', Rule::unique('users')],
+            'username'   => ['required', 'max:191', Rule::unique('users')],
+            'mobile'     => ['nullable', Rule::unique('users')],
             'first_name' => ['nullable', 'max:191'],
-            'last_name' => ['nullable', 'max:191'],
-            'email' => ['required', 'email', 'max:191', Rule::unique('users')],
-            'password' => ['required', 'min:6', 'confirmed'],
-            'roles' => ['required', 'array'],
+            'last_name'  => ['nullable', 'max:191'],
+            'email'      => ['required', 'email', 'max:191', Rule::unique('users')],
+            'password'   => ['required', 'min:6', 'confirmed'],
+            'roles'      => ['required', 'array'],
         ];
     }
 }

@@ -15,17 +15,17 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate' => 'فعال‌سازی',
-                'change_password' => 'تغییر گذرواژه',
-                'clear_session' => 'پاک کردن جلسه',
-                'confirm' => 'تایید',
-                'deactivate' => 'غیرفعال‌سازی',
+                'activate'           => 'فعال‌سازی',
+                'change_password'    => 'تغییر گذرواژه',
+                'clear_session'      => 'پاک کردن جلسه',
+                'confirm'            => 'تایید',
+                'deactivate'         => 'غیرفعال‌سازی',
                 'delete_permanently' => 'حذف همیشگی',
-                'login_as' => 'ورود با :user',
-                'resend_email' => 'ارسال دوباره تایید ایمیل',
-                'restore_user' => 'بازگرداندن کاربر',
-                'unconfirm' => 'عدم تائید',
-                'unlink' => 'لغو پیوند',
+                'login_as'           => 'ورود با :user',
+                'resend_email'       => 'ارسال دوباره تایید ایمیل',
+                'restore_user'       => 'بازگرداندن کاربر',
+                'unconfirm'          => 'عدم تائید',
+                'unlink'             => 'لغو پیوند',
             ],
         ],
     ],
@@ -33,20 +33,20 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'تأیید حساب',
-            'reset_password' => 'بازنشانی گذرواژه',
+            'reset_password'  => 'بازنشانی گذرواژه',
         ],
     ],
 
     'general' => [
-        'cancel' => 'انصراف',
+        'cancel'   => 'انصراف',
         'continue' => 'ادامه',
 
         'crud' => [
             'create' => 'ایجاد',
             'delete' => 'حذف',
-            'edit' => 'ویرایش',
+            'edit'   => 'ویرایش',
             'update' => 'به‌روز رسانی',
-            'view' => 'نمایش',
+            'view'   => 'نمایش',
         ],
 
         'save' => 'ذخیره',

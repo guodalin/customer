@@ -29,10 +29,10 @@ class UserRegistrationTest extends TestCase
         factory(Role::class)->create(['name' => 'user']);
 
         return $this->post('/register', array_merge([
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'password' => 'password',
+            'first_name'            => 'John',
+            'last_name'             => 'Doe',
+            'email'                 => 'john@example.com',
+            'password'              => 'password',
             'password_confirmation' => 'password',
         ], $userData));
     }
@@ -54,10 +54,10 @@ class UserRegistrationTest extends TestCase
     public function a_user_can_register_an_account()
     {
         $this->registerUser([
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'password' => 'password',
+            'first_name'            => 'John',
+            'last_name'             => 'Doe',
+            'email'                 => 'john@example.com',
+            'password'              => 'password',
             'password_confirmation' => 'password',
         ]);
 
@@ -135,9 +135,9 @@ class UserRegistrationTest extends TestCase
     public function first_name_is_required()
     {
         $response = $this->post('/register', [
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'password' => 'password',
+            'last_name'             => 'Doe',
+            'email'                 => 'john@example.com',
+            'password'              => 'password',
             'password_confirmation' => 'password',
         ]);
 
@@ -148,9 +148,9 @@ class UserRegistrationTest extends TestCase
     public function last_name_is_required()
     {
         $response = $this->post('/register', [
-            'first_name' => 'John',
-            'email' => 'john@example.com',
-            'password' => 'password',
+            'first_name'            => 'John',
+            'email'                 => 'john@example.com',
+            'password'              => 'password',
             'password_confirmation' => 'password',
         ]);
 
@@ -161,9 +161,9 @@ class UserRegistrationTest extends TestCase
     public function email_is_required()
     {
         $response = $this->post('/register', [
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'password' => 'password',
+            'first_name'            => 'John',
+            'last_name'             => 'Doe',
+            'password'              => 'password',
             'password_confirmation' => 'password',
         ]);
 
@@ -176,10 +176,10 @@ class UserRegistrationTest extends TestCase
         factory(User::class)->create(['email' => 'john@example.com']);
 
         $response = $this->post('/register', [
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'password' => 'password',
+            'first_name'            => 'John',
+            'last_name'             => 'Doe',
+            'email'                 => 'john@example.com',
+            'password'              => 'password',
             'password_confirmation' => 'password',
         ]);
 
@@ -191,9 +191,9 @@ class UserRegistrationTest extends TestCase
     {
         $response = $this->post('/register', [
             'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'password' => 'password',
+            'last_name'  => 'Doe',
+            'email'      => 'john@example.com',
+            'password'   => 'password',
         ]);
 
         $response->assertSessionHasErrors('password');
@@ -203,10 +203,10 @@ class UserRegistrationTest extends TestCase
     public function passwords_must_be_equivalent()
     {
         $response = $this->post('/register', [
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'password' => 'password',
+            'first_name'            => 'John',
+            'last_name'             => 'Doe',
+            'email'                 => 'john@example.com',
+            'password'              => 'password',
             'password_confirmation' => 'not_the_same',
         ]);
 

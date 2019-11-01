@@ -13,5 +13,5 @@ return [
     */
 
     'administrator' => 'Yönetici',
-    'user' => 'Kullanıcı',
+    'user'          => 'Kullanıcı',
 ];

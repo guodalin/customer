@@ -42,7 +42,7 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Comcsoft\Comment\Models\Comment  $comment
+     * @param  \App\Comcsoft\Comment\Models\Comment $comment
      * @return \Illuminate\Http\Response
      */
     public function show(Comment $comment)
@@ -53,7 +53,7 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Comcsoft\Comment\Models\Comment  $comment
+     * @param  \App\Comcsoft\Comment\Models\Comment $comment
      * @return \Illuminate\Http\Response
      */
     public function edit(Comment $comment)
@@ -64,8 +64,8 @@ class CommentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Comcsoft\Comment\Models\Comment  $comment
+     * @param  \Illuminate\Http\Request             $request
+     * @param  \App\Comcsoft\Comment\Models\Comment $comment
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Comment $comment)
@@ -76,7 +76,7 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Comcsoft\Comment\Models\Comment  $comment
+     * @param  \App\Comcsoft\Comment\Models\Comment $comment
      * @return \Illuminate\Http\Response
      */
     public function destroy(Comment $comment)

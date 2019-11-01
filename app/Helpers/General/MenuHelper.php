@@ -67,26 +67,26 @@ class MenuHelper
     }
 
     /**
-     * 添加链接
+     * 添加链接.
      *
-     * @param string $name
-     * @param array $html HTML属性
-     * @param array $icon 图标设置 [0 => 图标地址或者样式, 1 => true 仅显示图标 false 都显示]
-     * @param array $meta 其他设置
-     * @param string $active 激活pattern
+     * @param  string $name
+     * @param  array  $html   HTML属性
+     * @param  array  $icon   图标设置 [0 => 图标地址或者样式, 1 => true 仅显示图标 false 都显示]
+     * @param  array  $meta   其他设置
+     * @param  string $active 激活pattern
      * @return self
      */
     public function addItem($name, $links = [], $html = [], $icon = [], $meta = [], $active = '')
     {
         return $this->menu->items()->create([
-            'name' => $name,
-            'type' => $links[0] ?? MenuItem::TYPE_OF_URL,
-            'link' => $links[1] ?? '',
-            'icon' => $icon[0] ?? null,
-            'just_icon' => $icon[1] ?? false,
-            'meta' => $meta,
+            'name'            => $name,
+            'type'            => $links[0] ?? MenuItem::TYPE_OF_URL,
+            'link'            => $links[1] ?? '',
+            'icon'            => $icon[0] ?? null,
+            'just_icon'       => $icon[1] ?? false,
+            'meta'            => $meta,
             'html_attributes' => $html,
-            'active' => $active,
+            'active'          => $active,
         ]);
     }
 
@@ -108,7 +108,7 @@ class MenuHelper
 
     public function getCachedMenuItems()
     {
-        $key = 'menu.' . $this->menu->nickname . '.items';
+        $key = 'menu.'.$this->menu->nickname.'.items';
 
         // no cache when app is under debug mode
         if (config('app.debug')) {
@@ -121,11 +121,10 @@ class MenuHelper
     }
 
     /**
-     * 将持久化的菜单项加入菜单
+     * 将持久化的菜单项加入菜单.
      *
      * @param MenuItem $item
-     * @param mixed $menu
-     * @return void
+     * @param mixed    $menu
      */
     public function addItemToMenu(MenuItem $item, $menu)
     {
@@ -147,7 +146,7 @@ class MenuHelper
             ->id($item->id);
 
         if ($item->hasIcon()) {
-            $m->prepend('<i class="nav-icon ' . $item->icon . '"></i> ');
+            $m->prepend('<i class="nav-icon '.$item->icon.'"></i> ');
         }
 
         if ($item->active) {

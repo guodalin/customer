@@ -15,17 +15,17 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate' => 'הפעל',
-                'change_password' => 'שינוי סיסמא',
-                'clear_session' => 'נקה סשן התחברות',
-                'confirm' => 'אישור',
-                'deactivate' => 'ביטול הפעלה',
+                'activate'           => 'הפעל',
+                'change_password'    => 'שינוי סיסמא',
+                'clear_session'      => 'נקה סשן התחברות',
+                'confirm'            => 'אישור',
+                'deactivate'         => 'ביטול הפעלה',
                 'delete_permanently' => 'מחיקה לצמיתות',
-                'login_as' => 'התחברות בתור :user',
-                'resend_email' => 'שלח לי שוב מייל הפעלה',
-                'restore_user' => 'שחזור משתמש',
-                'unconfirm' => 'בטל אישור',
-                'unlink' => 'נתק',
+                'login_as'           => 'התחברות בתור :user',
+                'resend_email'       => 'שלח לי שוב מייל הפעלה',
+                'restore_user'       => 'שחזור משתמש',
+                'unconfirm'          => 'בטל אישור',
+                'unlink'             => 'נתק',
             ],
         ],
     ],
@@ -33,20 +33,20 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'אישור חשבון',
-            'reset_password' => 'איפוס סיסמה',
+            'reset_password'  => 'איפוס סיסמה',
         ],
     ],
 
     'general' => [
-        'cancel' => 'ביטול',
+        'cancel'   => 'ביטול',
         'continue' => 'המשך',
 
         'crud' => [
             'create' => 'צור',
             'delete' => 'מחק',
-            'edit' => 'עריכה',
+            'edit'   => 'עריכה',
             'update' => 'עדכון',
-            'view' => 'הצג',
+            'view'   => 'הצג',
         ],
 
         'save' => 'שמור',

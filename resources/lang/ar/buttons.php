@@ -15,17 +15,17 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate' => 'تفعيل',
-                'change_password' => 'تغيير كلمة المرور',
-                'clear_session' => 'Clear Session',
-                'confirm' => 'Confirm',
-                'deactivate' => 'تعطيل',
+                'activate'           => 'تفعيل',
+                'change_password'    => 'تغيير كلمة المرور',
+                'clear_session'      => 'Clear Session',
+                'confirm'            => 'Confirm',
+                'deactivate'         => 'تعطيل',
                 'delete_permanently' => 'حذف نهائي',
-                'login_as' => 'تسجيل الدخول كـ :user',
-                'resend_email' => 'إعادة إرسالة بريد التفعيل',
-                'restore_user' => 'إستعادة المستخدم',
-                'unconfirm' => 'Un-confirm',
-                'unlink' => 'Unlink',
+                'login_as'           => 'تسجيل الدخول كـ :user',
+                'resend_email'       => 'إعادة إرسالة بريد التفعيل',
+                'restore_user'       => 'إستعادة المستخدم',
+                'unconfirm'          => 'Un-confirm',
+                'unlink'             => 'Unlink',
             ],
         ],
     ],
@@ -33,20 +33,20 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'Confirm Account',
-            'reset_password' => 'Reset Password',
+            'reset_password'  => 'Reset Password',
         ],
     ],
 
     'general' => [
-        'cancel' => 'إلغاء',
+        'cancel'   => 'إلغاء',
         'continue' => 'Continue',
 
         'crud' => [
             'create' => 'إنشاء',
             'delete' => 'حذف',
-            'edit' => 'تعديل',
+            'edit'   => 'تعديل',
             'update' => 'تحديث',
-            'view' => 'View',
+            'view'   => 'View',
         ],
 
         'save' => 'حفظ',

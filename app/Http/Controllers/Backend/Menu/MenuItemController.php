@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Backend\Menu;
 
-use App\Models\Menu\MenuItem;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Menu\UpdateMenuItemRequest;
 use App\Http\Resources\Backend\Menu\MenuItemResource;
+use App\Models\Menu\MenuItem;
+use Illuminate\Http\Request;
 
 class MenuItemController extends Controller
 {
@@ -28,8 +28,19 @@ class MenuItemController extends Controller
      */
     public function store(UpdateMenuItemRequest $request)
     {
-        $item = MenuItem::create($request->only('menu_id', 'parent_id', 'name', 'icon', 'just_icon',
-                'show', 'html_attributes', 'meta', 'type', 'link', 'active'));
+        $item = MenuItem::create($request->only(
+            'menu_id',
+            'parent_id',
+            'name',
+            'icon',
+            'just_icon',
+            'show',
+            'html_attributes',
+            'meta',
+            'type',
+            'link',
+            'active'
+        ));
 
         return (new MenuItemResource($item))->additional(['message' => '成功添加菜单项']);
     }
@@ -37,7 +48,7 @@ class MenuItemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Menu\MenuItem  $menuItem
+     * @param  \App\Models\Menu\MenuItem $menuItem
      * @return \Illuminate\Http\Response
      */
     public function show(MenuItem $menuItem)
@@ -49,7 +60,7 @@ class MenuItemController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Menu\MenuItem  $item
+     * @param  \App\Models\Menu\MenuItem $item
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateMenuItemRequest $request, MenuItem $item)
@@ -63,7 +74,7 @@ class MenuItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Menu\MenuItem  $menuItem
+     * @param  \App\Models\Menu\MenuItem $menuItem
      * @return \Illuminate\Http\Response
      */
     public function destroy(MenuItem $item)
@@ -76,8 +87,8 @@ class MenuItemController extends Controller
     /**
      * Swap the specified resource from storage.
      *
-     * @param  \App\Models\Menu\MenuItem  $menuItem
-     * @param string $direction
+     * @param  \App\Models\Menu\MenuItem $menuItem
+     * @param  string                    $direction
      * @return \Illuminate\Http\Response
      */
     public function swap(MenuItem $item, $direction)

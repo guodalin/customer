@@ -3,12 +3,12 @@
 namespace Comcsoft\Comment\Traits;
 
 /**
- * Has Comments trait
+ * Has Comments trait.
  */
 trait HasComments
 {
     /**
-     * Make relationship with comments and commentable
+     * Make relationship with comments and commentable.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
@@ -18,14 +18,13 @@ trait HasComments
     }
 
     /**
-     * Make a comment
+     * Make a comment.
      *
-     * @param null|string $message
-     * @param null|array|string $medias request keys for medias
-     * @param boolean $anonymous
-     * @param null|\Comcsoft\Comment\Models\Comment $at reply
-     * @param null|User $commenter
-     * @return void
+     * @param null|string                           $message
+     * @param null|array|string                     $medias    request keys for medias
+     * @param bool                                  $anonymous
+     * @param null|\Comcsoft\Comment\Models\Comment $at        reply
+     * @param null|User                             $commenter
      */
     public function addComment($message = null, $medias = null, $anonymous = false, $at = null, $commenter = null)
     {
@@ -35,7 +34,7 @@ trait HasComments
     }
 
     /**
-     * Get comments list
+     * Get comments list.
      *
      * @return Collection
      */

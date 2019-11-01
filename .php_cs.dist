@@ -4,7 +4,7 @@
 $rules = [
     'array_indentation' => true,
     'array_syntax' => ['syntax' => 'short'],
-    'binary_operator_spaces' => ['default' => 'single_space'],
+    'binary_operator_spaces' => ['default' => 'single_space', 'operators' => ['=>' => 'align']],
     'blank_line_after_namespace' => true,
     'blank_line_after_opening_tag' => true,
     'blank_line_before_statement' => [

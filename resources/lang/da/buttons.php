@@ -15,17 +15,17 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate' => 'Aktivér',
-                'change_password' => 'Skift adgangskode',
-                'clear_session' => 'Clear Session',
-                'confirm' => 'Confirm',
-                'deactivate' => 'Deaktiver',
+                'activate'           => 'Aktivér',
+                'change_password'    => 'Skift adgangskode',
+                'clear_session'      => 'Clear Session',
+                'confirm'            => 'Confirm',
+                'deactivate'         => 'Deaktiver',
                 'delete_permanently' => 'Slet permanent',
-                'login_as' => 'Log ind som :user',
-                'resend_email' => 'Gensend bekræftelsesmail',
-                'restore_user' => 'Genskab bruger',
-                'unconfirm' => 'Un-confirm',
-                'unlink' => 'Unlink',
+                'login_as'           => 'Log ind som :user',
+                'resend_email'       => 'Gensend bekræftelsesmail',
+                'restore_user'       => 'Genskab bruger',
+                'unconfirm'          => 'Un-confirm',
+                'unlink'             => 'Unlink',
             ],
         ],
     ],
@@ -33,20 +33,20 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'Confirm Account',
-            'reset_password' => 'Reset Password',
+            'reset_password'  => 'Reset Password',
         ],
     ],
 
     'general' => [
-        'cancel' => 'Fortryd',
+        'cancel'   => 'Fortryd',
         'continue' => 'Continue',
 
         'crud' => [
             'create' => 'Opret',
             'delete' => 'Slet',
-            'edit' => 'Rediger',
+            'edit'   => 'Rediger',
             'update' => 'Opdater',
-            'view' => 'View',
+            'view'   => 'View',
         ],
 
         'save' => 'Gem',
