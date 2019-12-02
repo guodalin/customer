@@ -68,20 +68,20 @@ class CreateUserTest extends TestCase
         Model::setEventDispatcher($initialDispatcher);
 
         $response = $this->post('/admin/auth/user', [
-            'first_name'            => 'John',
-            'last_name'             => 'Doe',
-            'email'                 => 'john@example.com',
-            'password'              => 'password',
-            'password_confirmation' => 'password',
-            'active'                => '1',
-            'confirmed'             => '1',
-            'timezone'              => 'UTC',
-            'confirmation_email'    => '1',
-            'roles'                 => [1 => 'administrator'],
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'email' => 'john@example.com',
+            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
+            'active' => '1',
+            'confirmed' => '1',
+            'timezone' => 'UTC',
+            'confirmation_email' => '1',
+            'roles' => [1 => 'administrator'],
         ]);
 
         $this->assertDatabaseHas(
-            config('access.table_names.users'),
+            'users',
             [
                 'first_name' => 'John',
                 'last_name'  => 'Doe',
@@ -102,16 +102,16 @@ class CreateUserTest extends TestCase
         Notification::fake();
 
         $response = $this->post('/admin/auth/user', [
-            'first_name'            => 'John',
-            'last_name'             => 'Doe',
-            'email'                 => 'john@example.com',
-            'password'              => 'password',
-            'password_confirmation' => 'password',
-            'active'                => '1',
-            'confirmed'             => '0',
-            'timezone'              => 'UTC',
-            'confirmation_email'    => '1',
-            'roles'                 => [1 => 'administrator'],
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'email' => 'john@example.com',
+            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
+            'active' => '1',
+            'confirmed' => '0',
+            'timezone' => 'UTC',
+            'confirmation_email' => '1',
+            'roles' => [1 => 'administrator'],
         ]);
 
         $response->assertSessionHas(['flash_success' => __('alerts.backend.users.created')]);

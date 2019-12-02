@@ -30,13 +30,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'Todos los derechos reservados.',
-            'are_you_sure'        => '¿Está seguro?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
-            'continue'            => 'Continuar',
-            'member_since'        => 'Miembro desde',
-            'minutes'             => ' minutos',
-            'search_placeholder'  => 'Buscar...',
-            'timeout'             => 'Usted ha sido automaticamente desconectado por razones de seguridad ya que no tuvo actividad en ',
+            'are_you_sure' => '¿Está seguro?',
+            'boilerplate_link' => 'Laravel Boilerplate',
+            'continue' => 'Continuar',
+            'member_since' => 'Miembro desde',
+            'minutes' => ' minutos',
+            'search_placeholder' => 'Buscar...',
+            'timeout' => 'Usted ha sido automaticamente desconectado por razones de seguridad ya que no tuvo actividad en ',
 
             'see_all' => [
                 'messages'      => 'Ver todos los mensajes',

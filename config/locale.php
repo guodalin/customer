@@ -29,7 +29,8 @@ return [
          * Index 2 of sub-array is whether or not to use RTL (right-to-left) html direction for this language
          */
         // 'ar' => ['ar', 'ar_AR', true],
-        'zh'    => ['zh', 'zh-CN', false],
+        // 'az' => ['az', 'az-AZ', false],
+        'zh' => ['zh', 'zh-CN', false],
         'zh-TW' => ['zh-TW', 'zh-TW', false],
         // 'da' => ['da', 'da_DK', false],
         // 'de' => ['de', 'de_DE', false],

@@ -30,13 +30,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'همه حقوق محفوظ است.',
-            'are_you_sure'        => 'آیا مطمئن هستید که می‌خواهید این کار را انجام دهید؟',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
-            'continue'            => 'ادامه',
-            'member_since'        => 'عضویت از',
-            'minutes'             => ' دقیقه',
-            'search_placeholder'  => 'جستجو ...',
-            'timeout'             => 'از آنجا که هیچ فعالیتی نداشتید، به دلایل امنیتی، به طور خودکار از سیستم خارج شدید ',
+            'are_you_sure' => 'آیا مطمئن هستید که می‌خواهید این کار را انجام دهید؟',
+            'boilerplate_link' => 'Laravel Boilerplate',
+            'continue' => 'ادامه',
+            'member_since' => 'عضویت از',
+            'minutes' => ' دقیقه',
+            'search_placeholder' => 'جستجو ...',
+            'timeout' => 'از آنجا که هیچ فعالیتی نداشتید، به دلایل امنیتی، به طور خودکار از سیستم خارج شدید ',
 
             'see_all' => [
                 'messages'      => 'نمایش همه پیام‌ها',

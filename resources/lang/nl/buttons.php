@@ -15,41 +15,41 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate'           => 'Activeren',
-                'change_password'    => 'Verander Wachtwoord',
-                'clear_session'      => 'Clear Session',
-                'confirm'            => 'Confirm',
-                'deactivate'         => 'Deactiveren',
+                'activate' => 'Activeren',
+                'change_password' => 'Verander Wachtwoord',
+                'clear_session' => 'Sessies leegmaken',
+                'confirm' => 'Bevestigen',
+                'deactivate' => 'Deactiveren',
                 'delete_permanently' => 'Permanent verwijderen',
-                'login_as'           => 'Aanmelden als :user',
-                'resend_email'       => 'Bevestigings email nogmaals zenden',
-                'restore_user'       => 'Gebruiker herstellen',
-                'unconfirm'          => 'Un-confirm',
-                'unlink'             => 'Unlink',
+                'login_as' => 'Aanmelden als :user',
+                'resend_email' => 'Bevestigingsmail nogmaals verzenden',
+                'restore_user' => 'Gebruiker herstellen',
+                'unconfirm' => 'Bevestiging ongedaan maken',
+                'unlink' => 'Unlink',
             ],
         ],
     ],
 
     'emails' => [
         'auth' => [
-            'confirm_account' => 'Account Bevestigen',
-            'reset_password'  => 'Reset Wachtwoord',
+            'confirm_account' => 'Account bevestigen',
+            'reset_password' => 'Wachtwoord herstellen',
         ],
     ],
 
     'general' => [
-        'cancel'   => 'Annuleer',
-        'continue' => 'Continue',
+        'cancel' => 'Annuleren',
+        'continue' => 'Doorgaan',
 
         'crud' => [
-            'create' => 'Creëer',
-            'delete' => 'Verwijder',
-            'edit'   => 'Aanpassen',
+            'create' => 'Aanmaken',
+            'delete' => 'Verwijderen',
+            'edit' => 'Aanpassen',
             'update' => 'Bijwerken',
-            'view'   => 'Bekijk',
+            'view' => 'Bekijken',
         ],
 
         'save' => 'Opslaan',
-        'view' => 'Bekijk',
+        'view' => 'Bekijken',
     ],
 ];

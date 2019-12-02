@@ -2,7 +2,6 @@
 
 use App\Models\Auth\User;
 use Faker\Generator;
-use Ramsey\Uuid\Uuid;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +16,6 @@ use Ramsey\Uuid\Uuid;
 
 $factory->define(User::class, function (Generator $faker) {
     return [
-        'uuid'                => Uuid::uuid4()->toString(),
         'first_name'          => $faker->firstName,
         'last_name'           => $faker->lastName,
         'email'               => $faker->safeEmail,

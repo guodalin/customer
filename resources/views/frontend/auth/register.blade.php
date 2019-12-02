@@ -60,13 +60,15 @@
 
                     {{ html()->form()->close() }}
 
-                    @if ($socialiteLinks)
-                    <div class="text-center">
-                        {!! $socialiteLinks !!}
-                    </div>
-                    @endif
-                </div>
-            </div>
-        </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="text-center">
+                                @include('frontend.auth.includes.socialite')
+                            </div>
+                        </div><!--/ .col -->
+                    </div><!-- / .row -->
+                </div><!-- card-body -->
+            </div><!-- card -->
+        </div><!-- col-md-8 -->
     </div><!-- row -->
 @endsection

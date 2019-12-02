@@ -31,15 +31,15 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'Все права защищены.',
-            'are_you_sure'        => 'Вы уверены?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
-            'continue'            => 'Продолжить',
-            'member_since'        => 'Пользователь с',
-            'minutes'             => 'минут',
-            'search_placeholder'  => 'Поиск...',
-            'timeout'             => 'Вы автоматически выведены из системы из соображений безопасности, так как Вы не были активны в течении',
-            'see_all'             => [
-                'messages'      => 'Просмотр всех сообщений',
+            'are_you_sure' => 'Вы уверены?',
+            'boilerplate_link' => 'Laravel Boilerplate',
+            'continue' => 'Продолжить',
+            'member_since' => 'Пользователь с',
+            'minutes' => 'минут',
+            'search_placeholder' => 'Поиск...',
+            'timeout' => 'Вы автоматически выведены из системы из соображений безопасности, так как Вы не были активны в течении',
+            'see_all' => [
+                'messages' => 'Просмотр всех сообщений',
                 'notifications' => 'Показать все',
                 'tasks'         => 'Показать все задачи',
             ],

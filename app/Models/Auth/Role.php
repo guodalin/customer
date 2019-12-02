@@ -2,7 +2,6 @@
 
 namespace App\Models\Auth;
 
-use App\Models\Auth\Traits\Attribute\RoleAttribute;
 use App\Models\Auth\Traits\Method\RoleMethod;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Permission\Models\Role as SpatieRole;
@@ -13,7 +12,6 @@ use Spatie\Permission\Models\Role as SpatieRole;
 class Role extends SpatieRole
 {
     use LogsActivity,
-        RoleAttribute,
         RoleMethod;
 
     /*-------------------------------------------

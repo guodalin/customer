@@ -27,8 +27,8 @@ class SendContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'    => ['required'],
-            'email'   => ['required'],
+            'name' => ['required'],
+            'email' => ['required', 'email'],
             'message' => ['required'],
         ];
     }

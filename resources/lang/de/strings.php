@@ -30,13 +30,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'Alle Rechte vorbehalten.',
-            'are_you_sure'        => 'Bist du dir sicher?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
-            'continue'            => 'Fortsetzen',
-            'member_since'        => 'Mitglied seit',
-            'minutes'             => ' Minuten',
-            'search_placeholder'  => 'Suchen...',
-            'timeout'             => 'Du wurdest aus Sicherheitsgründen automatisch abgemeldet weil du inaktiv warst seit ',
+            'are_you_sure' => 'Bist du dir sicher?',
+            'boilerplate_link' => 'Laravel Boilerplate',
+            'continue' => 'Fortsetzen',
+            'member_since' => 'Mitglied seit',
+            'minutes' => ' Minuten',
+            'search_placeholder' => 'Suchen...',
+            'timeout' => 'Du wurdest aus Sicherheitsgründen automatisch abgemeldet weil du inaktiv warst seit ',
 
             'see_all' => [
                 'messages'      => 'Alle Nachrichten anzeigen',

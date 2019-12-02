@@ -31,8 +31,7 @@ return [
         'toggle_navigation'  => 'Toggle Navigation',
         'create_new'         => 'Create New',
         'toolbar_btn_groups' => 'Toolbar with button groups',
-        'more'               => 'More',
-        'none'               => 'None',
+        'more' => 'More',
     ],
 
     'backend' => [

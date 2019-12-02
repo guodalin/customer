@@ -108,7 +108,7 @@
 
                             <div class="col-md-10">
                                 <label class="switch switch-label switch-pill switch-primary">
-                                    {{ html()->checkbox('active', true, '1')->class('switch-input') }}
+                                    {{ html()->checkbox('active', true)->class('switch-input') }}
                                     <span class="switch-slider" data-checked="yes" data-unchecked="no"></span>
                                 </label>
                             </div><!--col-->
@@ -119,7 +119,7 @@
 
                             <div class="col-md-10">
                                 <label class="switch switch-label switch-pill switch-primary">
-                                    {{ html()->checkbox('confirmed', true, '1')->class('switch-input') }}
+                                    {{ html()->checkbox('confirmed', true)->class('switch-input') }}
                                     <span class="switch-slider" data-checked="yes" data-unchecked="no"></span>
                                 </label>
                             </div><!--col-->
@@ -131,7 +131,7 @@
 
                                 <div class="col-md-10">
                                     <label class="switch switch-label switch-pill switch-primary">
-                                        {{ html()->checkbox('confirmation_email', true, '1')->class('switch-input') }}
+                                        {{ html()->checkbox('confirmation_email')->class('switch-input') }}
                                         <span class="switch-slider" data-checked="yes" data-unchecked="no"></span>
                                     </label>
                                 </div><!--col-->

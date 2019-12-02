@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\Backend\Auth\User;
 
-use App\Rules\Auth\ChangePassword;
 use App\Rules\Auth\UnusedPassword;
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -1,8 +1,13 @@
 ## AIO基础套件 (ALL IN ONE BASE)
 
-91360 PHP 项目组基于 [Laravel 5.8 Boilerplate](http://laravel-boilerplate.com) 开发的整体一致性软件
+91360 PHP 项目组基于 [Laravel Boilerplate](http://laravel-boilerplate.com) 开发的整体一致性软件
 
-### 官方文档
+### Demo Credentials
+
+**User:** admin@admin.com
+**Password:** secret
+
+### Official Documentation
 
 [Click here for the official documentation](http://laravel-boilerplate.com)
 
@@ -37,10 +42,6 @@
 > 2. 后台管理员 executive@executive.com/secret
 > 3. 普通用户 user@user.com/secret
 
-### Wiki
-
-Please view the [wiki](https://github.com/rappasoft/laravel-5-boilerplate/wiki) for a list of [features](https://github.com/rappasoft/laravel-5-boilerplate/wiki#features).
-
 ### Issues
 
 如遇到任何问题请访问并 [提交到这里](https://git.comc.91360.com/php/aio-base/issues).
@@ -51,7 +52,7 @@ Thank you for considering contributing to the Laravel Boilerplate project! Pleas
 
 ### Security Vulnerabilities
 
-If you discover a security vulnerability within this boilerplate, please send an e-mail to Anthony Rappa at rappa819@gmail.com, or create a pull request if possible. All security vulnerabilities will be promptly addressed. Please reference [this page](https://github.com/rappasoft/laravel-5-boilerplate/wiki/7.-Security-Fixes) to make sure you are up to date.
+If you discover a security vulnerability within this boilerplate, please send an e-mail to Anthony Rappa at rappa819@gmail.com, or create a pull request if possible. All security vulnerabilities will be promptly addressed.
 
 ### License
 

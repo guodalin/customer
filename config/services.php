@@ -1,15 +1,16 @@
 <?php
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
     |--------------------------------------------------------------------------
     |
     | This file is for storing the credentials for third party services such
-    | as Stripe, Mailgun, SparkPost and others. This file provides a sane
-    | default location for this type of information, allowing packages
-    | to have a conventional place to find your various credentials.
+    | as Mailgun, SparkPost and others. This file provides a sane default
+    | location for this type of information, allowing packages to have
+    | a conventional file to locate the various service credentials.
     |
     */
 
@@ -18,29 +19,16 @@ return [
         'secret'   => env('MAILGUN_SECRET'),
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
-
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
-
     'ses' => [
         'key'    => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
-    ],
-
-    'stripe' => [
-        'model'   => App\Models\Auth\User::class,
-        'key'     => env('STRIPE_KEY'),
-        'secret'  => env('STRIPE_SECRET'),
-        'webhook' => [
-            'secret'    => env('STRIPE_WEBHOOK_SECRET'),
-            'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
-        ],
     ],
 
     /*
@@ -84,18 +72,8 @@ return [
         'active'        => env('GOOGLE_ACTIVE'),
         'client_id'     => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect'      => env('GOOGLE_REDIRECT'),
-
-        /*
-         * Only allows google to grab email address
-         * Default scopes array also has: 'https://www.googleapis.com/auth/plus.login'
-         * https://medium.com/@njovin/fixing-laravel-socialite-s-google-permissions-2b0ef8c18205
-         */
-        'scopes' => [
-            'https://www.googleapis.com/auth/plus.me',
-            'https://www.googleapis.com/auth/plus.profile.emails.read',
-        ],
-
+        'redirect' => env('GOOGLE_REDIRECT'),
+        'scopes' => [],
         'with' => [],
     ],
 

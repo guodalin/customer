@@ -12,11 +12,10 @@ return [
     |
     */
 
-    'failed'         => 'Toegangsgegevens niet gevonden',
-    'general_error'  => 'Je hebt niet de rechten om dat te doen.',
-    'password_rules' => 'Your password must be more than 8 characters long, should contain at least 1 uppercase, 1 lowercase and 1 number.',
-    'password_used'  => 'You can not set a password that you have previously used.',
-    'socialite'      => [
+    'failed' => 'Toegangsgegevens niet gevonden',
+    'general_error' => 'Je hebt niet de rechten om dat te doen.',
+    'password_used' => 'Je kan geen wachtwoord instellen dat je al eerder gebruikte.',
+    'socialite' => [
         'unacceptable' => ':provider is niet een geaccepteerd login type.',
     ],
     'throttle' => 'Te veel aanmeld pogingen, probeer het nog eens na :seconds seconden.',

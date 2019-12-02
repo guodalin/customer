@@ -2,12 +2,7 @@
 
 namespace App\Models\Auth;
 
-use App\Models\Auth\Traits\SendUserPasswordReset;
-use App\Models\Traits\Uuid;
 use Comcsoft\Comment\Traits\CanComment;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Image\Manipulations;
@@ -15,19 +10,24 @@ use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
+use Lab404\Impersonate\Models\Impersonate;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Auth\Traits\SendUserPasswordReset;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class User.
  */
-class BaseUser extends Authenticatable implements HasMedia
+abstract class BaseUser extends Authenticatable implements HasMedia
 {
     use HasRoles,
+        Impersonate,
         Notifiable,
         SendUserPasswordReset,
         SoftDeletes,
         HasApiTokens,
         HasMediaTrait,
-        Uuid,
         CanComment,
         LogsActivity;
 
@@ -56,16 +56,6 @@ class BaseUser extends Authenticatable implements HasMedia
         'to_be_logged_out',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
     /*-------------------------------------------
      * Attributes to log the event.
      */
@@ -74,6 +64,14 @@ class BaseUser extends Authenticatable implements HasMedia
     protected static $logAttributes = [
         'username', 'mobile', 'email', 'password_changed_at',
         'timezone', 'last_login_at', 'last_login_ip',
+    ];
+
+    /**
+     * The dynamic attributes from mutators that should be returned with the user object.
+     * @var array
+     */
+    protected $appends = [
+        'full_name',
     ];
 
     protected static $logOnlyDirty = true;
@@ -102,11 +100,13 @@ class BaseUser extends Authenticatable implements HasMedia
     ];
 
     /**
-     * The dynamic attributes from mutators that should be returned with the user object.
+     * The attributes that should be hidden for arrays.
+     *
      * @var array
      */
-    protected $appends = [
-        'full_name',
+    protected $hidden = [
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -154,5 +154,27 @@ class BaseUser extends Authenticatable implements HasMedia
                     ->background('transparent')
                     ->optimize();
             });
+    }
+
+    /**
+     * Return true or false if the user can impersonate an other user.
+     *
+     * @param void
+     * @return  bool
+     */
+    public function canImpersonate()
+    {
+        return $this->isAdmin();
+    }
+
+    /**
+     * Return true or false if the user can be impersonate.
+     *
+     * @param void
+     * @return  bool
+     */
+    public function canBeImpersonated()
+    {
+        return $this->id !== 1;
     }
 }

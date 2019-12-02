@@ -54,8 +54,9 @@ return [
          * Обов'язково додайте нову мову в алфавітному порядку.
          */
         'langs' => [
-            'ar'    => 'Арабська (Arabic)',
-            'zh'    => 'Китайська (Chinese Simplified)',
+            'ar' => 'Арабська (Arabic)',
+            'az' => 'Azerbaijan',
+            'zh' => 'Китайська (Chinese Simplified)',
             'zh-TW' => 'Китайська (Chinese Traditional)',
             'da'    => 'Датська (Danish)',
             'de'    => 'Німецька (German)',

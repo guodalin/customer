@@ -28,13 +28,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'Tous droits réservés.',
-            'are_you_sure'        => 'Êtes-vous sûr ?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
-            'continue'            => 'Continuer',
-            'member_since'        => 'Membre depuis',
-            'minutes'             => ' minutes.',
-            'search_placeholder'  => 'Rechercher...',
-            'timeout'             => 'Vous avez été automatiquement déconnecté pour cause d\'inactivité pendant ',
+            'are_you_sure' => 'Êtes-vous sûr ?',
+            'boilerplate_link' => 'Laravel Boilerplate',
+            'continue' => 'Continuer',
+            'member_since' => 'Membre depuis',
+            'minutes' => ' minutes.',
+            'search_placeholder' => 'Rechercher...',
+            'timeout' => 'Vous avez été automatiquement déconnecté pour cause d\'inactivité pendant ',
 
             'see_all' => [
                 'messages'      => 'Voir tous les messages',

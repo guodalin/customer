@@ -29,11 +29,11 @@ class UserRegistrationTest extends TestCase
         factory(Role::class)->create(['name' => 'user']);
 
         return $this->post('/register', array_merge([
-            'first_name'            => 'John',
-            'last_name'             => 'Doe',
-            'email'                 => 'john@example.com',
-            'password'              => 'password',
-            'password_confirmation' => 'password',
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'email' => 'john@example.com',
+            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
         ], $userData));
     }
 
@@ -54,17 +54,17 @@ class UserRegistrationTest extends TestCase
     public function a_user_can_register_an_account()
     {
         $this->registerUser([
-            'first_name'            => 'John',
-            'last_name'             => 'Doe',
-            'email'                 => 'john@example.com',
-            'password'              => 'password',
-            'password_confirmation' => 'password',
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'email' => 'john@example.com',
+            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
         ]);
 
-        $newUser = (new UserRepository())->where('email', 'john@example.com')->first();
+        $newUser = resolve(UserRepository::class)->where('email', 'john@example.com')->first();
         $this->assertSame($newUser->first_name, 'John');
         $this->assertSame($newUser->last_name, 'Doe');
-        $this->assertTrue(Hash::check('password', $newUser->password));
+        $this->assertTrue(Hash::check('OC4Nzu270N!QBVi%U%qX', $newUser->password));
     }
 
     /** @test */
@@ -74,7 +74,7 @@ class UserRegistrationTest extends TestCase
         Notification::fake();
 
         $this->registerUser(['email' => 'john@example.com']);
-        $user = (new UserRepository())->where('email', 'john@example.com')->first();
+        $user = resolve(UserRepository::class)->where('email', 'john@example.com')->first();
 
         Notification::assertSentTo($user, UserNeedsConfirmation::class);
     }
@@ -114,7 +114,7 @@ class UserRegistrationTest extends TestCase
         $response = $this->registerUser();
         $response->assertSessionHas(['flash_success' => __('exceptions.frontend.auth.confirmation.created_pending')]);
 
-        $response = $this->post('/login', ['email' => 'john@example.com', 'password' => 'password']);
+        $response = $this->post('/login', ['email' => 'john@example.com', 'password' => 'OC4Nzu270N!QBVi%U%qX']);
 
         $response->assertSessionHas(['flash_danger' => __('exceptions.frontend.auth.confirmation.pending')]);
     }

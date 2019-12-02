@@ -27,11 +27,13 @@ use Illuminate\Validation\ValidationException;
 class UserRepository extends BaseRepository
 {
     /**
-     * @return string
+     * UserRepository constructor.
+     *
+     * @param  User  $model
      */
-    public function model()
+    public function __construct(User $model)
     {
-        return User::class;
+        $this->model = $model;
     }
 
     /**
