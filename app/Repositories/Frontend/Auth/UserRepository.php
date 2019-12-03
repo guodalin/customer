@@ -69,6 +69,24 @@ class UserRepository extends BaseRepository
     }
 
     /**
+     * @param string $hashid
+     *
+     * @throws GeneralException
+     * @return mixed
+     */
+    public function findByHashid($hashid)
+    {
+        $user = $this->model
+            ->findByHashid($hashid);
+
+        if ($user instanceof $this->model) {
+            return $user;
+        }
+
+        throw new GeneralException(__('exceptions.backend.access.users.not_found'));
+    }
+
+    /**
      * @param $code
      *
      * @throws GeneralException

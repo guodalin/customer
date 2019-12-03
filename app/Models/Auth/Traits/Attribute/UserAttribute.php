@@ -3,6 +3,7 @@
 namespace App\Models\Auth\Traits\Attribute;
 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /**
  * Trait UserAttribute.
@@ -33,6 +34,10 @@ trait UserAttribute
      */
     public function getFullNameAttribute()
     {
+        if (Str::startsWith(app()->getLocale(), 'zh')) {
+            return $this->last_name . $this->first_name;
+        }
+
         return $this->last_name
             ? $this->first_name.' '.$this->last_name
             : $this->first_name;

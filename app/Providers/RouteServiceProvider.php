@@ -32,7 +32,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->bind('user', function ($value) {
             $user = new User;
 
-            return User::withTrashed()->where($user->getRouteKeyName(), $value)->first();
+            return User::withTrashed()->findByHashid($value);
         });
 
         parent::boot();

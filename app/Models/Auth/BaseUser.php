@@ -3,6 +3,7 @@
 namespace App\Models\Auth;
 
 use App\Models\Auth\Traits\SendUserPasswordReset;
+use App\Models\Traits\HashidTrait;
 use Comcsoft\Comment\Traits\CanComment;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,7 +30,8 @@ abstract class BaseUser extends Authenticatable implements HasMedia
         HasApiTokens,
         HasMediaTrait,
         CanComment,
-        LogsActivity;
+        LogsActivity,
+        HashidTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -65,6 +67,13 @@ abstract class BaseUser extends Authenticatable implements HasMedia
         'username', 'mobile', 'email', 'password_changed_at',
         'timezone', 'last_login_at', 'last_login_ip',
     ];
+
+    /**
+     * hashid connection
+     *
+     * @var string
+     */
+    protected $hashidConnection = 'user';
 
     /**
      * The dynamic attributes from mutators that should be returned with the user object.

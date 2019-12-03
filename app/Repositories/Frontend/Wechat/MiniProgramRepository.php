@@ -58,14 +58,14 @@ class MiniProgramRepository
      */
     public function findByToken($token)
     {
-        $uuid = Cache::get('wechat.miniprogram.'.$token);
+        $hashid = Cache::get('wechat.miniprogram.'.$token);
 
-        if (!$uuid) {
+        if (!$hashid) {
             return;
         }
 
         try {
-            return resolve(UserRepository::class)->findByUuid($uuid);
+            return resolve(UserRepository::class)->findByHashid($hashid);
         } catch (GeneralException $e) {
             return;
         }
@@ -90,7 +90,7 @@ class MiniProgramRepository
     }
 
     /**
-     * 把用户uuid缓存到微信小程序token.
+     * 把用户hashid缓存到微信小程序token.
      *
      * @param  string                $token
      * @param  \App\Models\Auth\User $user
@@ -98,7 +98,7 @@ class MiniProgramRepository
      */
     public function cacheToken($token, $user)
     {
-        Cache::put('wechat.miniprogram.'.$token['session_key'], $user->uuid, now()->addDay());
+        Cache::put('wechat.miniprogram.'.$token['session_key'], $user->hashid(), now()->addDay());
 
         return $this;
     }

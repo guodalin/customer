@@ -29,6 +29,7 @@ return [
         'show'              => '显示',
         'toggle_navigation' => '切换导航',
         'more'              => '更多',
+        'create_new'        => '新建',
     ],
 
     'backend' => [

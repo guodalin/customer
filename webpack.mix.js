@@ -96,7 +96,7 @@ if (mix.inProduction()) {
             terser: {
                 cache: true,
                 parallel: true,
-                sourceMap: true
+                sourceMap: false
             }
         });
 } else {

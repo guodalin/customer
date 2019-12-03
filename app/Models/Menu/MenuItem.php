@@ -2,14 +2,12 @@
 
 namespace App\Models\Menu;
 
-use App\Models\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
 
 class MenuItem extends Model
 {
-    use NodeTrait,
-        Uuid;
+    use NodeTrait;
 
     /**
      * 纯文字.
@@ -35,13 +33,6 @@ class MenuItem extends Model
      * 分割线
      */
     const TYPE_OF_DIVIDE = 'divide';
-
-    /**
-     * Undocumented variable.
-     *
-     * @var string
-     */
-    protected $uuidName = 'nickname';
 
     /**
      * The attributes that are mass assignable.
@@ -132,6 +123,16 @@ class MenuItem extends Model
     public function getMetaAttribute()
     {
         return unserialize($this->attributes['meta']);
+    }
+
+    /**
+     * 昵称属性.
+     *
+     * @return string
+     */
+    public function getNicknameAttribute()
+    {
+        return $this->attributes['nickname'] ?: ('menuitem_' . $this->id);
     }
 
     /**

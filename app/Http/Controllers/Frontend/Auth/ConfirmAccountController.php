@@ -40,14 +40,14 @@ class ConfirmAccountController extends Controller
     }
 
     /**
-     * @param $uuid
+     * @param $hashid
      *
      * @throws \App\Exceptions\GeneralException
      * @return mixed
      */
-    public function sendConfirmationEmail($uuid)
+    public function sendConfirmationEmail($hashid)
     {
-        $user = $this->user->findByUuid($uuid);
+        $user = $this->user->findByHashid($hashid);
 
         if ($user->isConfirmed()) {
             return redirect()->route('frontend.auth.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.already_confirmed'));

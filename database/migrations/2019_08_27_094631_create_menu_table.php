@@ -29,7 +29,7 @@ class CreateMenuTable extends Migration
             $table->nestedSet();
 
             $table->string('name');
-            $table->uuid('nickname');
+            $table->string('nickname')->nullable();
 
             $table->char('type', 10)->default('url')->comment('路由类型，url,route,action,divide,raw');
             $table->string('link')->nullable()->comment('路由值');
