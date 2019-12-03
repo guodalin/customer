@@ -15,17 +15,17 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate' => 'Aktiv et',
-                'change_password' => 'Şifrəni dəyiş',
-                'clear_session' => 'Sessiyanı təmizlə',
-                'confirm' => 'Təsdiqlə',
-                'deactivate' => 'Deaktiv et',
+                'activate'           => 'Aktiv et',
+                'change_password'    => 'Şifrəni dəyiş',
+                'clear_session'      => 'Sessiyanı təmizlə',
+                'confirm'            => 'Təsdiqlə',
+                'deactivate'         => 'Deaktiv et',
                 'delete_permanently' => 'Birdəfəlik sil',
-                'login_as' => ':user kimi daxil ol',
-                'resend_email' => 'Təsdiqləmə emailini yenidən göndər',
-                'restore_user' => 'İstifadəçini yenidən yüklə',
-                'unconfirm' => 'Təsdiqləmə',
-                'unlink' => 'Əlaqəni sil',
+                'login_as'           => ':user kimi daxil ol',
+                'resend_email'       => 'Təsdiqləmə emailini yenidən göndər',
+                'restore_user'       => 'İstifadəçini yenidən yüklə',
+                'unconfirm'          => 'Təsdiqləmə',
+                'unlink'             => 'Əlaqəni sil',
             ],
         ],
     ],
@@ -33,20 +33,20 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'Hesab Təsdiqi',
-            'reset_password' => 'Şifrəni yenilə',
+            'reset_password'  => 'Şifrəni yenilə',
         ],
     ],
 
     'general' => [
-        'cancel' => 'İmtina et',
+        'cancel'   => 'İmtina et',
         'continue' => 'Davam et',
 
         'crud' => [
             'create' => 'Yarat',
             'delete' => 'Sil',
-            'edit' => 'Redaktə',
+            'edit'   => 'Redaktə',
             'update' => 'Yenilə',
-            'view' => 'Bax',
+            'view'   => 'Bax',
         ],
 
         'save' => 'Yadda Saxla',

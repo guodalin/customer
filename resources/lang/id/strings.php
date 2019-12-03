@@ -28,13 +28,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'Hak Cipta Dilindungi.',
-            'are_you_sure' => 'Anda yakin?',
-            'boilerplate_link' => 'Laravel Boilerplate',
-            'continue' => 'Lanjutjan',
-            'member_since' => 'Anggota sejak',
-            'minutes' => ' menit',
-            'search_placeholder' => 'Cari...',
-            'timeout' => 'Anda secara otomatis log out untuk alasan keamanan karena Anda tidak punya aktivitas dalam ',
+            'are_you_sure'        => 'Anda yakin?',
+            'boilerplate_link'    => 'Laravel Boilerplate',
+            'continue'            => 'Lanjutjan',
+            'member_since'        => 'Anggota sejak',
+            'minutes'             => ' menit',
+            'search_placeholder'  => 'Cari...',
+            'timeout'             => 'Anda secara otomatis log out untuk alasan keamanan karena Anda tidak punya aktivitas dalam ',
 
             'see_all' => [
                 'messages'      => 'Lihat semua pesan',

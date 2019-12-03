@@ -20,7 +20,7 @@ trait UserMethod
      */
     public function canChangePassword()
     {
-        return ! app('session')->has(config('access.socialite_session_name'));
+        return !app('session')->has(config('access.socialite_session_name'));
     }
 
     /**
@@ -37,7 +37,7 @@ trait UserMethod
                     return $this->ucenterAvatar();
                 }
 
-                if (! $size) {
+                if (!$size) {
                     $size = config('gravatar.default.size');
                 }
 
@@ -119,6 +119,6 @@ trait UserMethod
      */
     public function isPending()
     {
-        return config('access.users.requires_approval') && ! $this->confirmed;
+        return config('access.users.requires_approval') && !$this->confirmed;
     }
 }

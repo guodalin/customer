@@ -13,5 +13,5 @@ return [
     */
 
     'administrator' => 'İdarə heyəti',
-    'user' => 'İstifadəçi',
+    'user'          => 'İstifadəçi',
 ];

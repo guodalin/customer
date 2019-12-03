@@ -19,8 +19,8 @@ class ChangePasswordTest extends TestCase
         $response = $this->actingAs($user)
             ->followingRedirects()
             ->patch('/password/update', [
-                'old_password' => '1234',
-                'password' => '1234567',
+                'old_password'          => '1234',
+                'password'              => '1234567',
                 'password_confirmation' => '1234567',
             ]);
 
@@ -34,8 +34,8 @@ class ChangePasswordTest extends TestCase
 
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => '1234',
-                'password' => 'OC4Nzu270N!QBVi%U%qX',
+                'old_password'          => '1234',
+                'password'              => 'OC4Nzu270N!QBVi%U%qX',
                 'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
             ]);
 
@@ -82,8 +82,8 @@ class ChangePasswordTest extends TestCase
 
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'OC4Nzu270N!QBVi%U%qX',
-                'password' => 'OC4Nzu270N!QBVi%U%qX_02',
+                'old_password'          => 'OC4Nzu270N!QBVi%U%qX',
+                'password'              => 'OC4Nzu270N!QBVi%U%qX_02',
                 'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX_02',
             ]);
 
@@ -101,8 +101,8 @@ class ChangePasswordTest extends TestCase
         // Change once
         $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'OC4Nzu270N!QBVi%U%qX',
-                'password' => 'OC4Nzu270N!QBVi%U%qX_02',
+                'old_password'          => 'OC4Nzu270N!QBVi%U%qX',
+                'password'              => 'OC4Nzu270N!QBVi%U%qX_02',
                 'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX_02',
             ]);
 
@@ -111,8 +111,8 @@ class ChangePasswordTest extends TestCase
         // Change back
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'OC4Nzu270N!QBVi%U%qX_02',
-                'password' => 'OC4Nzu270N!QBVi%U%qX',
+                'old_password'          => 'OC4Nzu270N!QBVi%U%qX_02',
+                'password'              => 'OC4Nzu270N!QBVi%U%qX',
                 'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
             ]);
 
@@ -132,8 +132,8 @@ class ChangePasswordTest extends TestCase
         // Change once
         $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'OC4Nzu270N!QBVi%U%qX',
-                'password' => 'OC4Nzu270N!QBVi%U%qX_02',
+                'old_password'          => 'OC4Nzu270N!QBVi%U%qX',
+                'password'              => 'OC4Nzu270N!QBVi%U%qX_02',
                 'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX_02',
             ]);
 
@@ -142,15 +142,15 @@ class ChangePasswordTest extends TestCase
         // Change twice
         $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'OC4Nzu270N!QBVi%U%qX_02',
-                'password' => 'OC4Nzu270N!QBVi%U%qX_03',
+                'old_password'          => 'OC4Nzu270N!QBVi%U%qX_02',
+                'password'              => 'OC4Nzu270N!QBVi%U%qX_03',
                 'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX_03',
             ]);
 
         $response = $this->actingAs($user)
             ->patch('/password/update', [
-                'old_password' => 'OC4Nzu270N!QBVi%U%qX_03',
-                'password' => 'OC4Nzu270N!QBVi%U%qX',
+                'old_password'          => 'OC4Nzu270N!QBVi%U%qX_03',
+                'password'              => 'OC4Nzu270N!QBVi%U%qX',
                 'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
             ]);
 

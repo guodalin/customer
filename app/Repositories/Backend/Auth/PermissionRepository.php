@@ -13,7 +13,7 @@ class PermissionRepository extends BaseRepository
     /**
      * PermissionRepository constructor.
      *
-     * @param  Permission  $model
+     * @param Permission $model
      */
     public function __construct(Permission $model)
     {

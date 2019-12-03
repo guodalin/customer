@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Auth\User;
-use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 /**

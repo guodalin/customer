@@ -30,7 +30,7 @@ return [
          */
         // 'ar' => ['ar', 'ar_AR', true],
         // 'az' => ['az', 'az-AZ', false],
-        'zh' => ['zh', 'zh-CN', false],
+        'zh'    => ['zh', 'zh-CN', false],
         'zh-TW' => ['zh-TW', 'zh-TW', false],
         // 'da' => ['da', 'da_DK', false],
         // 'de' => ['de', 'de_DE', false],

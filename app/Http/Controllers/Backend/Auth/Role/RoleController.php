@@ -62,11 +62,11 @@ class RoleController extends Controller
     }
 
     /**
-     * @param  StoreRoleRequest  $request
+     * @param StoreRoleRequest $request
      *
-     * @return mixed
      * @throws \App\Exceptions\GeneralException
      * @throws \Throwable
+     * @return mixed
      */
     public function store(StoreRoleRequest $request)
     {
@@ -94,12 +94,12 @@ class RoleController extends Controller
     }
 
     /**
-     * @param  UpdateRoleRequest  $request
-     * @param  Role  $role
+     * @param UpdateRoleRequest $request
+     * @param Role              $role
      *
-     * @return mixed
      * @throws \App\Exceptions\GeneralException
      * @throws \Throwable
+     * @return mixed
      */
     public function update(UpdateRoleRequest $request, Role $role)
     {

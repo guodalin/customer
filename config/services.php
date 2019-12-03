@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
@@ -72,9 +71,9 @@ return [
         'active'        => env('GOOGLE_ACTIVE'),
         'client_id'     => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('GOOGLE_REDIRECT'),
-        'scopes' => [],
-        'with' => [],
+        'redirect'      => env('GOOGLE_REDIRECT'),
+        'scopes'        => [],
+        'with'          => [],
     ],
 
     'linkedin' => [

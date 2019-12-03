@@ -12,10 +12,10 @@ return [
     |
     */
 
-    'failed' => 'Brukernavn eller passord stemmer ikke.',
+    'failed'        => 'Brukernavn eller passord stemmer ikke.',
     'general_error' => 'Du har ikke tilgang til at utføre denne handling.',
     'password_used' => 'You can not set a password that you have previously used.',
-    'socialite' => [
+    'socialite'     => [
         'unacceptable' => ':provider kan ikke brukes som login.',
     ],
     'throttle' => 'For mange mislykkede forsøk. Prøv igen om :seconds sekunder.',

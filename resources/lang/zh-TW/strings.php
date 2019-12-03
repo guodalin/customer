@@ -28,13 +28,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => '保留所有權利。 ',
-            'are_you_sure' => '你確定嗎？ ',
-            'boilerplate_link' => 'Laravel Boilerplate',
-            'continue' => '繼續',
-            'member_since' => '會員自',
-            'minutes' => ' 分鐘',
-            'search_placeholder' => '搜索...',
-            'timeout' => '您因為沒有活動而被自動註銷為了安全原因',
+            'are_you_sure'        => '你確定嗎？ ',
+            'boilerplate_link'    => 'Laravel Boilerplate',
+            'continue'            => '繼續',
+            'member_since'        => '會員自',
+            'minutes'             => ' 分鐘',
+            'search_placeholder'  => '搜索...',
+            'timeout'             => '您因為沒有活動而被自動註銷為了安全原因',
 
             'see_all' => [
                 'messages'      => '查看所有郵件',

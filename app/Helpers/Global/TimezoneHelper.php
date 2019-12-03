@@ -2,7 +2,7 @@
 
 use App\Helpers\General\TimezoneHelper;
 
-if (! function_exists('timezone')) {
+if (!function_exists('timezone')) {
     /**
      * Access the timezone helper.
      */

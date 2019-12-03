@@ -27,7 +27,7 @@ class SecureHeaders
 
     /**
      * @param $request
-     * @param  Closure  $next
+     * @param Closure $next
      *
      * @return mixed
      */

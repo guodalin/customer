@@ -56,7 +56,7 @@ abstract class TestCase extends BaseTestCase
      */
     protected function loginAsAdmin($admin = false)
     {
-        if (! $admin) {
+        if (!$admin) {
             $admin = $this->createAdmin();
         }
 

@@ -12,10 +12,10 @@ return [
     |
     */
 
-    'failed' => 'Identitas tersebut tidak cocok dengan catatan kami.',
+    'failed'        => 'Identitas tersebut tidak cocok dengan catatan kami.',
     'general_error' => 'Anda tidak memiliki akses untuk melakukan itu.',
     'password_used' => 'You can not set a password that you have previously used.',
-    'socialite' => [
+    'socialite'     => [
         'unacceptable' => ':provider bukanlah jenis login diterima.',
     ],
     'throttle' => 'Terlalu banyak usaha login. Coba lagi dalam :seconds detik.',

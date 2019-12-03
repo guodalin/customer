@@ -182,6 +182,6 @@ class MenuItem extends Model
 
     public function hasIcon()
     {
-        return ! empty($this->icon);
+        return !empty($this->icon);
     }
 }

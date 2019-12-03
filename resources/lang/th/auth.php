@@ -12,10 +12,10 @@ return [
     |
     */
 
-    'failed' => 'ข้อมูลที่ใช้ในการยืนยันตัวตนไม่ถูกต้อง',
+    'failed'        => 'ข้อมูลที่ใช้ในการยืนยันตัวตนไม่ถูกต้อง',
     'general_error' => 'คุณไม่มีสิทธิ์ในการเข้าถึงหรือกระทำการ',
     'password_used' => 'You can not set a password that you have previously used.',
-    'socialite' => [
+    'socialite'     => [
         'unacceptable' => 'ไม่ได้รับการยินยอมให้เข้าสู่ระบบด้วย :provider',
     ],
     'throttle' => 'คุณได้พยายามเข้าระบบหลายครั้งเกินไป กรุณาลองใหม่ใน :seconds วินาทีข้างหน้า',

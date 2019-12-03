@@ -59,9 +59,9 @@ return [
          * Be sure to add the new language in alphabetical order.
          */
         'langs' => [
-            'ar' => 'Αραβικά (Arabic)',
-            'az' => 'Azerbaijan',
-            'zh' => '(Chinese Simplified)',
+            'ar'    => 'Αραβικά (Arabic)',
+            'az'    => 'Azerbaijan',
+            'zh'    => '(Chinese Simplified)',
             'zh-TW' => '(Chinese Traditional)',
             'da'    => 'Δανέζικα (Danish)',
             'de'    => 'Γερμανικά (German)',

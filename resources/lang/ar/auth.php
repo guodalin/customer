@@ -12,10 +12,10 @@ return [
     |
     */
 
-    'failed' => 'البيانات المدخلة لا تتطابق مع قاعدة بيناتنا.',
+    'failed'        => 'البيانات المدخلة لا تتطابق مع قاعدة بيناتنا.',
     'general_error' => 'ليس لديك صلاحية الوصول إلى هذا.',
     'password_used' => 'You can not set a password that you have previously used.',
-    'socialite' => [
+    'socialite'     => [
         'unacceptable' => ':provider ليس نوع تسجيل دخول صحيح.',
     ],
     'throttle' => 'ثانية من محاولات تسجيل الدخول الفاشلة، برجاء المحاولة مرة أخرى بعد :seconds seconds.',

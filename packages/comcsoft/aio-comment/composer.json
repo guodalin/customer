@@ -11,9 +11,9 @@
     ],
     "require": {
         "php": ">=7.1.3",
-        "illuminate/support": "^5.4",
-        "illuminate/database": "^5.4",
-        "illuminate/console": "^5.4",
+        "illuminate/support": "^5.4|^6.0",
+        "illuminate/database": "^5.4|^6.0",
+        "illuminate/console": "^5.4|^6.0",
         "comcsoft/laravel-comment": "dev-master",
         "spatie/laravel-medialibrary": "^7.5"
     },

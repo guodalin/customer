@@ -21,7 +21,7 @@ class WechatMiniProgramTokenGuard extends TokenGuard
         // If we've already retrieved the user for the current request we can just
         // return it back immediately. We do not want to fetch the user data on
         // every call to this method because that would be tremendously slow.
-        if (! is_null($this->user)) {
+        if (!is_null($this->user)) {
             return $this->user;
         }
 
@@ -29,7 +29,7 @@ class WechatMiniProgramTokenGuard extends TokenGuard
 
         $token = $this->getTokenForRequest();
 
-        if (! empty($token)) {
+        if (!empty($token)) {
             $user = resolve(MiniProgramRepository::class)->findByToken($token);
         }
 
@@ -54,6 +54,6 @@ class WechatMiniProgramTokenGuard extends TokenGuard
      */
     public function validate(array $credentials = [])
     {
-        return ! is_null((new static($this->provider, $this->request, $this->inputKey))->user());
+        return !is_null((new static($this->provider, $this->request, $this->inputKey))->user());
     }
 }

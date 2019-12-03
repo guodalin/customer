@@ -26,7 +26,7 @@ class LoginController extends Controller
 
         if ($user) {
             // Check to see if the users account is confirmed and active
-            if (! $user->isConfirmed()) {
+            if (!$user->isConfirmed()) {
                 // If the user is pending (account approval is on)
                 if ($user->isPending()) {
                     throw new GeneralException(__('exceptions.frontend.auth.confirmation.pending'));
@@ -36,7 +36,7 @@ class LoginController extends Controller
                 throw new GeneralException(__('exceptions.frontend.auth.confirmation.resend', [
                     'url' => route('frontend.auth.account.confirm.resend', $user->{$user->getUuidName()}),
                 ]));
-            } elseif (! $user->isActive()) {
+            } elseif (!$user->isActive()) {
                 throw new GeneralException(__('exceptions.frontend.auth.deactivated'));
             }
 

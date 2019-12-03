@@ -30,13 +30,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'All Rights Reserved.',
-            'are_you_sure' => 'Are you sure you want to do this?',
-            'boilerplate_link' => 'Laravel Boilerplate',
-            'continue' => 'Continue',
-            'member_since' => 'Member since',
-            'minutes' => ' minutes',
-            'search_placeholder' => 'Search...',
-            'timeout' => 'You were automatically logged out for security reasons since you had no activity in ',
+            'are_you_sure'        => 'Are you sure you want to do this?',
+            'boilerplate_link'    => 'Laravel Boilerplate',
+            'continue'            => 'Continue',
+            'member_since'        => 'Member since',
+            'minutes'             => ' minutes',
+            'search_placeholder'  => 'Search...',
+            'timeout'             => 'You were automatically logged out for security reasons since you had no activity in ',
 
             'see_all' => [
                 'messages'      => 'See all messages',

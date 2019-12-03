@@ -11,12 +11,12 @@ return [
     */
 
     '404' => [
-        'title' => 'Səhifə tapılmadı',
+        'title'       => 'Səhifə tapılmadı',
         'description' => 'Axtardığınız səhifə tapılmadı.',
     ],
 
     '503' => [
-        'title' => 'Tezliklə qayıdacağıq.',
+        'title'       => 'Tezliklə qayıdacağıq.',
         'description' => 'Tezliklə qayıdacağıq.',
     ],
 ];

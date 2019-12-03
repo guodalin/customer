@@ -2,7 +2,7 @@
 
 use App\Helpers\General\HtmlHelper;
 
-if (! function_exists('style')) {
+if (!function_exists('style')) {
     /**
      * @param       $url
      * @param array $attributes
@@ -16,7 +16,7 @@ if (! function_exists('style')) {
     }
 }
 
-if (! function_exists('script')) {
+if (!function_exists('script')) {
     /**
      * @param       $url
      * @param array $attributes
@@ -30,7 +30,7 @@ if (! function_exists('script')) {
     }
 }
 
-if (! function_exists('form_cancel')) {
+if (!function_exists('form_cancel')) {
     /**
      * @param        $cancel_to
      * @param        $title
@@ -44,7 +44,7 @@ if (! function_exists('form_cancel')) {
     }
 }
 
-if (! function_exists('form_submit')) {
+if (!function_exists('form_submit')) {
     /**
      * @param        $title
      * @param string $classes
@@ -57,7 +57,7 @@ if (! function_exists('form_submit')) {
     }
 }
 
-if (! function_exists('active_class')) {
+if (!function_exists('active_class')) {
     /**
      * Get the active class if the condition is not falsy.
      *

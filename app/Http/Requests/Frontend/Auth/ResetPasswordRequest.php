@@ -33,7 +33,6 @@ class ResetPasswordRequest extends FormRequest
             'password' => [
                 'required',
                 'confirmed',
-                new ChangePassword(),
                 new UnusedPassword($this->get('token')),
             ],
         ];

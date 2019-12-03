@@ -50,7 +50,7 @@ class WechatAuthorizeListener
             // 尝试获取微信的unionid,
             $original = $wechatUser->getOriginal();
 
-            if ($original && isset($original['unionid']) && ! empty($original['unionid'])) {
+            if ($original && isset($original['unionid']) && !empty($original['unionid'])) {
                 $wechatUser->setAttribute('id', $original['unionid']);
             }
 

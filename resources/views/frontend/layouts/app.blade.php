@@ -42,6 +42,6 @@
         {!! script(mix('js/frontend.js')) !!}
         @stack('after-scripts')
 
-        @include('includes.partials.ga')
+        @include('includes.partials.bd')
     </body>
 </html>

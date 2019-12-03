@@ -31,7 +31,6 @@ class UpdateUserPasswordRequest extends FormRequest
             'password' => [
                 'required',
                 'confirmed',
-                new ChangePassword(),
                 new UnusedPassword((int) $this->segment(4)),
             ],
         ];

@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\Frontend\User;
 
-use App\Rules\Auth\ChangePassword;
 use App\Rules\Auth\UnusedPassword;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -33,7 +32,6 @@ class UpdatePasswordRequest extends FormRequest
             'password'     => [
                 'required',
                 'confirmed',
-                new ChangePassword(),
                 new UnusedPassword($this->user()),
             ],
         ];

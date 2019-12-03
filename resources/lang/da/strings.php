@@ -28,13 +28,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'Alle rettigheder forbeholdes.',
-            'are_you_sure' => 'Er du sikker?',
-            'boilerplate_link' => 'Laravel Boilerplate',
-            'continue' => 'Fortsæt',
-            'member_since' => 'Medlem siden',
-            'minutes' => ' minutter',
-            'search_placeholder' => 'Søg...',
-            'timeout' => 'Du er af sikkerhedsmæssige årsager blevet logget ud automatisk, da du ikke har været aktiv i ',
+            'are_you_sure'        => 'Er du sikker?',
+            'boilerplate_link'    => 'Laravel Boilerplate',
+            'continue'            => 'Fortsæt',
+            'member_since'        => 'Medlem siden',
+            'minutes'             => ' minutter',
+            'search_placeholder'  => 'Søg...',
+            'timeout'             => 'Du er af sikkerhedsmæssige årsager blevet logget ud automatisk, da du ikke har været aktiv i ',
 
             'see_all' => [
                 'messages'      => 'Se alle beskeder',

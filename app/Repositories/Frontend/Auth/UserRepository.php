@@ -26,7 +26,7 @@ class UserRepository extends BaseRepository
     /**
      * UserRepository constructor.
      *
-     * @param  User  $model
+     * @param User $model
      */
     public function __construct(User $model)
     {
@@ -107,7 +107,7 @@ class UserRepository extends BaseRepository
                 'active'            => true,
                 'password'          => $data['password'],
                 // If users require approval or needs to confirm email
-                'confirmed' => ! (config('access.users.requires_approval') || config('access.users.confirm_email')),
+                'confirmed' => !(config('access.users.requires_approval') || config('access.users.confirm_email')),
             ];
 
             if (should_sync_with_ucenter()) {
@@ -172,7 +172,7 @@ class UserRepository extends BaseRepository
     {
         $user = $this->getById($id);
 
-        if (isset($input['username']) && ! empty($input['username'])) {
+        if (isset($input['username']) && !empty($input['username'])) {
             $user->username = $input['username'];
 
             // 如果修改用户名, 那么需要同步到ucenter
@@ -204,7 +204,7 @@ class UserRepository extends BaseRepository
                 // if (auth()->user()->avatar_location === '') {
                 // throw new GeneralException('You must supply a profile image.');
                 // }
-                if (! $user->getFirstMedia('avatar')) {
+                if (!$user->getFirstMedia('avatar')) {
                     throw ValidationException::withMessages(['avatar_location' => __('validation.attributes.frontend.upload_avatar')]); //GeneralException('You must supply a profile image.');
                 }
             }
@@ -338,9 +338,9 @@ class UserRepository extends BaseRepository
          * The true flag indicate that it is a social account
          * Which triggers the script to use some default values in the create method
          */
-        if (! $user) {
+        if (!$user) {
             // Registration is not enabled
-            if (! config('access.registration')) {
+            if (!config('access.registration')) {
                 throw new GeneralException(__('exceptions.frontend.auth.registration_disabled'));
             }
 
@@ -353,7 +353,7 @@ class UserRepository extends BaseRepository
             }
 
             // 如果还是没有找到用户
-            if (! $user) {
+            if (!$user) {
                 // Get users first name and last name from their full name
                 $nameParts = $this->getNameParts($data->getName(), $data->getNickname());
 
@@ -379,7 +379,7 @@ class UserRepository extends BaseRepository
         }
 
         // See if the user has logged in with this social account before
-        if (! $user->hasProvider($provider)) {
+        if (!$user->hasProvider($provider)) {
             // Gather the provider data for saving and associate it with the user
             $user->providers()->save(new SocialAccount([
                 'provider'    => $provider,
@@ -411,7 +411,7 @@ class UserRepository extends BaseRepository
      */
     protected function getNameParts($fullName, $nickName = null)
     {
-        if (! $fullName) {
+        if (!$fullName) {
             $fullName = $nickName;
         }
 
@@ -424,12 +424,12 @@ class UserRepository extends BaseRepository
             $result['last_name'] = null;
         }
 
-        if (! empty($parts) && $size === 1) {
+        if (!empty($parts) && $size === 1) {
             $result['first_name'] = $parts[0];
             $result['last_name'] = null;
         }
 
-        if (! empty($parts) && $size >= 2) {
+        if (!empty($parts) && $size >= 2) {
             $result['first_name'] = $parts[0];
             $result['last_name'] = $parts[1];
         }

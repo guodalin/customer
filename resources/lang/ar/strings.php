@@ -28,13 +28,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'جميع الحقوق محفوظة.',
-            'are_you_sure' => 'هل أنت متأكد؟',
-            'boilerplate_link' => 'Laravel Boilerplate',
-            'continue' => 'متابعة',
-            'member_since' => 'عضو منذ',
-            'minutes' => ' minutes',
-            'search_placeholder' => 'بحث...',
-            'timeout' => 'You were automatically logged out for security reasons since you had no activity in ',
+            'are_you_sure'        => 'هل أنت متأكد؟',
+            'boilerplate_link'    => 'Laravel Boilerplate',
+            'continue'            => 'متابعة',
+            'member_since'        => 'عضو منذ',
+            'minutes'             => ' minutes',
+            'search_placeholder'  => 'بحث...',
+            'timeout'             => 'You were automatically logged out for security reasons since you had no activity in ',
 
             'see_all' => [
                 'messages'      => 'رؤية جميع الرسائل',

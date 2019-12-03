@@ -21,7 +21,7 @@ class ChangeUserPasswordTest extends TestCase
 
         $response = $this->followingRedirects()
             ->patch("/admin/auth/user/{$user->id}/password/change", [
-                'password' => '1234567',
+                'password'              => '1234567',
                 'password_confirmation' => '1234567',
             ]);
 
@@ -61,7 +61,7 @@ class ChangeUserPasswordTest extends TestCase
         Event::fake();
 
         $response = $this->patch("/admin/auth/user/{$user->id}/password/change", [
-            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'password'              => 'OC4Nzu270N!QBVi%U%qX',
             'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
         ]);
 
@@ -79,7 +79,7 @@ class ChangeUserPasswordTest extends TestCase
         $user = factory(User::class)->create(['password' => 'OC4Nzu270N!QBVi%U%qX']);
 
         $response = $this->patch("/admin/auth/user/{$user->id}/password/change", [
-            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'password'              => 'OC4Nzu270N!QBVi%U%qX',
             'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
         ]);
 
@@ -96,12 +96,12 @@ class ChangeUserPasswordTest extends TestCase
         $user = factory(User::class)->create(['password' => 'OC4Nzu270N!QBVi%U%qX']);
 
         $this->patch("/admin/auth/user/{$user->id}/password/change", [
-            'password' => 'OC4Nzu270N!QBVi%U%qX_02',
+            'password'              => 'OC4Nzu270N!QBVi%U%qX_02',
             'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX_02',
         ]);
 
         $response = $this->patch("/admin/auth/user/{$user->id}/password/change", [
-            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'password'              => 'OC4Nzu270N!QBVi%U%qX',
             'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
         ]);
 

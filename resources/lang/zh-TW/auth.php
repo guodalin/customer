@@ -12,10 +12,10 @@ return [
     |
     */
 
-    'failed' => '賬戶不存在，請重新輸入。 ',
+    'failed'        => '賬戶不存在，請重新輸入。 ',
     'general_error' => '沒有操作權限。 ',
     'password_used' => 'You can not set a password that you have previously used.',
-    'socialite' => [
+    'socialite'     => [
         'unacceptable' => ':provider 的登錄方式失敗。 ',
     ],
     'throttle' => '登錄失敗次數過多。請在 :seconds 秒後重試。 ',

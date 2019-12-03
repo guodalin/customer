@@ -17,7 +17,7 @@ class RoleRepository extends BaseRepository
     /**
      * RoleRepository constructor.
      *
-     * @param  Role  $model
+     * @param Role $model
      */
     public function __construct(Role $model)
     {
@@ -38,7 +38,7 @@ class RoleRepository extends BaseRepository
             throw new GeneralException('A role already exists with the name '.e($data['name']));
         }
 
-        if (! isset($data['permissions']) || ! \count($data['permissions'])) {
+        if (!isset($data['permissions']) || !\count($data['permissions'])) {
             $data['permissions'] = [];
         }
 
@@ -83,7 +83,7 @@ class RoleRepository extends BaseRepository
             }
         }
 
-        if (! isset($data['permissions']) || ! \count($data['permissions'])) {
+        if (!isset($data['permissions']) || !\count($data['permissions'])) {
             $data['permissions'] = [];
         }
 

@@ -29,10 +29,10 @@ class UserRegistrationTest extends TestCase
         factory(Role::class)->create(['name' => 'user']);
 
         return $this->post('/register', array_merge([
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'first_name'            => 'John',
+            'last_name'             => 'Doe',
+            'email'                 => 'john@example.com',
+            'password'              => 'OC4Nzu270N!QBVi%U%qX',
             'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
         ], $userData));
     }
@@ -54,10 +54,10 @@ class UserRegistrationTest extends TestCase
     public function a_user_can_register_an_account()
     {
         $this->registerUser([
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@example.com',
-            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'first_name'            => 'John',
+            'last_name'             => 'Doe',
+            'email'                 => 'john@example.com',
+            'password'              => 'OC4Nzu270N!QBVi%U%qX',
             'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
         ]);
 

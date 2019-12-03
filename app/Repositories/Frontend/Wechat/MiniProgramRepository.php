@@ -60,7 +60,7 @@ class MiniProgramRepository
     {
         $uuid = Cache::get('wechat.miniprogram.'.$token);
 
-        if (! $uuid) {
+        if (!$uuid) {
             return;
         }
 

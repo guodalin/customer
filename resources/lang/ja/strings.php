@@ -28,13 +28,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'All Rights Reserved.',
-            'are_you_sure' => '本当ですか？',
-            'boilerplate_link' => 'Laravel Boilerplate',
-            'continue' => 'Continue',
-            'member_since' => '会員登録日',
-            'minutes' => ' 分',
-            'search_placeholder' => '検索中...',
-            'timeout' => 'あなたは活動がなかったのでセキュリティ上の理由から自動的にログアウトされました。',
+            'are_you_sure'        => '本当ですか？',
+            'boilerplate_link'    => 'Laravel Boilerplate',
+            'continue'            => 'Continue',
+            'member_since'        => '会員登録日',
+            'minutes'             => ' 分',
+            'search_placeholder'  => '検索中...',
+            'timeout'             => 'あなたは活動がなかったのでセキュリティ上の理由から自動的にログアウトされました。',
 
             'see_all' => [
                 'messages'      => 'すべてのメッセージを見る',

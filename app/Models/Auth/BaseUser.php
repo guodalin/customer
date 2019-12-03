@@ -2,7 +2,12 @@
 
 namespace App\Models\Auth;
 
+use App\Models\Auth\Traits\SendUserPasswordReset;
 use Comcsoft\Comment\Traits\CanComment;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Image\Manipulations;
@@ -10,11 +15,6 @@ use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Notifications\Notifiable;
-use Lab404\Impersonate\Models\Impersonate;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Auth\Traits\SendUserPasswordReset;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class User.
@@ -160,7 +160,7 @@ abstract class BaseUser extends Authenticatable implements HasMedia
      * Return true or false if the user can impersonate an other user.
      *
      * @param void
-     * @return  bool
+     * @return bool
      */
     public function canImpersonate()
     {
@@ -171,7 +171,7 @@ abstract class BaseUser extends Authenticatable implements HasMedia
      * Return true or false if the user can be impersonate.
      *
      * @param void
-     * @return  bool
+     * @return bool
      */
     public function canBeImpersonated()
     {

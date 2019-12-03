@@ -28,16 +28,16 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'Alle Rechten Voorbehouden.',
-            'are_you_sure' => 'Zeker?',
-            'boilerplate_link' => 'Laravel Boilerplate',
-            'continue' => 'Doorgaan',
-            'member_since' => 'Lid sinds',
-            'minutes' => ' minuten',
-            'search_placeholder' => 'Zoeken...',
-            'timeout' => 'Automatisch uitgelogd vanwege veiligheidsredenen aangezien er geen activiteit was in ',
+            'are_you_sure'        => 'Zeker?',
+            'boilerplate_link'    => 'Laravel Boilerplate',
+            'continue'            => 'Doorgaan',
+            'member_since'        => 'Lid sinds',
+            'minutes'             => ' minuten',
+            'search_placeholder'  => 'Zoeken...',
+            'timeout'             => 'Automatisch uitgelogd vanwege veiligheidsredenen aangezien er geen activiteit was in ',
 
             'see_all' => [
-                'messages' => 'Alle berichten bekijken',
+                'messages'      => 'Alle berichten bekijken',
                 'notifications' => 'Bekijk alles',
                 'tasks'         => ' Alle taken bekijken',
             ],
@@ -55,20 +55,20 @@ return [
         ],
 
         'search' => [
-            'empty' => 'Voer een zoekterm in.',
+            'empty'      => 'Voer een zoekterm in.',
             'incomplete' => 'Je moet een eigen zoeksysteem implementeren.',
-            'title' => 'Zoekresultaten',
-            'results' => 'Zoekresultaten voor :query',
+            'title'      => 'Zoekresultaten',
+            'results'    => 'Zoekresultaten voor :query',
         ],
 
         'welcome' => 'Welkom op het Dashboard',
     ],
     'emails' => [
         'auth' => [
-            'account_confirmed' => 'Uw account werd goedgekeurd.',
-            'error' => 'Oeps!',
-            'greeting' => 'Hallo!',
-            'regards' => 'Groet,',
+            'account_confirmed'       => 'Uw account werd goedgekeurd.',
+            'error'                   => 'Oeps!',
+            'greeting'                => 'Hallo!',
+            'regards'                 => 'Groet,',
             'trouble_clicking_button' => 'Als u problemen heeft met de ":action_text" button, kopieer en plak dan de onderstaande URL in uw web browser:',
             'thank_you_for_using_app' => 'Dank u voor het gebruik van onze applicatie!',
 
@@ -82,7 +82,7 @@ return [
 
         'contact' => [
             'email_body_title' => 'Je hebt een nieuw contactaanvraag:',
-            'subject' => 'Het contactformulier op :app_name werd ingevuld!',
+            'subject'          => 'Het contactformulier op :app_name werd ingevuld!',
         ],
     ],
 
@@ -120,10 +120,10 @@ return [
         ],
 
         'user' => [
-            'change_email_notice' => 'Als je je e-mailadres aanpast zul je automatisch uitloggen tot je het nieuw e-mailadres bevestigt.',
+            'change_email_notice'  => 'Als je je e-mailadres aanpast zul je automatisch uitloggen tot je het nieuw e-mailadres bevestigt.',
             'email_changed_notice' => 'Je moet je nieuw e-mailadres bevestigen voordat je kan inloggen.',
-            'profile_updated' => 'Profiel succesvol bijgewerkt.',
-            'password_updated' => 'Wachtwoord succesvol bijgewerkt.',
+            'profile_updated'      => 'Profiel succesvol bijgewerkt.',
+            'password_updated'     => 'Wachtwoord succesvol bijgewerkt.',
         ],
 
         'welcome_to' => 'Welkom bij :place',

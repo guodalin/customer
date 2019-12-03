@@ -29,7 +29,7 @@ class UserRepository extends BaseRepository
     /**
      * UserRepository constructor.
      *
-     * @param  User  $model
+     * @param User $model
      */
     public function __construct(User $model)
     {
@@ -123,13 +123,13 @@ class UserRepository extends BaseRepository
             $user = parent::create($insert);
 
             // See if adding any additional permissions
-            if (! isset($data['permissions']) || ! count($data['permissions'])) {
+            if (!isset($data['permissions']) || !count($data['permissions'])) {
                 $data['permissions'] = [];
             }
 
             if ($user) {
                 // User must have at least one role
-                if (! count($data['roles'])) {
+                if (!count($data['roles'])) {
                     throw new GeneralException(__('exceptions.backend.access.users.role_needed_create'));
                 }
 
@@ -138,7 +138,7 @@ class UserRepository extends BaseRepository
                 $user->syncPermissions($data['permissions']);
 
                 //Send confirmation email if requested and account approval is off
-                if ($user->confirmed === false && isset($data['confirmation_email']) && ! config('access.users.requires_approval')) {
+                if ($user->confirmed === false && isset($data['confirmation_email']) && !config('access.users.requires_approval')) {
                     $user->notify(new UserNeedsConfirmation($user->confirmation_code));
                 }
 
@@ -165,7 +165,7 @@ class UserRepository extends BaseRepository
         $this->checkUserByEmail($user, $data['email']);
 
         // See if adding any additional permissions
-        if (! isset($data['permissions']) || ! count($data['permissions'])) {
+        if (!isset($data['permissions']) || !count($data['permissions'])) {
             $data['permissions'] = [];
         }
 
@@ -306,7 +306,7 @@ class UserRepository extends BaseRepository
      */
     public function unconfirm(User $user) : User
     {
-        if (! $user->confirmed) {
+        if (!$user->confirmed) {
             throw new GeneralException(__('exceptions.backend.access.users.not_confirmed'));
         }
 

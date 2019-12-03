@@ -142,7 +142,7 @@ abstract class BaseRepository implements RepositoryContract
     /**
      * @param $item
      * @param $column
-     * @param  array  $columns
+     * @param array $columns
      *
      * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|object|null
      */
@@ -160,8 +160,8 @@ abstract class BaseRepository implements RepositoryContract
      *
      * @param $id
      *
-     * @return bool|null
      * @throws \Exception
+     * @return bool|null
      */
     public function deleteById($id)
     {
@@ -313,7 +313,7 @@ abstract class BaseRepository implements RepositoryContract
             $this->query->orderBy($orders['column'], $orders['direction']);
         }
 
-        if (isset($this->take) and ! is_null($this->take)) {
+        if (isset($this->take) and !is_null($this->take)) {
             $this->query->take($this->take);
         }
 

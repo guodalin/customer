@@ -12,10 +12,10 @@ return [
     |
     */
 
-    'failed' => 'Αυτά τα διαπιστευτήρια δεν ταιριάζουν με τα αρχεία μας.',
+    'failed'        => 'Αυτά τα διαπιστευτήρια δεν ταιριάζουν με τα αρχεία μας.',
     'general_error' => 'Δεν έχετε πρόσβαση σε αυτό.',
     'password_used' => 'You can not set a password that you have previously used.',
-    'socialite' => [
+    'socialite'     => [
         'unacceptable' => ':provider δεν είναι αποδεκτός τρόπος σύνδεσης.',
     ],
     'throttle' => 'Πολλές προσπάθειες σύνδεσης. Παρακαλούμε προσπαθήστε πάλι σε :seconds δευτερόλεπτα.',

@@ -1,6 +1,6 @@
 <?php
 
-if (! function_exists('is_email')) {
+if (!function_exists('is_email')) {
     /**
      * @param $str
      *
@@ -12,7 +12,7 @@ if (! function_exists('is_email')) {
     }
 }
 
-if (! function_exists('is_mobile')) {
+if (!function_exists('is_mobile')) {
     /**
      * @param $str
      *
@@ -24,7 +24,7 @@ if (! function_exists('is_mobile')) {
     }
 }
 
-if (! function_exists('should_sync_with_ucenter')) {
+if (!function_exists('should_sync_with_ucenter')) {
     /**
      * 是否需要同步到ucenter.
      *
@@ -36,7 +36,7 @@ if (! function_exists('should_sync_with_ucenter')) {
     }
 }
 
-if (! function_exists('sanitize_filename')) {
+if (!function_exists('sanitize_filename')) {
     /**
      * 随机文件名称.
      *

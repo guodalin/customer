@@ -81,14 +81,14 @@ class PasswordExpirationTest extends TestCase
         config(['access.users.password_expires_days' => 30]);
 
         $user = factory(User::class)->create([
-            'password' => 'OC4Nzu270N!QBVi%U%qX',
+            'password'            => 'OC4Nzu270N!QBVi%U%qX',
             'password_changed_at' => now()->subMonths(2)->toDateTimeString(),
         ]);
 
         $response = $this->actingAs($user)
             ->patch('/password/expired', [
-                'old_password' => 'OC4Nzu270N!QBVi%U%qX',
-                'password' => 'OC4Nzu270N!QBVi%U%qX',
+                'old_password'          => 'OC4Nzu270N!QBVi%U%qX',
+                'password'              => 'OC4Nzu270N!QBVi%U%qX',
                 'password_confirmation' => 'OC4Nzu270N!QBVi%U%qX',
             ]);
 

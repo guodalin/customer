@@ -4,9 +4,9 @@ return [
     // Application captcha specific settings
     'captcha' => [
         // Whether the registration captcha is on or off
-        'contact' => env('CONTACT_CAPTCHA_STATUS', false),
+        'contact'      => env('CONTACT_CAPTCHA_STATUS', false),
         'registration' => env('REGISTRATION_CAPTCHA_STATUS', false),
-        'login' => env('LOGIN_CAPTCHA_STATUS', false),
+        'login'        => env('LOGIN_CAPTCHA_STATUS', false),
     ],
 
     // Whether or not registration is enabled

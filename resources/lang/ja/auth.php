@@ -12,10 +12,10 @@ return [
     |
     */
 
-    'failed' => 'これらの資格情報は記録と一致しません。',
+    'failed'        => 'これらの資格情報は記録と一致しません。',
     'general_error' => 'あなたはアクセスできません。',
     'password_used' => 'You can not set a password that you have previously used.',
-    'socialite' => [
+    'socialite'     => [
         'unacceptable' => ':provider 受け入れ可能なログインタイプではありません。',
     ],
     'throttle' => 'ログイン試行が多すぎます。 :seconds 後にもう一度お試しください。',

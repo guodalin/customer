@@ -28,13 +28,13 @@ return [
 
         'general' => [
             'all_rights_reserved' => 'ขอสงวนสิทธิ์',
-            'are_you_sure' => 'คุณแน่ใจหรือ?',
-            'boilerplate_link' => 'Laravel Boilerplate',
-            'continue' => 'ทำต่อ',
-            'member_since' => 'เป็นสมาชิกตั้งแต่',
-            'minutes' => ' นาที',
-            'search_placeholder' => 'ค้นหา...',
-            'timeout' => 'คุณถูกทำให้ออกจากระบบโดยอัตโนมัติเพื่อความปลอดภัย เนื่องจากไม่มีความเคลื่อนไหวใดๆ เกิดขึ้นใน ',
+            'are_you_sure'        => 'คุณแน่ใจหรือ?',
+            'boilerplate_link'    => 'Laravel Boilerplate',
+            'continue'            => 'ทำต่อ',
+            'member_since'        => 'เป็นสมาชิกตั้งแต่',
+            'minutes'             => ' นาที',
+            'search_placeholder'  => 'ค้นหา...',
+            'timeout'             => 'คุณถูกทำให้ออกจากระบบโดยอัตโนมัติเพื่อความปลอดภัย เนื่องจากไม่มีความเคลื่อนไหวใดๆ เกิดขึ้นใน ',
 
             'see_all' => [
                 'messages'      => 'ดูข้อความทั้งหมด',

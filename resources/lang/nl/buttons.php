@@ -15,17 +15,17 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate' => 'Activeren',
-                'change_password' => 'Verander Wachtwoord',
-                'clear_session' => 'Sessies leegmaken',
-                'confirm' => 'Bevestigen',
-                'deactivate' => 'Deactiveren',
+                'activate'           => 'Activeren',
+                'change_password'    => 'Verander Wachtwoord',
+                'clear_session'      => 'Sessies leegmaken',
+                'confirm'            => 'Bevestigen',
+                'deactivate'         => 'Deactiveren',
                 'delete_permanently' => 'Permanent verwijderen',
-                'login_as' => 'Aanmelden als :user',
-                'resend_email' => 'Bevestigingsmail nogmaals verzenden',
-                'restore_user' => 'Gebruiker herstellen',
-                'unconfirm' => 'Bevestiging ongedaan maken',
-                'unlink' => 'Unlink',
+                'login_as'           => 'Aanmelden als :user',
+                'resend_email'       => 'Bevestigingsmail nogmaals verzenden',
+                'restore_user'       => 'Gebruiker herstellen',
+                'unconfirm'          => 'Bevestiging ongedaan maken',
+                'unlink'             => 'Unlink',
             ],
         ],
     ],
@@ -33,20 +33,20 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'Account bevestigen',
-            'reset_password' => 'Wachtwoord herstellen',
+            'reset_password'  => 'Wachtwoord herstellen',
         ],
     ],
 
     'general' => [
-        'cancel' => 'Annuleren',
+        'cancel'   => 'Annuleren',
         'continue' => 'Doorgaan',
 
         'crud' => [
             'create' => 'Aanmaken',
             'delete' => 'Verwijderen',
-            'edit' => 'Aanpassen',
+            'edit'   => 'Aanpassen',
             'update' => 'Bijwerken',
-            'view' => 'Bekijken',
+            'view'   => 'Bekijken',
         ],
 
         'save' => 'Opslaan',
