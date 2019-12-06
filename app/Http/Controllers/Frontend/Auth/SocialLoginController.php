@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Frontend\Auth;
 
 use App\Events\Frontend\Auth\UserLoggedIn;
 use App\Exceptions\GeneralException;
-use App\Helpers\Auth\SocialiteHelper;
 use App\Http\Controllers\Controller;
 use App\Repositories\Frontend\Auth\UserRepository;
 use Illuminate\Http\Request;
-use Laravel\Socialite\Facades\Socialite;
+use Overtrue\LaravelSocialite\Socialite;
 
 /**
  * Class SocialLoginController.
@@ -21,20 +20,13 @@ class SocialLoginController extends Controller
     protected $userRepository;
 
     /**
-     * @var SocialiteHelper
-     */
-    protected $socialiteHelper;
-
-    /**
      * SocialLoginController constructor.
      *
      * @param UserRepository  $userRepository
-     * @param SocialiteHelper $socialiteHelper
      */
-    public function __construct(UserRepository $userRepository, SocialiteHelper $socialiteHelper)
+    public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
-        $this->socialiteHelper = $socialiteHelper;
     }
 
     /**
@@ -50,18 +42,17 @@ class SocialLoginController extends Controller
         // There's a high probability something will go wrong
         $user = null;
 
-        // If the provider is not an acceptable third party than kick back
-        if (!in_array($provider, $this->socialiteHelper->getAcceptedProviders(), true)) {
-            return redirect()->route(home_route())->withFlashDanger(__('auth.socialite.unacceptable', ['provider' => e($provider)]));
-        }
-
         /*
          * The first time this is hit, request is empty
          * It's redirected to the provider and then back here, where request is populated
          * So it then continues creating the user
          */
         if (!$request->all()) {
-            return $this->getAuthorizationFirst($provider);
+            try {
+                return $this->getAuthorizationFirst($provider);
+            } catch (\Throwable $th) {
+                return redirect()->route(home_route())->withFlashDanger(__('auth.socialite.unacceptable', ['provider' => e($provider)]));
+            }
         }
 
         // Create the user if this is a new social account or find the one that is already there.
@@ -107,10 +98,10 @@ class SocialLoginController extends Controller
         $socialite = Socialite::driver($provider);
         $scopes = empty(config("services.{$provider}.scopes")) ? false : config("services.{$provider}.scopes");
         $with = empty(config("services.{$provider}.with")) ? false : config("services.{$provider}.with");
-        $fields = empty(config("services.{$provider}.fields")) ? false : config("services.{$provider}.fields");
+        // $fields = empty(config("services.{$provider}.fields")) ? false : config("services.{$provider}.fields");
 
         if ($url) {
-            $socialite->redirectUrl($url);
+            $socialite->withRedirectUrl($url);
         }
 
         if ($scopes) {
@@ -121,9 +112,9 @@ class SocialLoginController extends Controller
             $socialite->with($with);
         }
 
-        if ($fields) {
-            $socialite->fields($fields);
-        }
+        // if ($fields) {
+        //     $socialite->fields($fields);
+        // }
 
         return $socialite->redirect();
     }
@@ -138,8 +129,12 @@ class SocialLoginController extends Controller
         $user = Socialite::driver($provider)->user();
 
         // 微信需要获得 unionid 来识别用户
-        if (in_array($provider, ['weixin', 'weixinweb'])) {
-            $user->map(['id' => $user->offsetGet('unionid')]);
+        if (in_array($provider, ['wechat'])) {
+            $original = $user->getOriginal();
+
+            if (isset($original['unionid']) && !empty($original['unionid'])) {
+                $user->setAttribute('id', $original['unionid']);
+            }
         }
 
         return $user;

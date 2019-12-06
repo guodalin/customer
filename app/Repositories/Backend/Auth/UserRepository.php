@@ -120,7 +120,7 @@ class UserRepository extends BaseRepository
                 $insert['id'] = resolve(UcenterRepository::class)->create($insert['username'], $insert['password'], $insert['email']);
             }
 
-            $user = parent::create($insert);
+            $user = $this->model::create($insert);
 
             // See if adding any additional permissions
             if (!isset($data['permissions']) || !count($data['permissions'])) {

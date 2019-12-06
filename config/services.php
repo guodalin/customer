@@ -39,82 +39,17 @@ return [
      * Docs: https://github.com/laravel/socialite
      * Make sure 'scopes' and 'with' are arrays, if their are none, use empty arrays []
      */
-    'bitbucket' => [
-        'active'        => env('BITBUCKET_ACTIVE'),
-        'client_id'     => env('BITBUCKET_CLIENT_ID'),
-        'client_secret' => env('BITBUCKET_CLIENT_SECRET'),
-        'redirect'      => env('BITBUCKET_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
-    ],
+    'allowed_socialites' => explode(',', env('SOCIALITE_ENABLES', 'wechat,qq,weibo')),
 
-    'facebook' => [
-        'active'        => env('FACEBOOK_ACTIVE'),
-        'client_id'     => env('FACEBOOK_CLIENT_ID'),
-        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect'      => env('FACEBOOK_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
-        'fields'        => [],
-    ],
-
-    'github' => [
-        'active'        => env('GITHUB_ACTIVE'),
-        'client_id'     => env('GITHUB_CLIENT_ID'),
-        'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect'      => env('GITHUB_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
-    ],
-
-    'google' => [
-        'active'        => env('GOOGLE_ACTIVE'),
-        'client_id'     => env('GOOGLE_CLIENT_ID'),
-        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect'      => env('GOOGLE_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
-    ],
-
-    'linkedin' => [
-        'active'        => env('LINKEDIN_ACTIVE'),
-        'client_id'     => env('LINKEDIN_CLIENT_ID'),
-        'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
-        'redirect'      => env('LINKEDIN_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
-        'fields'        => [],
-    ],
-
-    'twitter' => [
-        'active'        => env('TWITTER_ACTIVE'),
-        'client_id'     => env('TWITTER_CLIENT_ID'),
-        'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect'      => env('TWITTER_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
-    ],
-
-    'weixinweb' => [
-        'active'        => env('WEIXINWEB_ACTIVE'),
-        'client_id'     => env('WEIXINWEB_CLIENT_ID'),
-        'client_secret' => env('WEIXINWEB_CLIENT_SECRET'),
-        'redirect'      => env('WEIXINWEB_REDIRECT'),
-        'scopes'        => [],
-        'with'          => [],
-    ],
-
-    'weixin' => [
-        'active'        => env('WEIXIN_ACTIVE'),
-        'client_id'     => env('WEIXIN_CLIENT_ID'),
-        'client_secret' => env('WEIXIN_CLIENT_SECRET'),
-        'redirect'      => env('WEIXIN_REDIRECT'),
+    'wechat' => [
+        'client_id'     => env('WECHAT_CLIENT_ID'),
+        'client_secret' => env('WECHAT_CLIENT_SECRET'),
+        'redirect'      => env('WECHAT_REDIRECT'),
         'scopes'        => [],
         'with'          => [],
     ],
 
     'qq' => [
-        'active'        => env('QQ_ACTIVE'),
         'client_id'     => env('QQ_CLIENT_ID'),
         'client_secret' => env('QQ_CLIENT_SECRET'),
         'redirect'      => env('QQ_REDIRECT'),
@@ -123,7 +58,6 @@ return [
     ],
 
     'weibo' => [
-        'active'        => env('WEIBO_ACTIVE'),
         'client_id'     => env('WEIBO_CLIENT_ID'),
         'client_secret' => env('WEIBO_CLIENT_SECRET'),
         'redirect'      => env('WEIBO_REDIRECT'),

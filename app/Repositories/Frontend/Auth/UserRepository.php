@@ -132,7 +132,7 @@ class UserRepository extends BaseRepository
                 $insert['id'] = resolve(UcenterRepository::class)->create($insert['username'], $insert['password'], $insert['email']);
             }
 
-            $user = parent::create($insert);
+            $user = $this->model::create($insert);
 
             if ($user) {
                 // Add the default site role to the new user
@@ -413,10 +413,10 @@ class UserRepository extends BaseRepository
                     'token'  => $data->token,
                     'avatar' => $data->avatar,
                 ]);
-
-            $user->avatar_type = $provider;
-            $user->save();
         }
+
+        $user->avatar_type = $provider;
+        $user->save();
 
         // Return the user object
         return $user;

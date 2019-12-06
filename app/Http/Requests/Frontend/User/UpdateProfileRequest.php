@@ -32,7 +32,7 @@ class UpdateProfileRequest extends FormRequest
             'first_name'      => ['nullable', 'max:191'],
             'last_name'       => ['nullable', 'max:191'],
             'email'           => ['sometimes', 'required', 'email', 'max:191'],
-            'avatar_type'     => ['required', 'max:191', Rule::in(array_merge(['gravatar', 'storage'], (new SocialiteHelper)->getAcceptedProviders()))],
+            'avatar_type'     => ['required', 'max:191', Rule::in(array_merge(['gravatar', 'storage'], (array)config('services.allowed_socialites')))],
             'avatar_location' => ['sometimes', 'image', 'max:'.floor(config('medialibrary.max_file_size') / 1024)],
         ];
     }

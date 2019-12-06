@@ -22,6 +22,13 @@ class LoginController extends Controller
      */
     public function login(Request $request, MiniProgramRepository $miniProgramRepository, $name = null)
     {
+        $this->validate($request, [
+            'session_key' => 'required_without:code',
+            'code' => 'required_without:session_key',
+            'base' => 'required|array',
+            'phone' => 'array',
+        ]);
+
         list($user, $result) = $miniProgramRepository->login($name, $request->input('code'), $request->input('base'));
 
         if ($user) {
