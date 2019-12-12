@@ -29,9 +29,22 @@ class LoginController extends Controller
             'phone' => 'array',
         ]);
 
-        list($user, $result) = $miniProgramRepository->login($name, $request->input('code'), $request->input('base'));
+        $miniProgramRepository->init($name);
+
+        $sessKey = $request->input('session_key');
+
+        if ($sessKey) {
+            $miniProgramRepository->setSessionKey($sessKey);
+        } else {
+            $miniProgramRepository->auth($request->input('code'));
+        }
+
+        $user = $miniProgramRepository->login($request->input('base'), $request->input('phone'));
 
         if ($user) {
+            // cache user's key
+            $miniProgramRepository->store($user);
+
             // Check to see if the users account is confirmed and active
             if (!$user->isConfirmed()) {
                 // If the user is pending (account approval is on)
@@ -47,7 +60,7 @@ class LoginController extends Controller
                 throw new GeneralException(__('exceptions.frontend.auth.deactivated'));
             }
 
-            return ['message' => __('alerts.frontend.auth.succeed'), 'result' => $result];
+            return ['message' => __('alerts.frontend.auth.succeed'), 'access_token' => $miniProgramRepository->sessKey];
         }
 
         throw new AuthenticationException();

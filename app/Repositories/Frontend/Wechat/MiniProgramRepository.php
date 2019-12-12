@@ -12,41 +12,85 @@ use Overtrue\Socialite\User as WechatUser;
 class MiniProgramRepository
 {
     /**
+     * @var \EasyWeChat\MiniProgram\Application
+     */
+    public $mnp;
+
+    /**
+     * @var string
+     */
+    public $sessKey;
+
+    /**
+     * init mnp app
+     *
+     * @param string|null $name
+     * @return self
+     */
+    public function init($name)
+    {
+        $this->mnp = Wechat::miniProgram($name);
+
+        return $this;
+    }
+
+    /**
+     * 设置session_key
+     *
+     * @param string $sessKey
+     * @return self
+     */
+    public function setSessionKey($sessKey)
+    {
+        $this->sessKey = $sessKey;
+
+        return $this;
+    }
+
+    /**
+     * 换取session_key
+     *
+     * @param string $code
+     * @return self
+     */
+    public function auth($code)
+    {
+        $result = $this->mnp->auth->session($code);
+
+        $this->setSessionKey($result['session_key']);
+
+        return $this;
+    }
+
+    /**
      * 登录微信小程序.
      *
-     * @param string     $name
-     * @param string     $code
      * @param array      $base
      * @param array|null $more
      */
-    public function login($name, $code, $base, $more = null)
+    public function login($base, $more = null)
     {
-        $mnp = Wechat::miniProgram($name);
-
-        $result = $mnp->auth->session($code);
-
-        $userInfo = $this->decrypt($mnp->encryptor, $result['session_key'], $base['iv'], $base['data']);
+        $userInfo = $this->decrypt($this->mnp->encryptor, $this->sessKey, $base['iv'], $base['data']);
 
         if ($more) {
-            $moreInfo = $this->decrypt($mnp->encryptor, $result['session_key'], $more['iv'], $more['data']);
+            $moreInfo = $this->decrypt($this->mnp->encryptor, $this->sessKey, $more['iv'], $more['data']);
         }
 
         if ($userInfo) {
             $wechatUser = new WechatUser([
-                'id'       => $userInfo['unionId'],
+                'id'       => $userInfo['unionId'] ?? $userInfo['openId'],
                 'nickname' => $userInfo['nickName'],
                 'name'     => $userInfo['nickName'],
                 'avatar'   => $userInfo['avatarUrl'],
                 'email'    => null,
-                'token'    => $result['session_key'],
-                'provider' => 'weixin',
+                'token'    => $this->sessKey,
+                'provider' => 'wechat',
             ]);
 
-            $user = resolve(UserRepository::class)->findOrCreateProvider($wechatUser, 'weixin');
-
-            $this->cacheToken($result, $user);
-
-            return [$user, $result];
+            return resolve(UserRepository::class)->findOrCreateProvider(
+                $wechatUser,
+                'wechat',
+                isset($moreInfo) ? $moreInfo['phoneNumber'] : null);
         }
     }
 
@@ -56,9 +100,9 @@ class MiniProgramRepository
      * @param  string                     $token
      * @return null|\App\Models\Auth\User
      */
-    public function findByToken($token)
+    public function user()
     {
-        $hashid = Cache::get('wechat.miniprogram.'.$token);
+        $hashid = Cache::get('wechat.miniprogram.'.$this->sessKey);
 
         if (!$hashid) {
             return;
@@ -96,9 +140,9 @@ class MiniProgramRepository
      * @param  \App\Models\Auth\User $user
      * @return self
      */
-    public function cacheToken($token, $user)
+    public function store($user)
     {
-        Cache::put('wechat.miniprogram.'.$token['session_key'], $user->hashid(), now()->addDay());
+        Cache::put('wechat.miniprogram.'.$this->sessKey, $user->hashid(), now()->addDay());
 
         return $this;
     }

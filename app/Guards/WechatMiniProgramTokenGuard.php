@@ -30,7 +30,9 @@ class WechatMiniProgramTokenGuard extends TokenGuard
         $token = $this->getTokenForRequest();
 
         if (!empty($token)) {
-            $user = resolve(MiniProgramRepository::class)->findByToken($token);
+            $user = resolve(MiniProgramRepository::class)
+                ->setSessionKey($token)
+                ->user();
         }
 
         return $this->user = $user;
