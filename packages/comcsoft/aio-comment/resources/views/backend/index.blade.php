@@ -1,10 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('labels.backend.access.users.management'))
-
-@section('breadcrumb-links')
-    @include('backend.auth.user.includes.breadcrumb-links')
-@endsection
+@section('title', app_name() . ' | ' . __('aio-comment::backend.label.management'))
 
 @section('content')
 <div class="card">
@@ -12,7 +8,7 @@
         <div class="row">
             <div class="col-sm-5">
                 <h4 class="card-title mb-0">
-                    {{ __('labels.backend.access.users.management') }} <small class="text-muted">{{ __('labels.backend.access.users.active') }}</small>
+                    {{ __('aio-comment::backend.label.management') }}
                 </h4>
             </div><!--col-->
 
@@ -40,20 +36,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($users as $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->username }}</td>
-                                <td>{{ $user->full_name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>@include('backend.auth.user.includes.confirm', ['user' => $user])</td>
-                                <td>{{ $user->roles_label }}</td>
-                                <td>{{ $user->permissions_label }}</td>
-                                <td>@include('backend.auth.user.includes.social-buttons', ['user' => $user])</td>
-                                <td>{{ $user->updated_at->diffForHumans() }}</td>
-                                <td>@include('backend.auth.user.includes.actions', ['user' => $user])</td>
-                            </tr>
-                        @endforeach
+
                         </tbody>
                     </table>
                 </div>
@@ -62,13 +45,13 @@
         <div class="row">
             <div class="col-7">
                 <div class="float-left">
-                    {!! $users->total() !!} {{ trans_choice('labels.backend.access.users.table.total', $users->total()) }}
+
                 </div>
             </div><!--col-->
 
             <div class="col-5">
                 <div class="float-right">
-                    {!! $users->render() !!}
+
                 </div>
             </div><!--col-->
         </div><!--row-->

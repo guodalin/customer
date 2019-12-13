@@ -1,8 +1,6 @@
 <?php
 
-Route::middleware('web')
-    ->namespace('Comcsoft\Aio\Comment\Controllers')
-    ->group(function () {
+Route::group(['namespace' => 'Comcsoft\Aio\Comment\Controllers', 'middleware' => 'web', 'as' => 'aio-comment::'], function () {
         /*
         * Frontend Routes
         * Namespaces indicate folder structure

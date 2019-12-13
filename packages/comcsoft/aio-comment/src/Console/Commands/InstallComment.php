@@ -39,6 +39,11 @@ class InstallComment extends Command
         // install backend menu
         $menuHelper
             ->usingBackendMenu()
-            ->addRoute(__('aio-comment::backend.menu.title'), 'admin.comment.index', ['class' => 'nav-item'], ['far fa-comments']);
+            ->addRoute(
+                __('aio-comment::backend.menu.title'),
+                'aio-comment::admin.comment.index',
+                ['class' => 'nav-item'],
+                ['far fa-comments']
+            );
     }
 }
