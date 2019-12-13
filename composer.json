@@ -28,7 +28,8 @@
         "spatie/laravel-activitylog": "^3.9",
         "spatie/laravel-html": "^2.22",
         "spatie/laravel-medialibrary": "^7.14",
-        "spatie/laravel-permission": "^3.0"
+        "spatie/laravel-permission": "^3.0",
+        "spatie/laravel-tags": "^2.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
@@ -121,14 +122,6 @@
         "ucenter": {
             "type": "vcs",
             "url": "https://git.comc.91360.com/php/comcsoft-ucenter.git"
-        },
-
-        "laravel-comment": {
-            "type": "path",
-            "url": "packages/comcsoft/laravel-comment",
-            "options": {
-                "symlink": true
-            }
         },
 
         "aio-comment": {

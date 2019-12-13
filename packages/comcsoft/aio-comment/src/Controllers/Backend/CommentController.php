@@ -15,7 +15,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        return view('aio-comment::backend.index');
     }
 
     /**

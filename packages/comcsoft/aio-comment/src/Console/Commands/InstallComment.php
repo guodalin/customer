@@ -34,14 +34,11 @@ class InstallComment extends Command
      *
      * @return mixed
      */
-    public function handle()
+    public function handle(MenuHelper $menuHelper)
     {
         // install backend menu
-        \DB::transaction(function () {
-            $bm = (new MenuHelper())->usingBackendMenu();
-
-            // 添加菜单
-            $bm->addRoute(__('aio-comment::backend.menu.title'), 'admin.comment.index', ['class' => 'nav-item'], ['far fa-comments']);
-        });
+        $menuHelper
+            ->usingBackendMenu()
+            ->addRoute(__('aio-comment::backend.menu.title'), 'admin.comment.index', ['class' => 'nav-item'], ['far fa-comments']);
     }
 }

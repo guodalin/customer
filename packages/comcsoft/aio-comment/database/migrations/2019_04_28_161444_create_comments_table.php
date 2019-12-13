@@ -23,11 +23,13 @@ class CreateCommentsTable extends Migration
             $table->string('message')->nullable();
             $table->string('ua')->nullable()->comment('user agent');
 
-            $table->boolean('anonymous')->default(false);
+            $table->boolean('anonymous')->default(false)->comment('anonymous');
+            $table->boolean('active')->default(true)->comment('active');
+
             $table->timestamps();
             $table->softDeletes();
 
-            if (config('comment.commenter.cascade_on_delete')) {
+            if (config('comment.commenter.table.cascade_on_delete')) {
                 $table->foreign('user_id')
                     ->references(config('comment.commenter.table.primary_key'))
                     ->on(config('comment.commenter.table.name'))
