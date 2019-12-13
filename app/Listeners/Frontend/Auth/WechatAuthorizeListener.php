@@ -21,9 +21,9 @@ class WechatAuthorizeListener
     public $userRepository;
 
     /**
-     * weixin provider name.
+     * wechat provider name.
      */
-    public const PROVIDER_NAME = 'weixin';
+    public const PROVIDER_NAME = 'wechat';
 
     /**
      * Create the event listener.

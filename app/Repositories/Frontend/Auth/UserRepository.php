@@ -337,7 +337,7 @@ class UserRepository extends BaseRepository
     public function findOrCreateProvider($data, $provider, $phone = null)
     {
         // correct name first
-        $provider = $this->correctProviderName($provider);
+        // $provider = $this->correctProviderName($provider);
 
         // User email may not provided.
         $user_email = $data->email ?: "{$data->id}@{$provider}.com";
@@ -465,9 +465,9 @@ class UserRepository extends BaseRepository
      */
     public function correctProviderName($provider)
     {
-        if ($provider == 'weixinweb') {
-            return 'weixin';
-        }
+        // if ($provider == 'weixinweb') {
+        //     return 'weixin';
+        // }
 
         return $provider;
     }
@@ -481,7 +481,7 @@ class UserRepository extends BaseRepository
     protected function genUserNameAndEmail($provider)
     {
         // correct provider name first
-        $provider = $this->correctProviderName($provider);
+        // $provider = $this->correctProviderName($provider);
 
         $prefix = $provider.'_';
 
