@@ -12,14 +12,14 @@ class InstallComment extends Command
      *
      * @var string
      */
-    protected $signature = 'comment:install';
+    protected $signature = 'aio:comment {todo : comment argument, `install` to install necessary data}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'install comment';
+    protected $description = 'Comment commands';
 
     /**
      * Create a new command instance.
@@ -36,14 +36,20 @@ class InstallComment extends Command
      */
     public function handle(MenuHelper $menuHelper)
     {
-        // install backend menu
-        $menuHelper
-            ->usingBackendMenu()
-            ->addRoute(
-                __('aio-comment::backend.menu.title'),
-                'aio-comment::admin.comment.index',
-                ['class' => 'nav-item'],
-                ['far fa-comments']
-            );
+        $arg = $this->argument('todo');
+
+        if ($arg == 'install') {
+            // install backend menu
+            $menuHelper
+                ->usingBackendMenu()
+                ->addRoute(
+                    __('aio-comment::backend.menu.title'),
+                    'aio-comment::admin.comment.index',
+                    ['class' => 'nav-item'],
+                    ['far fa-comments']
+                );
+
+            $this->info('comment menu has been installed.');
+        }
     }
 }
