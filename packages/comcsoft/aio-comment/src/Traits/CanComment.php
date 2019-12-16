@@ -16,7 +16,7 @@ trait CanComment
      */
     public function comments()
     {
-        return $this->hasMany(config('comment.model'), 'user_id', config('comment.commenter.table.primary_key'));
+        return $this->hasMany(config('aio.comment.model'), 'user_id', config('aio.comment.commenter.table.primary_key'));
     }
 
     /**

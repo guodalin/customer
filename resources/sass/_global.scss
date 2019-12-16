@@ -11,3 +11,8 @@
   margin: 0 !important;
   border-radius: 0 !important;
 }
+
+// fix wechat provider icon
+.fa-wechat:before {
+    @extend .fa-weixin, :before;
+}

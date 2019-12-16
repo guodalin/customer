@@ -12,7 +12,7 @@ class CommentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/comment.php', 'comment');
+        $this->mergeConfigFrom(__DIR__ . '/../config/comment.php', 'aio.comment');
 
         $this->app->bind('aio.comment', CommentManager::class);
     }
@@ -24,8 +24,9 @@ class CommentServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../resources/lang' => resource_path('lang/vendor/comment'),
-                __DIR__ . '/../config/comment.php' => config_path('comment.php'),
+                __DIR__ . '/../resources/lang' => resource_path('lang/vendor/aio-comment'),
+                __DIR__ . '/../resources/views'=> resource_path('views/vendor/aio-comment'),
+                __DIR__ . '/../config/comment.php' => config_path('aio/comment.php'),
             ], 'aio-comment');
 
             $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');

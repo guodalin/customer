@@ -16,7 +16,7 @@ trait CanCommentable
      */
     public function comments()
     {
-        return $this->morphMany(config('comment.model'), 'commentable');
+        return $this->morphMany(config('aio.comment.model'), 'commentable');
     }
 
     /**

@@ -57,7 +57,7 @@ class Comment extends Model implements HasMedia
      */
     public function commenter()
     {
-        return $this->belongsTo(config('comment.commenter.model'), 'user_id', config('comment.commenter.table.primary_key'));
+        return $this->belongsTo(config('aio.comment.commenter.model'), 'user_id', config('aio.comment.commenter.table.primary_key'));
     }
 
     /**
@@ -78,7 +78,7 @@ class Comment extends Model implements HasMedia
         $this->addMediaCollection($this->theMediaCollectionName())
             ->registerMediaConversions(function (Media $media) {
                 $this->addMediaConversion('thumb')
-                    ->fit(Manipulations::FIT_CROP, config('comment.media.thumb.width'), config('comment.media.thumb.height'))
+                    ->fit(Manipulations::FIT_CROP, config('aio.comment.media.thumb.width'), config('aio.comment.media.thumb.height'))
                     ->format(Manipulations::FORMAT_PNG)
                     ->background('transparent')
                     ->optimize();

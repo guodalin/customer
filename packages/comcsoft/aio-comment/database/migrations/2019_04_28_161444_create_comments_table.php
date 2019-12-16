@@ -29,10 +29,10 @@ class CreateCommentsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            if (config('comment.commenter.table.cascade_on_delete')) {
+            if (config('aio.comment.commenter.table.cascade_on_delete')) {
                 $table->foreign('user_id')
-                    ->references(config('comment.commenter.table.primary_key'))
-                    ->on(config('comment.commenter.table.name'))
+                    ->references(config('aio.comment.commenter.table.primary_key'))
+                    ->on(config('aio.comment.commenter.table.name'))
                     ->onDelete('cascade');
             }
         });
