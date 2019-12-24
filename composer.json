@@ -12,6 +12,7 @@
         "php": "^7.2",
         "arcanedev/log-viewer": "^5.0",
         "comcsoft/aio-comment": "dev-master",
+        "comcsoft/aio-exam": "dev-master",
         "creativeorange/gravatar": "~1.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.0",
         "fideloper/proxy": "^4.0",
@@ -127,6 +128,14 @@
         "aio-comment": {
             "type": "path",
             "url": "packages/comcsoft/aio-comment",
+            "options": {
+                "symlink": true
+            }
+        },
+
+        "aio-exam": {
+            "type": "path",
+            "url": "packages/comcsoft/aio-exam",
             "options": {
                 "symlink": true
             }

@@ -74,7 +74,7 @@ class MenuHelper
      * @param  array  $icon   图标设置 [0 => 图标地址或者样式, 1 => true 仅显示图标 false 都显示]
      * @param  array  $meta   其他设置
      * @param  string $active 激活pattern
-     * @return self
+     * @return \App\Models\Menu\MenuItem
      */
     public function addItem($name, $links = [], $html = [], $icon = [], $meta = [], $active = '')
     {

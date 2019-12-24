@@ -1,0 +1,37 @@
+<?php
+
+namespace Comcsoft\Aio\Exam\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class QuestionOption extends Model
+{
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'exam_question_options';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'question_id',
+        'content',
+        'correct',
+        'sort',
+    ];
+
+    /**
+     * 多对多关联试卷
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
+}
