@@ -3,8 +3,9 @@
 namespace Comcsoft\Aio\Exam\Drivers;
 
 use Comcsoft\Aio\Exam\Contracts\Questionable;
+use Comcsoft\Aio\Exam\Contracts\QuestionDriver;
 
-class BaseDriver
+abstract class BaseDriver implements QuestionDriver
 {
     /**
      * 题目对象
@@ -44,5 +45,16 @@ class BaseDriver
     public function getQuestion(): Questionable
     {
         return $this->question;
+    }
+
+    /**
+     * bind question
+     *
+     * @param Questionable $question
+     * @return self
+     */
+    public function bind(Questionable $question)
+    {
+        return $this->setQuestion($question);
     }
 }

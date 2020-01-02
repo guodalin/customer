@@ -20,7 +20,7 @@ trait HasQuestionDriver
     public function driver(): QuestionDriverContract
     {
         return QuestionDriverFacade::driver($this->getQuestionType())
-            ->setQuestion($this);
+            ->bind($this);
     }
 
     /**
