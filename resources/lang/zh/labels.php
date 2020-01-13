@@ -113,6 +113,10 @@ return [
         'menu' => [
             'management' => '菜单管理',
         ],
+
+        'category' => [
+            'management' => '栏目管理',
+        ],
     ],
 
     'frontend' => [

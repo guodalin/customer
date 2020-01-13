@@ -1,21 +1,18 @@
 <?php
 
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\Menu\MenuController;
-use App\Http\Controllers\Backend\Menu\MenuItemController;
-
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 // Menu actions
-Route::post('menu/item', [MenuItemController::class, 'store']);
-Route::put('menu/item/{item}', [MenuItemController::class, 'update']);
-Route::delete('menu/item/{item}', [MenuItemController::class, 'destroy']);
-Route::put('menu/item/{item}/swap/{direction}', [MenuItemController::class, 'swap']);
+Route::group(['namespace' => 'Menu'], function () {
+    Route::post('menu/item', 'MenuItemController@store');
+    Route::put('menu/item/{item}', 'MenuItemController@update');
+    Route::delete('menu/item/{item}', 'MenuItemController@destroy');
+    Route::put('menu/item/{item}/swap/{direction}', 'MenuItemController@swap');
+    Route::apiResource('menu', 'MenuController');
+});
 
-Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
-Route::post('menu', [MenuController::class, 'store']);
-Route::delete('menu/{menu}', [MenuController::class, 'destroy']);
-Route::put('menu/{menu}', [MenuController::class, 'update']);
-Route::get('menu/{menu}', [MenuController::class, 'show']);
+// Category actions
+Route::put('category/{category}/swap/{direction}', 'CategoryController@swap');
+Route::apiResource('category', 'CategoryController');

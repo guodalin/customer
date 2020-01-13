@@ -15,8 +15,14 @@ const path = require('path');
 
 mix.setPublicPath('public');
 
-const packagesFolder = './packages';
-const depth = 2; // vender(1)/packagename(2)
+let packagesFolder = './packages';
+let depth = 2; // vender(1)/packagename(2)
+
+// using vendor package when in production
+if (mix.inProduction()) {
+    packagesFolder = './vendor/comcsoft';
+    depth = 1;
+}
 
 /**
  * 遍历目录

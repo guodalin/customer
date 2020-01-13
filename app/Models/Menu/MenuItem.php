@@ -77,53 +77,9 @@ class MenuItem extends Model
     protected $casts = [
         'show'      => 'boolean',
         'just_icon' => 'boolean',
+        'html_attributes' => 'array',
+        'meta'      => 'array',
     ];
-
-    /**
-     * 序列化html属性.
-     *
-     * @param  array $value
-     * @return self
-     */
-    public function setHtmlAttributesAttribute($value)
-    {
-        $this->attributes['html_attributes'] = serialize($value);
-
-        return $this;
-    }
-
-    /**
-     * 反序列化html属性.
-     *
-     * @return mixed
-     */
-    public function getHtmlAttributesAttribute()
-    {
-        return unserialize($this->attributes['html_attributes']);
-    }
-
-    /**
-     * 序列化meta属性.
-     *
-     * @param  array $value
-     * @return self
-     */
-    public function setMetaAttribute($value)
-    {
-        $this->attributes['meta'] = serialize($value);
-
-        return $this;
-    }
-
-    /**
-     * 反序列化meta属性.
-     *
-     * @return mixed
-     */
-    public function getMetaAttribute()
-    {
-        return unserialize($this->attributes['meta']);
-    }
 
     /**
      * 昵称属性.
@@ -133,6 +89,11 @@ class MenuItem extends Model
     public function getNicknameAttribute()
     {
         return $this->attributes['nickname'] ?: ('menuitem_' . $this->id);
+    }
+
+    public function getTypeAttribute()
+    {
+        return trim($this->attributes['type']);
     }
 
     /**
