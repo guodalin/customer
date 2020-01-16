@@ -7,6 +7,7 @@
 
     @isset($image)
         <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: {{ $width ?? '200px' }}; max-height: {{ $height ?? '150px' }};"></div>
+        <input type="hidden" name="{{ $hidden ?? 'original_image' }}" value="{{ $image }}">
     @endisset
 
     <div class="text-center">
