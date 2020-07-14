@@ -26,9 +26,9 @@
         @include('includes.partials.read-only')
 
         <div id="app">
-            @include('includes.partials.logged-in-as')
-            @include('frontend.includes.nav')
-
+            {{--  @include('includes.partials.logged-in-as')  --}}
+            {{--  @include('frontend.includes.nav')  --}}
+        <div class="safe" style="color:green;font-size:12px;background:#000;height:30px;line-height:30px"><img style="margin-top:5px;margin-right:5px;width:15px;height:18px;float:left;margin-left:15px;" src="http://3.3china.org/public/images/safe.png">此二维码已通过安全验证，可以放心扫码</div>
             <div class="container">
                 @include('includes.partials.messages')
                 @yield('content')

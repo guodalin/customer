@@ -7,8 +7,13 @@
                     @lang('menus.backend.sidebar.dashboard')
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Route::is('admin/customer/index')) }}" href="{{ route('admin.customer.index') }}">
+                    <i class="nav-icon fab fa-elementor"></i>客服
+                </a>
+            </li>
 
-            <li class="nav-title">@lang('menus.backend.sidebar.app')</li>
+            {{--  <li class="nav-title">@lang('menus.backend.sidebar.app')</li>
 
             @include('backend.includes.partials.menuitems', ['items' => $app_menus])
 
@@ -83,7 +88,7 @@
                         </li>
                     </ul>
                 </li>
-            @endif
+            @endif  --}}
         </ul>
     </nav>
 

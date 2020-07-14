@@ -4,6 +4,9 @@
 Route::redirect('/', '/admin/dashboard', 301);
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+Route::get('customer', 'CustomerController@index')->name('customer');
+Route::Resource('customer', 'CustomerController');
+
 // Menu actions
 Route::group(['namespace' => 'Menu'], function () {
     Route::post('menu/item', 'MenuItemController@store');
