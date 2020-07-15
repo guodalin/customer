@@ -16,6 +16,7 @@ class Customer extends Model
         'name',
         'avatar',
         'info',
+        'hits'
     ];
 
     public function scopeSearch($query, array $params)
