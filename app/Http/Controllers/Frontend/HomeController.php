@@ -29,7 +29,7 @@ class HomeController extends Controller
                 Customer::find($customers[$rand]['id'])->increment('hits');
             }
         } else {
-            $rand = $_COOKIE['rand2'];
+            $rand = $_COOKIE['rand'];
         }
         $customer = isset($customers[$rand]) ? $customers[$rand] : ['name' => '官方客服','avatar' => 'http://rand.test/storage/avatars/vMA5mj6FiMtM5Pnf0EuBhF2NpCPKau8eN1IZidm6.png'];
         return view('frontend.qrcode',compact('customer'));
