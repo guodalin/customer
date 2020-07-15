@@ -4,7 +4,7 @@ namespace App\Models\Auth;
 
 use App\Models\Auth\Traits\SendUserPasswordReset;
 use App\Models\Traits\HashidTrait;
-use Comcsoft\Aio\Comment\Traits\CanComment;
+// use Comcsoft\Aio\Comment\Traits\CanComment;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -29,7 +29,7 @@ abstract class BaseUser extends Authenticatable implements HasMedia
         SoftDeletes,
         HasApiTokens,
         HasMediaTrait,
-        CanComment,
+        // CanComment,
         LogsActivity,
         HashidTrait;
 

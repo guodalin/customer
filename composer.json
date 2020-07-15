@@ -11,8 +11,6 @@
     "require": {
         "php": "^7.2",
         "arcanedev/log-viewer": "^5.0",
-        "comcsoft/aio-comment": "dev-master",
-        "comcsoft/aio-exam": "dev-master",
         "creativeorange/gravatar": "~1.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.0",
         "fideloper/proxy": "^4.0",
@@ -120,25 +118,5 @@
     },
 
     "repositories": {
-        "ucenter": {
-            "type": "vcs",
-            "url": "https://git.comc.91360.com/php/comcsoft-ucenter.git"
-        },
-
-        "aio-comment": {
-            "type": "path",
-            "url": "packages/comcsoft/aio-comment",
-            "options": {
-                "symlink": true
-            }
-        },
-
-        "aio-exam": {
-            "type": "path",
-            "url": "packages/comcsoft/aio-exam",
-            "options": {
-                "symlink": true
-            }
-        }
     }
 }
