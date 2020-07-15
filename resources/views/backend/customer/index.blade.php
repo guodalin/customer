@@ -34,6 +34,7 @@
                                 <th>#</th>
                                 <th>姓名</th>
                                 <th>头像</th>
+                                <th>次数</th>
                                 <th>@lang('labels.general.actions')</th>
                             </tr>
                         </thead>
@@ -48,6 +49,9 @@
                                     <div class="media">
                                         <img src="{{ asset('storage/'.$customer->avatar) }}" alt="" class="mr-3 rounded" width="120">
                                     </div>
+                                </td>
+                                <td>
+                                    {{ $customer->hits }}
                                 </td>
                                 <td>
                                     <div role="group" aria-label="lecture Actions" class="btn-group">
