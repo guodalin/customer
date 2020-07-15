@@ -31,7 +31,7 @@ class HomeController extends Controller
         } else {
             $rand = $_COOKIE['rand'];
         }
-        $customer = isset($customers[$rand]) ? $customers[$rand] : ['name' => '官方客服','avatar' => 'http://rand.test/storage/avatars/vMA5mj6FiMtM5Pnf0EuBhF2NpCPKau8eN1IZidm6.png'];
+        $customer = isset($customers[$rand]) ? $customers[$rand] : ['name' => '官方客服','avatar' => 'http://106.52.65.57:8081/storage/avatars/JsC8A6oBjZxbCocRVqTsqPNFv4TxouumYCVsrbSW.jpeg'];
         return view('frontend.qrcode',compact('customer'));
     }
 }
