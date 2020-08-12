@@ -13,6 +13,13 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Route::is('admin/earning/index')) }}"
+                    href="{{ route('admin.earning.index') }}">
+                    <i class="nav-icon fab fa-elementor"></i>号码
+                </a>
+            </li>
+
             {{--  <li class="nav-title">@lang('menus.backend.sidebar.app')</li>
 
             @include('backend.includes.partials.menuitems', ['items' => $app_menus])

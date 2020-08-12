@@ -7,6 +7,10 @@ Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('customer', 'CustomerController@index')->name('customer');
 Route::Resource('customer', 'CustomerController');
 
+
+Route::get('earning', 'EarningController@index')->name('earning');
+Route::Resource('earning', 'EarningController');
+
 // Menu actions
 Route::group(['namespace' => 'Menu'], function () {
     Route::post('menu/item', 'MenuItemController@store');
