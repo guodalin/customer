@@ -1,6 +1,6 @@
 @extends('frontend.layouts.appearn')
 
-@section('title', $earning['name'] )
+@section('title', '3小时银行流水100万，网赚天后带你赚钱！' )
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/dialog.css') }}">
@@ -380,7 +380,7 @@
                 </button>
             </strong>
         </p>
-        <p>大家好，我是刘仙芝，半年之前我还是一个农村出来的普通90后女孩，领导口中的小刘，同时眼里的土姑娘。</p>
+        <p>大家好，我是刘仙芝，半年之前我还是一个农村出来的普通90后女孩，领导口中的小刘，同事眼里的土姑娘。</p>
         <p class="tu4" style="text-align:center">
             <img src="{{ asset('img/frontend/1.jpg') }}" alt="" style="width:50%">
         </p>
@@ -421,8 +421,7 @@
                 <img src="{{ asset('img/frontend/4.jpg') }}" alt="" style="">
             </p>
 
-            <p>小编觉得产品是
-                <span>金鹰女神赵丽颖代言，信誉有保障！</span>正规项目，可以长期操作！</p>
+            <p>所以小编觉得项目有保障！正规项目，可以长期操作！</p>
             <p>
                 <strong>好运团队-客服QQ号：<button data-setting-click="baidu" data-clipboard-action="copy"
                         data-clipboard-target="#target" class="copy_btn">
