@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-sm-5">
                     <h4 class="card-title mb-0">
-                        客服
+                        微信号
                         <small class="text-muted">编辑信息</small>
                     </h4>
                 </div><!--col-->

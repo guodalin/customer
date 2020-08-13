@@ -1,12 +1,12 @@
 @extends ('backend.layouts.app')
-@section ('title', app_name() . ' | 客服' )
+@section ('title', app_name() . ' | 微信号' )
 @section('content')
 <div class="card">
     <div class="card-body">
         <div class="row">
             <div class="col-sm-5">
                 <h4 class="card-title mb-0">
-                    客服
+                    微信号
                 </h4>
             </div>
             <!--col-->
@@ -32,7 +32,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>姓名</th>
+                                <th>微信号</th>
                                 {{--  <th>头像</th>
                                 <th>次数</th>  --}}
                                 <th>@lang('labels.general.actions')</th>

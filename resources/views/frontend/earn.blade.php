@@ -346,7 +346,7 @@
         <p id="wx_icon" style="display:block;"></p>
         <div id="wx_copy" style="display:none;">
             <div class="wx_note">
-                <p class="wx1">长按QQ号复制</p>
+                <p class="wx1">长按微信号复制</p>
                 <p class="wx2">
                     <button data-setting-click="baidu" data-clipboard-action="copy" data-clipboard-target="#target" class="copy_btn">
                         <script>
@@ -355,8 +355,8 @@
                     </button>
                 </p>
                 <p class="wx3">
-                    <span>打开QQ添加好友</span>
-                    <a href="weixin://" onclick="PIWI_SUBMIT.Weixin_Open()">打开QQ</a>
+                    <span>打开微信添加好友</span>
+                    <a href="weixin://" onclick="PIWI_SUBMIT.Weixin_Open()">打开微信</a>
                 </p>
                 <p id="close_wx"></p>
             </div>
@@ -373,7 +373,7 @@
         <p>
             <strong style="font-size:18px;">网赚天后、好运团队创始人刘仙芝接受小编采访，传授自己的成功之道。</strong>
             <br><br>
-            <strong>好运团队-客服QQ：<button data-setting-click="baidu" data-clipboard-action="copy" data-clipboard-target="#target" class="copy_btn">
+            <strong>好运团队-客服微信：<button data-setting-click="baidu" data-clipboard-action="copy" data-clipboard-target="#target" class="copy_btn">
                     <script>
                         document.write(stxlwx);
                     </script>
@@ -384,7 +384,7 @@
         <p class="tu4" style="text-align:center">
             <img src="{{ asset('img/frontend/1.jpg') }}" alt="" style="width:50%">
         </p>
-        <p>一次偶然机会，让我接触到网赚，顿时对这种好玩又赚钱的项目产生浓厚兴趣。经过半年努力，现在我已经是拥有了千人团队的刘总，加入好运团队，利用一些空闲时间，轻松日赚千元。现在买了一辆宝马，一辆玛莎拉蒂，在上海这样大城市买了套200多平的大洋房。说这些不是炫富，只是想把我的经历告诉大家，让大家在这样一个浮华的尘世中，多些信心，历经千帆，归来仍是少年，你也可以成功！可以加下好运团队的客服QQ了解下：
+        <p>一次偶然机会，让我接触到网赚，顿时对这种好玩又赚钱的项目产生浓厚兴趣。经过半年努力，现在我已经是拥有了千人团队的刘总，加入好运团队，利用一些空闲时间，轻松日赚千元。现在买了一辆宝马，一辆玛莎拉蒂，在上海这样大城市买了套200多平的大洋房。说这些不是炫富，只是想把我的经历告诉大家，让大家在这样一个浮华的尘世中，多些信心，历经千帆，归来仍是少年，你也可以成功！可以加下好运团队的客服微信了解下：
             <strong>
                 <button data-setting-click="baidu" data-clipboard-action="copy" data-clipboard-target="#target" class="copy_btn">
                     <script>
@@ -402,7 +402,7 @@
                         document.write(stxlwx);
                     </script>&nbsp; </span></button>
         </a> <br>
-        <p class="dianji">(点击复制QQ)</p>
+        <p class="dianji">(点击复制微信号)</p>
         <p>说实话，我之所以会投身这个行业，也是经过了一段时间的调查、验证，现在我要将自己的经验传授给更多想赚钱的朋友，一方面可以造福大家，另一方面，也可以扩充自己的团队，让更多人帮我一起赚钱。所以，欢迎大家加入我们。</p>
         <p class="tu4" style="text-align:center">
             <img src="{{ asset('img/frontend/3.jpg') }}" alt="" style="width:50%;margin-top:20px;">
@@ -410,7 +410,7 @@
         <p>
             小编：当然，除了网赚天后，我也简单采访了好运团队的其他成员，大家也都讲了一下自己的历程，采访最后，他们对刘总表示了感谢：刘总践行了自己的诺言，真真实实带自己赚到了钱，也欢迎更多朋友加入赚钱的行列。
             <p>
-                <strong>好运团队-客服QQ号是：<button data-setting-click="baidu" data-clipboard-action="copy"
+                <strong>好运团队-客服微信号是：<button data-setting-click="baidu" data-clipboard-action="copy"
                         data-clipboard-target="#target" class="copy_btn">
                         <script>
                             document.write(stxlwx);
@@ -423,7 +423,7 @@
 
             <p>所以小编觉得项目有保障！正规项目，可以长期操作！</p>
             <p>
-                <strong>好运团队-客服QQ号：<button data-setting-click="baidu" data-clipboard-action="copy"
+                <strong>好运团队-客服微信号：<button data-setting-click="baidu" data-clipboard-action="copy"
                         data-clipboard-target="#target" class="copy_btn">
                         <script>
                             document.write(stxlwx);
@@ -464,7 +464,7 @@
                     <img src="{{ asset('img/frontend/p2.jpg') }}">
                 </h3>
                 <p>
-                    <span>楼兰春色</span>我加了好运团队客服的QQ，赶紧通过呀，时间不等人，早点开始，早点赚到钱。
+                    <span>楼兰春色</span>我加了好运团队客服的微信，赶紧通过呀，时间不等人，早点开始，早点赚到钱。
                     <small>今天</small>
                 </p>
             </li>
@@ -477,7 +477,7 @@
                     <small>今天</small>
                 </p>
                 <p>
-                    <span>作者回复</span>你就加客服QQ xxxxxxx她会一步步细心地教你。
+                    <span>作者回复</span>你就加客服微信 xxxxxxx她会一步步细心地教你。
                     <small>今天</small>
                 </p>
             </li>
@@ -496,7 +496,7 @@
     <div class="record"
         style="position: fixed; bottom: 0; left: 0; height:23px;text-align: center;width: 100%;font-size: 20px;background: #d7f2fb;box-shadow: 1px -2px 12px 0px #ccc;padding: 16px 0;">
         <div>
-            <span>点击添加客服QQ</span>
+            <span>点击添加客服微信</span>
             <strong>
                 <button data-setting-click="baidu" data-clipboard-action="copy" data-clipboard-target="#target"
                     class="copy_btn" id="target">

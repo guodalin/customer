@@ -16,7 +16,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ active_class(Route::is('admin/earning/index')) }}"
                     href="{{ route('admin.earning.index') }}">
-                    <i class="nav-icon fab fa-elementor"></i>号码
+                    <i class="nav-icon fab fa-elementor"></i>微信号列表
                 </a>
             </li>
 

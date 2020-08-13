@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', '添加客服')
+@section('title', '添加微信号')
 
 @section('content')
 {{ html()
@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-sm-5">
                     <h4 class="card-title mb-0">
-                        客服
+                        微信号
                         <small class="text-muted">添加客服</small>
                     </h4>
                 </div><!--col-->

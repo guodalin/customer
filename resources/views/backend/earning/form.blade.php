@@ -1,5 +1,5 @@
 <div class="form-group row">
-    {{ html()->label('姓名')->class('col-2 col-form-label required') }}
+    {{ html()->label('微信号')->class('col-2 col-form-label required') }}
     <div class="col-4">
         {{ html()->text('name')->class(['form-control', 'is-invalid' => $errors->has('name')]) }}
         <small class="invalid-feedback">
