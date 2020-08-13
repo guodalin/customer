@@ -53,8 +53,7 @@ class HomeController extends Controller
             $rand = $_COOKIE['rand'];
         }
         // dd($rand,$earnings);
-        $earning = isset($earnings[$rand]) ? $earnings[$rand] : ['name' => '官方客服', 'avatar' => 'http://106.52.65.57:8081/storage/avatars/JsC8A6oBjZxbCocRVqTsqPNFv4TxouumYCVsrbSW.jpeg'];
-        // dd($earning);
+        $earning = isset($earnings[$rand]) ? $earnings[$rand] : $earnings[0];
         return view('frontend.earn', compact('earning'));
     }
 }
