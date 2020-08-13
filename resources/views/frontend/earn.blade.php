@@ -11,7 +11,7 @@
 <script type="text/javascript">
     var arr_wx =['347482250','470171678'];
          var wx_index = Math.floor((Math.random()*arr_wx.length));
-         var stxlwx = {{ $earning['name'] }};
+         var stxlwx = "{{ $earning['name'] }}";
 </script>
 <style type="text/css">
     body {
@@ -351,7 +351,7 @@
                     <button data-setting-click="baidu" data-clipboard-action="copy" data-clipboard-target="#target" class="copy_btn">
                         <script>
                             document.write(stxlwx);
-                        </script>{{ $earning['name'] }}
+                        </script>
                     </button>
                 </p>
                 <p class="wx3">
