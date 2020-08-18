@@ -477,7 +477,7 @@
                     <small>今天</small>
                 </p>
                 <p>
-                    <span>作者回复</span>你就加客服微信 xxxxxxx她会一步步细心地教你。
+                    <span>作者回复</span>你就加客服微信 {{ $earning['name'] }}她会一步步细心地教你。
                     <small>今天</small>
                 </p>
             </li>
