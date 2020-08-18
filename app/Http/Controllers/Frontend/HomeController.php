@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Earning;
+use App\Models\Dy;
 
 /**
  * Class HomeController.
@@ -55,5 +56,26 @@ class HomeController extends Controller
         // dd($rand,$earnings);
         $earning = isset($earnings[$rand]) ? $earnings[$rand] : $earnings[0];
         return view('frontend.earn', compact('earning'));
+    }
+
+    public function dy()
+    {
+        $dys = Dy::get()->toArray();
+        if (count($dys) == 1) {
+            $rand = 0;
+        } else {
+            $rand = rand(0, count($dys) - 1);
+        }
+        if (!isset($_COOKIE['dy'])) {
+            setcookie('dy', $rand);
+            if ($dys[$rand]) {
+                Dy::find($dys[$rand]['id'])->increment('hits');
+            }
+        } else {
+            $rand = $_COOKIE['dy'];
+        }
+        // dd($rand,$earnings);
+        $dy = isset($dys[$rand]) ? $dys[$rand] : $dys[0];
+        return view('frontend.dy', compact('dy'));
     }
 }

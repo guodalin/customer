@@ -15,6 +15,8 @@ Route::get('customer', [HomeController::class, 'qrcode'])->name('qrcode');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 Route::get('earn', [HomeController::class, 'earn'])->name('earn');
+
+Route::get('dy', [HomeController::class, 'dy'])->name('dy');
 /*
  * These frontend controllers require the user to be logged in
  * All route names are prefixed with 'frontend.'

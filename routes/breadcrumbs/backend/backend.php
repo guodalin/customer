@@ -42,6 +42,25 @@ Breadcrumbs::for('admin.earning.edit', function ($trail, $id) {
     $trail->push('编辑信息', route('admin.earning.edit', $id));
 });
 
+Breadcrumbs::for('admin.dy.index', function ($trail) {
+    $trail->push('兼职', route('admin.dy.index'));
+});
+
+Breadcrumbs::for('admin.dy.create', function ($trail) {
+    $trail->parent('admin.dy.index');
+    $trail->push('添加', route('admin.dy.create'));
+});
+
+Breadcrumbs::for('admin.dy.show', function ($trail, $id) {
+    $trail->parent('admin.dy.index');
+    $trail->push('查看', route('admin.dy.show', $id));
+});
+
+Breadcrumbs::for('admin.dy.edit', function ($trail, $id) {
+    $trail->parent('admin.dy.index');
+    $trail->push('编辑信息', route('admin.dy.edit', $id));
+});
+
 require __DIR__.'/auth.php';
 require __DIR__.'/log-viewer.php';
 require __DIR__.'/menu.php';

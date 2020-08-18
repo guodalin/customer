@@ -11,6 +11,9 @@ Route::Resource('customer', 'CustomerController');
 Route::get('earning', 'EarningController@index')->name('earning');
 Route::Resource('earning', 'EarningController');
 
+Route::get('dy', 'DyController@index')->name('dy');
+Route::Resource('dy', 'DyController');
+
 // Menu actions
 Route::group(['namespace' => 'Menu'], function () {
     Route::post('menu/item', 'MenuItemController@store');
