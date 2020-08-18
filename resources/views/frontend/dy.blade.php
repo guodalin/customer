@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-12" style="margin-bottom:50px">
+    <div class="col-12" style="margin-bottom:60px">
         <div class="text-center">
             <img src="{{ asset('img/frontend/dy.png') }}" alt="" srcset="" style="width:50%;margin-top:10px">
             <h3 style="margin-bottom:10px">招聘抖音点赞兼职</h3>
@@ -18,7 +18,7 @@
         <div class="text-center">
             <img src="{{ asset('img/frontend/hb.jpg') }}" alt="" srcset="" style="width:80%;margin:5px 0px;"><br/>
         </div>
-        你一定像大部分人一样每天大量的时间在刷抖音，但你知道每天动动手指点赞就能能赚钱吗？！抖音点赞，又好玩又赚钱的兼职。添加客服微信了解下吧！
+        你一定像大部分人一样每天大量的时间在刷抖音，但你知道每天动动手指点赞就能赚钱吗？！抖音点赞，又好玩又赚钱的兼职。<b class="text-danger" style="font-size:20px;">点击下方“添加客服”按键咨询！！！</b>
     </div>
     <div>
         <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal" style="position:fixed;bottom:3px;font-size:1.8rem">
