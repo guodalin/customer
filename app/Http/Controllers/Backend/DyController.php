@@ -94,17 +94,13 @@ class DyController extends Controller
      */
     public function update(Request $request, dy $dy)
     {
-        $path = '';
         if ($request->file('avatar')) {
             $path = $request->file('avatar')->store('avatars');
+            $dy->avatar = $path;
         }
-
-        $data = [
-            'name' => $request->input('name'),
-            'info' => $request->input('info'),
-            'avatar' => $path
-        ];
-        $dy->update($data);
+        $dy->name = $request->input('name');
+        $dy->info = $request->input('info');
+        $dy->save();
 
         return redirect()->route('admin.dy.index')->withFlashSuccess('修改成功');
     }

@@ -94,17 +94,13 @@ class EarningController extends Controller
      */
     public function update(Request $request, earning $earning)
     {
-        $path = '';
         if ($request->file('avatar')) {
             $path = $request->file('avatar')->store('avatars');
+            $earning->avatar = $path;
         }
-
-        $data = [
-            'name' => $request->input('name'),
-            'info' => $request->input('info'),
-            'avatar' => $path
-        ];
-        $earning->update($data);
+        $earning->name = $request->input('name');
+        $earning->info = $request->input('info');
+        $earning->save();
 
         return redirect()->route('admin.earning.index')->withFlashSuccess('修改成功');
     }
