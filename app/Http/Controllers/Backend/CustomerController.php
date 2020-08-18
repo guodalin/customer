@@ -87,14 +87,14 @@ class CustomerController extends Controller
      */
     public function update(Request $request, customer $customer)
     {
-        $path = $request->file('avatar')->store('avatars');
+        if ($request->file('avatar')) {
+            $path = $request->file('avatar')->store('avatars');
+            $customer->avatar = $path;
+        }
+        $customer->name = $request->input('name');
+        $customer->info = $request->input('info');
 
-        $data = [
-            'name' => $request->input('name'),
-            'info' => $request->input('info'),
-            'avatar' => $path
-        ];
-        $customer->update($data);
+        $customer->save();
 
         return redirect()->route('admin.customer.index')->withFlashSuccess('修改成功');
     }
