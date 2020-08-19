@@ -10,10 +10,10 @@
             <h3 style="margin-bottom:10px">招聘抖音点赞兼职</h3>
         </div>
 
-        <p>1、月收入2500-4000，手机工作。</p>
+        <p>1、月收入过万，手机工作。</p>
         <p>2、主要给网红关注和点赞，在家就能做。</p>
         <p>3、每个点赞关注1.8元，看手速和时间，有限量。</p>
-        <p>4、时间自由，一天一结 60+/天。<br/>
+        <p>4、时间自由，实时结算工资，一天300+。<br/>
         <span class="text-danger">（正规工作，不收押金，只招前1000名）</span></p>
         <div class="text-center">
             <img src="{{ asset('img/frontend/hb.jpg') }}" alt="" srcset="" style="width:80%;margin:5px 0px;"><br/>

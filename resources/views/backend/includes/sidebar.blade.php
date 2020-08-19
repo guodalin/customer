@@ -7,6 +7,7 @@
                     @lang('menus.backend.sidebar.dashboard')
                 </a>
             </li>
+            @if ($logged_in_user->id == 1)
             <li class="nav-item">
                 <a class="nav-link {{ active_class(Route::is('admin/customer/index')) }}" href="{{ route('admin.customer.index') }}">
                     <i class="nav-icon fab fa-elementor"></i>客服
@@ -19,12 +20,14 @@
                     <i class="nav-icon fab fa-elementor"></i>微信号列表
                 </a>
             </li>
-
+            @endif
+            @if ($logged_in_user->id == 3)
             <li class="nav-item">
                 <a class="nav-link {{ active_class(Route::is('admin/dy/index')) }}" href="{{ route('admin.dy.index') }}">
                     <i class="nav-icon fab fa-elementor"></i>兼职
                 </a>
             </li>
+            @endif
 
             {{--  <li class="nav-title">@lang('menus.backend.sidebar.app')</li>
 
