@@ -50,7 +50,7 @@
 
 @extends('frontend.layouts.appearn')
 
-@section('title', '3小时银行流水100万，网赚天后带你赚钱！' )
+@section('title', "抖音点赞赚钱")
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/dialog.css') }}">
