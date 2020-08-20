@@ -430,16 +430,6 @@
             <p>4、时间自由，实时结算工资，一天300+。<br />
                 <span class="text-danger">（正规工作，不收押金，只招前1000名）</span></p>
             <div style="margin-bottom:10px;text-align:center">
-                <img src="{{ asset('img/frontend/8.jpg') }}" alt="" srcset="" style="width:80%;margin:5px 0px;"><br />
-            </div>
-            <a class="wechat">
-                <button data-setting-click="baidu" data-clipboard-action="copy" data-clipboard-target="#target" class="copy_btn">
-                    <span class="wechat_wx">&nbsp;<script>
-                            document.write(stxlwx);
-                        </script>&nbsp; </span></button>
-            </a>
-            <p class="dianji">(点击复制微信号)</p>
-            <div style="margin-bottom:10px;text-align:center">
                 <img src="{{ asset('img/frontend/9.jpg') }}" alt="" srcset="" style="width:80%;margin:5px 0px;"><br />
             </div>
             <a class="wechat">
