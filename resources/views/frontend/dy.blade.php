@@ -423,7 +423,7 @@
             <h2 style="margin-bottom:10px;text-align:center">招聘抖音点赞兼职</h2>
             <div style="margin-bottom:10px;text-align:center">
                 <img src="{{ asset('img/frontend/hb.jpg') }}" alt="" srcset="" style="margin:5px 0px;"><br />
-                <small style="color:red">保存图片注册</small>
+                <b style="color:red">保存图片扫码注册</b>
             </div>
             <p>1、月收入过万，手机工作。</p>
             <p>2、主要给网红关注和点赞，在家就能做。</p>
